@@ -21,6 +21,11 @@ img {
   width: 100%;
 }
 
+header {
+	margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
 	color: #ccc;
@@ -296,22 +301,15 @@ nav a#openup {
 .cf:before,
 .cf:after {
   content: '';
-	display: table;
-	margin: 0;
-  padding: 0;
+  display: table;
 }
 
 .cf:after {
-	clear: both;
-	margin: 0;
-  padding: 0;
+  clear: both;
 }
 
 .cf {
-	zoom: 1;
-	margin: 0;
-	padding: 0;
-	top: 0px;
+  zoom: 1;
 }
 
 #form {

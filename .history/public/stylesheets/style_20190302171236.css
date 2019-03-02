@@ -23,25 +23,19 @@ img {
 
 a {
   text-decoration: none;
-	color: #ccc;
-	text-decoration: none;
-	}
-
-	.nav-link {
-		color: white;
-		position: relative;
-		display: inline;
-		margin-right: 10px;
-	}
-	
+  color: #ccc;
+}
+ul {
+	list-style-type: none;
+}
 .signup {
 	position: relative;
 	 top: 30px;
 }
-/* .cf li{
+.cf li{
 	margin-right: 5px;
 	list-style-type: none;
-} */
+}
 .section-main {
 	background: url(../images/child.jpg) no-repeat top/cover;
 }
@@ -296,22 +290,15 @@ nav a#openup {
 .cf:before,
 .cf:after {
   content: '';
-	display: table;
-	margin: 0;
-  padding: 0;
+  display: table;
 }
 
 .cf:after {
-	clear: both;
-	margin: 0;
-  padding: 0;
+  clear: both;
 }
 
 .cf {
-	zoom: 1;
-	margin: 0;
-	padding: 0;
-	top: 0px;
+  zoom: 1;
 }
 
 #form {

@@ -50,16 +50,16 @@ app.get('/', function(req, res){
 
 
   //add session
-  // app.use(session({
-  //   secret: "basic-auth-secret",
-  //   cookie: { maxAge: 60000 },
-  //   resave: true,
-  //   saveUninitialized: true,
-  //   store: new MongoStore({
-  //     mongooseConnection: mongoose.connection,
-  //     ttl: 24 * 60 * 60 // 1 day
-  //   })
-  // }));
+  app.use(session({
+    secret: "basic-auth-secret",
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  }));
 
 
   app.locals.title = 'BabySteps';
@@ -68,17 +68,17 @@ app.get('/', function(req, res){
   const index = require('./routes/index');
   app.use('/', index);
 
-  // app.use((req, res, next) => {
-  //   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
-  //     next(); // ==> go to the next route ---
-  //   } else {                          //    |
-  //     res.redirect("/login");         //    |
-  //   }                                 //    |
-  // }); 
+  app.use((req, res, next) => {
+    if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+      next(); // ==> go to the next route ---
+    } else {                          //    |
+      res.redirect("/login");         //    |
+    }                                 //    |
+  }); 
 
 
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
+  // const authRouter = require('./routes/auth');
+  // app.use('/', authRouter);
   // const recipes = require('./routes/recipes');
   // app.use('/', recipes);
   // const recipe = require('./routes/recipe');

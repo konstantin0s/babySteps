@@ -50,16 +50,16 @@ app.get('/', function(req, res){
 
 
   //add session
-  // app.use(session({
-  //   secret: "basic-auth-secret",
-  //   cookie: { maxAge: 60000 },
-  //   resave: true,
-  //   saveUninitialized: true,
-  //   store: new MongoStore({
-  //     mongooseConnection: mongoose.connection,
-  //     ttl: 24 * 60 * 60 // 1 day
-  //   })
-  // }));
+  app.use(session({
+    secret: "basic-auth-secret",
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  }));
 
 
   app.locals.title = 'BabySteps';
@@ -77,8 +77,8 @@ app.get('/', function(req, res){
   // }); 
 
 
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
+  // const authRouter = require('./routes/auth');
+  // app.use('/', authRouter);
   // const recipes = require('./routes/recipes');
   // app.use('/', recipes);
   // const recipe = require('./routes/recipe');

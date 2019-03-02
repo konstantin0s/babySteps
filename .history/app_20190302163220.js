@@ -77,8 +77,8 @@ app.get('/', function(req, res){
   // }); 
 
 
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
+  // const authRouter = require('./routes/auth');
+  // app.use('/', authRouter);
   // const recipes = require('./routes/recipes');
   // app.use('/', recipes);
   // const recipe = require('./routes/recipe');

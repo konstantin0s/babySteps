@@ -24,9 +24,8 @@ img {
 a {
   text-decoration: none;
 	color: #ccc;
-	text-decoration: none;
+		text-decoration: none;
 	}
-
 	.nav-link {
 		color: white;
 		position: relative;
@@ -296,22 +295,15 @@ nav a#openup {
 .cf:before,
 .cf:after {
   content: '';
-	display: table;
-	margin: 0;
-  padding: 0;
+  display: table;
 }
 
 .cf:after {
-	clear: both;
-	margin: 0;
-  padding: 0;
+  clear: both;
 }
 
 .cf {
-	zoom: 1;
-	margin: 0;
-	padding: 0;
-	top: 0px;
+  zoom: 1;
 }
 
 #form {

@@ -23,25 +23,16 @@ img {
 
 a {
   text-decoration: none;
-	color: #ccc;
-	text-decoration: none;
-	}
+  color: #ccc;
+}
 
-	.nav-link {
-		color: white;
-		position: relative;
-		display: inline;
-		margin-right: 10px;
-	}
-	
 .signup {
 	position: relative;
 	 top: 30px;
 }
-/* .cf li{
+.cf li{
 	margin-right: 5px;
-	list-style-type: none;
-} */
+}
 .section-main {
 	background: url(../images/child.jpg) no-repeat top/cover;
 }
@@ -208,8 +199,7 @@ nav ul {
 }
 nav li {
   display: inline;
-	float: left;
-	list-style-type: none;
+  float: left;
 }
 nav a {
   display: inline-block;
@@ -254,13 +244,12 @@ nav a#openup {
   }
   nav ul {
     display: none;
-		height: auto;
+    height: auto;
   }
   nav li {
     width: 100%;
     float: left;
-		position: relative;
-		list-style: none;
+    position: relative;
   }
   nav a {
     text-align: left;
@@ -296,75 +285,15 @@ nav a#openup {
 .cf:before,
 .cf:after {
   content: '';
-	display: table;
-	margin: 0;
-  padding: 0;
+  display: table;
 }
 
 .cf:after {
-	clear: both;
-	margin: 0;
-  padding: 0;
+  clear: both;
 }
 
 .cf {
-	zoom: 1;
-	margin: 0;
-	padding: 0;
-	top: 0px;
-}
-
-#form {
-  margin: 30px auto;
-  width: 380px;
-}
-
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
-}
-
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .3s ease background;
-  width: 100%;
-}
-
-#form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: .3s ease background;
-}
-
-.error-message {
-  background: #F02B63;
-  box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  width: 20%;
+  zoom: 1;
 }
 
 @media screen and (max-width: 780px) {
