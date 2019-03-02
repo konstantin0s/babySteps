@@ -3,7 +3,7 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index', {title: 'Form validation',
+  res.render('index', {title: 'BabySteps',
  success: req.session.success, errors: req.session.errors 
 });
 req.session.errors = null;

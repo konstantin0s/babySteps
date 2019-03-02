@@ -16,6 +16,29 @@
     </div>
      {{/each}}
 </div>
-</body>
-</html>
+ 
 
+ {{#if babysitters }}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li>
+            <a href='#'>Overview</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href='/login'>Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/signup'>Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+ {{/if}}
