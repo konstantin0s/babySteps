@@ -34,10 +34,6 @@ a {
 		margin-right: 10px;
 	}
 	
-.signup {
-	position: relative;
-	 top: 30px;
-}
 /* .cf li{
 	margin-right: 5px;
 	list-style-type: none;
@@ -293,6 +289,14 @@ nav a#openup {
     position: relative;
   }
 }
+
+.cf {
+	zoom: 1.1;
+	margin: 0;
+	padding: 0;
+	top: 0px;
+}
+
 .cf:before,
 .cf:after {
   content: '';
@@ -307,16 +311,11 @@ nav a#openup {
   padding: 0;
 }
 
-.cf {
-	zoom: 1;
-	margin: 0;
-	padding: 0;
-	top: 0px;
-}
-
 #form {
   margin: 30px auto;
-  width: 380px;
+	width: 380px;
+	position: relative;
+	top: 200px;
 }
 
 #form label {
@@ -356,6 +355,18 @@ nav a#openup {
   background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
+}
+
+.login {
+	position: relative;
+	top: 100px;
+	left: 476px;
+}
+
+.signup {
+	position: relative;
+	top: 100px;
+	left: 476px;
 }
 
 .error-message {
