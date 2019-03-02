@@ -4,7 +4,7 @@ const request = require('request');
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const bcrypt         = require("bcrypt");
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config()
 router.use(cookieParser());
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -64,9 +64,9 @@ router.post('/signup', function(req, res) {
     return res.json({"responseError" : "Please select captcha first"});
   }
   // const secretKey = "6LeR0ZMUAAAAANDnXcoQiTvxYDIghn9DZrrf7wFQ";
-  // process.env.SECRET_KEY
+  process.env.SECRET_KEY
 
-  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
 
   request(verificationURL,function(error,response,body) {
     body = JSON.parse(body);
