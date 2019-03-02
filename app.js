@@ -10,7 +10,10 @@ const cookieParser = require('cookie-parser');
 
 
 const app = express();
-app.use(cookieParser());
+
+
+const User = require("./models/user");
+
 
 mongoose
   .connect('mongodb://localhost/babysteps', {useNewUrlParser: true})
@@ -27,6 +30,17 @@ mongoose
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
+  app.use(cookieParser());
+  app.use(session({
+    secret: "basic-auth-secret",
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  }));
 
   //enables cors
   app.use(cors({
@@ -43,40 +57,29 @@ mongoose
   next();
 });
 
-// app.get('/', function(req, res){
-//   res.cookie('name', 'recipes'); //Sets name = express
-//   res.render('index');
-// });
-
-
-  //add session
-  // app.use(session({
-  //   secret: "basic-auth-secret",
-  //   cookie: { maxAge: 60000 },
-  //   resave: true,
-  //   saveUninitialized: true,
-  //   store: new MongoStore({
-  //     mongooseConnection: mongoose.connection,
-  //     ttl: 24 * 60 * 60 // 1 day
-  //   })
-  // }));
-
-
   app.locals.title = 'BabySteps';
-  // let Recipes = require('./models/recipes');
+
 
   const index = require('./routes/index');
   app.use('/', index);
   const authRouter = require('./routes/auth');
   app.use('/', authRouter);
 
-  // app.use((req, res, next) => {
-  //   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
-  //     next(); // ==> go to the next route ---
-  //   } else {                          //    |
-  //     res.redirect("/login");         //    |
-  //   }                                 //    |
-  // }); 
+  app.get('/', function(req, res){
+    res.cookie('name', 'name'); //Sets name = express
+    res.render('index');
+  });
+  
+    //add session
+
+
+  app.use((req, res, next) => {
+    if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+      next(); // ==> go to the next route ---
+    } else {                          //    |
+      res.redirect("/login");         //    |
+    }                                 //    |
+  }); 
 
   const babySitters = require('./routes/babysitters');
   app.use('/', babySitters);

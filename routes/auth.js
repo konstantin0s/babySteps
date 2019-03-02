@@ -12,12 +12,15 @@ router.use(bodyParser.json());
 
 
 const User = require("../models/user");
+let Babysitters =  require('../models/babysitter');
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
+// BCrypt to encrypt passwords
 
+const bcryptSalt     = 10;
 
 router.post("/signup", (req, res, next) => {
 
@@ -41,7 +44,7 @@ router.post("/signup", (req, res, next) => {
       return;
     }
 
-  const bcryptSalt     = 10;
+
   const salt     = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
 
@@ -63,7 +66,6 @@ router.post('/signup', function(req, res) {
   {
     return res.json({"responseError" : "Please select captcha first"});
   }
-
 
   const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
 
@@ -102,7 +104,7 @@ router.post("/login", (req, res, next) => {
       }
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
-        // req.session.currentUser = user;
+        req.session.currentUser = user;
         res.redirect("babysitters");
       } else {
         res.render("auth/login", {
