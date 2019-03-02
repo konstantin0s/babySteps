@@ -43,10 +43,10 @@ mongoose
   next();
 });
 
-app.get('/', function(req, res){
-  res.cookie('name', 'recipes'); //Sets name = express
-  res.render('index');
-});
+// app.get('/', function(req, res){
+//   res.cookie('name', 'recipes'); //Sets name = express
+//   res.render('index');
+// });
 
 
   //add session
@@ -67,6 +67,8 @@ app.get('/', function(req, res){
 
   const index = require('./routes/index');
   app.use('/', index);
+  const authRouter = require('./routes/auth');
+  app.use('/', authRouter);
 
   // app.use((req, res, next) => {
   //   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
@@ -76,9 +78,9 @@ app.get('/', function(req, res){
   //   }                                 //    |
   // }); 
 
+  const babySitters = require('./routes/babysitters');
+  app.use('/', babySitters);
 
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
   // const recipes = require('./routes/recipes');
   // app.use('/', recipes);
   // const recipe = require('./routes/recipe');

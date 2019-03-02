@@ -50,7 +50,7 @@ router.post("/signup", (req, res, next) => {
     password: hashPass
   })
   .then(() => {
-    res.redirect("/");
+    res.redirect("login");
   })
 })
   .catch(error => {
@@ -102,8 +102,8 @@ router.post("/login", (req, res, next) => {
       }
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
-        req.session.currentUser = user;
-        res.redirect("/");
+        // req.session.currentUser = user;
+        res.redirect("babysitters");
       } else {
         res.render("auth/login", {
           errorMessage: "Incorrect password"
