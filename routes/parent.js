@@ -4,12 +4,12 @@ const router  = express.Router();
 let Parent = require('../models/parent');
 
 
-router.get('/parentProfile/:id', function(req, res) {
+router.get('/parent/:id', function(req, res) {
   Parent.findOne({_id: req.params.id}, function(err, parent) {
     if (err) {
       console.log(err);
     } else {
-      res.render('parentProfile',
+      res.render('parent',
       {parent: parent});
     }
   });

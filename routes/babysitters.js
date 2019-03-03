@@ -3,14 +3,14 @@ const router  = express.Router();
 let Babysitters =  require('../models/babysitter');
 
 
-/* GET recipes page */
+/* GET babysitters page */
 
 router.get('/babysitters', (req, res, next) => {
   Babysitters.find({}, (err, babysitters) => {
     if (err) {
       console.log(err);
     } else {
-      res.render('babysitters',
+      res.render('babysitters', 
       {babysitters: babysitters});
     }
     

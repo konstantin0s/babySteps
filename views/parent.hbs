@@ -4,30 +4,27 @@
 
   <div class="cards">
     <div class="card">
-      <h2>firstName: {{this.firstName}}</h2>   
-      <h3>lastName: {{this.lastName}}</h3>
-      <p>City: {{this.city}}</p>
+      <h2>firstName: {{parent.firstName}}</h2>   
+      <h3>lastName: {{parent.lastName}}</h3>
+      <p>City: {{parent.city}}</p>
         {{!-- <img src="{{parentProfile.country}}" alt=""> --}}
-     <button class="btn btn-default"> <a href="/recipe/edit/{{parent.id}}">Edit</a></button>
+     <button class="btn btn-default"> <a href="/profile/edit/{{parent.id}}">Edit</a></button>
       <a href="#" class="btn btn-danger delete-recipe" data-id="{{parent.id}}">Delete</a>
  </div>
     </div>
 
- {{#if parent }}
+ {{#if parent}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li>
-            <a href='#'>Overview</a>
-          </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href='/login'>Link 1</a>
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href='/signup'>Link 2</a>
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -35,5 +32,4 @@
         </ul>
       </nav>
     </header>
-
  {{/if}}

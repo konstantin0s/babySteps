@@ -38,35 +38,56 @@
   </ul>
     </div>
   </nav> --}}
- <header>
+ {{!-- <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
-          </li>
+          </li> --}}
           {{!-- <li>
             <a href='#'>Overview</a>
           </li> --}}
-          <li class="nav-item">
+          {{!-- <li class="nav-item">
             <a class="nav-link" href='/login'>Log In</a>
-          </li>
-      	<div class="dropdown">
+          </li> --}}
+      	{{!-- <div class="dropdown">
 		     <button class="dropdown-button">Sign Up</button>
 		     <div class="dropdown-list">
 		  <a  href='/parent/signup'>Parent?</a>
       <a  href='/sitter/signup'>Sitter?</a> 
 	    	</div>
-	      </div>
+	      </div> --}}
           {{!-- <li class="nav-item">
         <a class="nav-link" href='/parent/signup'>Parent?</a>
           </li>
           <li class="nav-item">
         <a class="nav-link" href='/sitter/signup'>Sitter?</a> 
           </li> --}}
-        </ul>
+        {{!-- </ul>
         <a class="nav-link" href='#' id='openup'>myTunes</a>
       </nav>
+    </header> --}}
+
+  {{#if parent}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
     </header>
+ {{/if}}
 
 
   {{{body}}}

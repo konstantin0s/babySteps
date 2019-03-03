@@ -1,0 +1,36 @@
+
+
+
+{{!-- <button type="button" class="btn btn-primary check" name="addRecipe"> <a class="nav-link" href="/recipes/add">Add recipe</a></button> --}}
+<div class="cards">
+  <h1>List of parents:</h1>
+     {{#each parents}}
+    <div class="card">
+    <li class="list-group-item"><a href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></li>
+    </div>
+     {{/each}}
+</div>
+
+{{#if parent}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li>
+            <a href='#'>Overview</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}

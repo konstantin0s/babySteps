@@ -223,6 +223,12 @@ nav a#openup {
   display: none;
 }
 
+.cards {
+  position: relative;
+  top: 200px;
+  color: grey;
+}
+
 @media screen and (max-width: 580px) {
   .hide-on-small {
     display: none;

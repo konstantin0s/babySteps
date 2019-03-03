@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
 </head>
-<body>
-  <h1>Details of the Recipe:</h1>
+<body> --}}
 
   <div class="cards">
     <div class="card">
+        <h1>Details of the Babysitter:</h1>
       <h2>First Name: {{baby.firstName}}</h2>   
       <h3>Last Name: {{baby.lastName}}</h3>
       <p>City: {{baby.city}}</p>
@@ -18,8 +18,36 @@
       <p>Age: {{baby.age}}</p>
       <p>Salary: ${{baby.salary}}</p>
         {{!-- <img src="{{recipe.image}}" alt=""> --}}
-     <button class="btn btn-default"> <a href="/recipe/edit/{{recipe.id}}">Edit</a></button>
-      <a href="#" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Delete</a>
+     {{!-- <button class="btn btn-default"> <a href="/babysitter/edit/{{baby.id}}">Edit</a></button>
+      <a href="#" class="btn btn-danger delete-recipe" data-id="{{baby.id}}">Delete</a> --}}
     </div>
-</body>
-</html>
+    <h2>Contact Babysitter</h2>
+      <h2>Send message: You can add someting here maybe?</h2>
+    </div>
+{{!-- </body>
+</html> --}}
+
+ {{#if baby }}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li>
+            <a href='#'>Overview</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href='/parents'>View Parents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+ {{/if}}

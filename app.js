@@ -65,6 +65,7 @@ mongoose
   const authRouter = require('./routes/auth');
   app.use('/', authRouter);
 
+
   app.get('/', function(req, res){
     res.cookie('name', 'name'); //Sets name = express
     res.render('index');
@@ -87,7 +88,9 @@ mongoose
   app.use('/', parent);
   const babysitter = require('./routes/babysitter');
   app.use('/', babysitter);
-  
+  const parents = require('./routes/parents');
+  app.use('/', parents);
+
   // const addRecipe = require('./routes/addRecipe');
   // app.use('/', addRecipe);
   // const edit = require('./routes/edit');
