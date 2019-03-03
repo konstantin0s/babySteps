@@ -12,14 +12,13 @@ router.use(bodyParser.json());
 
 
 const Parent = require("../models/parent");
-let Babysitters =  require('../models/babysitter');
+const Babysitters =  require('../models/babysitter');
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/parent/signup");
 });
 
 // BCrypt to encrypt passwords
-
 const bcryptSalt     = 10;
 
 router.post("/signup", (req, res, next) => {
@@ -116,6 +115,7 @@ router.post("/login", (req, res, next) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
+        // res.redirect("/parentProfile");
         res.redirect("babysitters");
       } else {
         res.render("auth/parent/login", {

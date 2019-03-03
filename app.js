@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 
-const User = require("./models/user");
+const Parent = require("./models/parent");
 
 
 mongoose
@@ -83,11 +83,11 @@ mongoose
 
   const babySitters = require('./routes/babysitters');
   app.use('/', babySitters);
-
-  // const recipes = require('./routes/recipes');
-  // app.use('/', recipes);
-  // const recipe = require('./routes/recipe');
-  // app.use('/', recipe);
+    const parent = require('./routes/parent');
+  app.use('/', parent);
+  const babysitter = require('./routes/babysitter');
+  app.use('/', babysitter);
+  
   // const addRecipe = require('./routes/addRecipe');
   // app.use('/', addRecipe);
   // const edit = require('./routes/edit');

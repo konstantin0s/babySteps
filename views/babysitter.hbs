@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1>Details of the Recipe:</h1>
+
+  <div class="cards">
+    <div class="card">
+      <h2>First Name: {{baby.firstName}}</h2>   
+      <h3>Last Name: {{baby.lastName}}</h3>
+      <p>City: {{baby.city}}</p>
+      <h4>Country: {{baby.country}}</h4>
+      <p>Age: {{baby.age}}</p>
+      <p>Salary: ${{baby.salary}}</p>
+        {{!-- <img src="{{recipe.image}}" alt=""> --}}
+     <button class="btn btn-default"> <a href="/recipe/edit/{{recipe.id}}">Edit</a></button>
+      <a href="#" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Delete</a>
+    </div>
+</body>
+</html>
