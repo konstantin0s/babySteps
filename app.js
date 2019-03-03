@@ -31,7 +31,7 @@ mongoose
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(cookieParser());
-  app.use(session({
+  app.use(session({  //setup sessions always here 
     secret: "basic-auth-secret",
     cookie: { maxAge: 60000 },
     resave: true,
