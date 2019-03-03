@@ -5,10 +5,12 @@ const Schema   = mongoose.Schema;
 const parentSchema = new Schema({
   firstName: String,
   lastName: String,
+  username: String,
+  password: String,
   city: String,
   country: String,
   kids: Number,
-  days: String  //Array ?
+  days: Number  //Array ?
 }, {
   timestamps: true
 });

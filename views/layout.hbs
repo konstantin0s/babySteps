@@ -50,12 +50,19 @@
           <li class="nav-item">
             <a class="nav-link" href='/login'>Log In</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/signup'>Sign Up</a>
+      	<div class="dropdown">
+		     <button class="dropdown-button">Sign Up</button>
+		     <div class="dropdown-list">
+		  <a  href='/parent/signup'>Parent?</a>
+      <a  href='/sitter/signup'>Sitter?</a> 
+	    	</div>
+	      </div>
+          {{!-- <li class="nav-item">
+        <a class="nav-link" href='/parent/signup'>Parent?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href='#gift-cards'>Gift Cards</a>
-          </li>
+        <a class="nav-link" href='/sitter/signup'>Sitter?</a> 
+          </li> --}}
         </ul>
         <a class="nav-link" href='#' id='openup'>myTunes</a>
       </nav>
@@ -64,7 +71,6 @@
 
   {{{body}}}
 
-  <script src="/javascript/script.js"></script>
   <script src="/javascript/script.js"></script>
 </body>
 </html>

@@ -11,11 +11,11 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 
-const User = require("../models/user");
+const Parent = require("../models/parent");
 let Babysitters =  require('../models/babysitter');
 
 router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.render("auth/parent/signup");
 });
 
 // BCrypt to encrypt passwords
@@ -23,22 +23,27 @@ router.get("/signup", (req, res, next) => {
 const bcryptSalt     = 10;
 
 router.post("/signup", (req, res, next) => {
-
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
   const username = req.body.username;
   const password = req.body.password;
+  const city = req.body.city;
+  const country = req.body.country;
+  const kids = req.body.kids;
+  const days = req.body.days;
 
 
   if (username == "" || password == "") {
-    res.render("auth/signup", {
+    res.render("auth/parent/signup", {
       errorMessage: "Indicate a username and a password to sign up"
     });
     return;
   }
 
-  User.findOne({"username": username})
+  Parent.findOne({"username": username})
   .then(user => {
     if (user !== null) {
-      res.render("auth/signup", {
+      res.render("auth/parent/signup", {
         errorMessage: "The username already exists!"
       });
       return;
@@ -48,12 +53,18 @@ router.post("/signup", (req, res, next) => {
   const salt     = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
 
-  User.create({
+  Parent.create({
+    firstName,
+    lastName,
     username,
-    password: hashPass
+    password: hashPass,
+    city,
+    country,
+    kids,
+    days
   })
   .then(() => {
-    res.redirect("login");
+    res.redirect("parent/login");
   })
 })
   .catch(error => {
@@ -80,7 +91,7 @@ router.post('/signup', function(req, res) {
 });
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login");
+  res.render("auth/parent/login");
 });
 
 router.post("/login", (req, res, next) => {
@@ -88,16 +99,16 @@ router.post("/login", (req, res, next) => {
   const thePassword = req.body.password;
 
   if (theUsername === "" || thePassword === "") {
-    res.render("auth/login", {
+    res.render("auth/parent/login", {
       errorMessage: "Please enter both, username and password to sign up."
     });
     return;
   }
 
-  User.findOne({ "username": theUsername })
+  Parent.findOne({ "username": theUsername })
   .then(user => {
       if (!user) {
-        res.render("auth/login", {
+        res.render("auth/parent/login", {
           errorMessage: "The username doesn't exist."
         });
         return;
@@ -107,7 +118,7 @@ router.post("/login", (req, res, next) => {
         req.session.currentUser = user;
         res.redirect("babysitters");
       } else {
-        res.render("auth/login", {
+        res.render("auth/parent/login", {
           errorMessage: "Incorrect password"
         });
       }
@@ -121,7 +132,7 @@ router.get("/logout", (req, res, next) => {
   res.clearCookie("name");
   req.session.destroy((err) => {
     // cannot access session here
-    res.redirect("/login");
+    res.redirect("/");
   });
 });
 

@@ -11,17 +11,29 @@
   <title>{{title}}</title>
 </head>
 <body>  
-    <h2 class="signup">Sign Up</h2>
+    <h2 class="signup">Are you a parent?</h2>
 
   
 <form id="form" action="/signup" method="POST">
-    <label for="username">Username:</label><br>
-      <input type="text" name="username" placeholder="Your username"><br>
+    <label for="firstName">First Name:</label><br>
+      <input type="text" name="firstName" placeholder="First Name"><br>
+         <label for="lastName">Last Name:</label><br>
+      <input type="text" name="lastName" placeholder="Last Name"><br>
+          <label for="username">Username:</label><br>
+      <input type="text" name="username" placeholder="Username"><br>
    <label for="password">Password:</label><br>
     <input type="password" name="password" placeholder="********"><br>
     <div class="form-group col-md-4">
       <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
     </div>
+      <label for="city">City:</label><br>
+      <input type="text" name="city" placeholder="City"><br>
+         <label for="country">Country:</label><br>
+      <input type="text" name="country" placeholder="Country"><br>
+          <label for="kids">Kids:</label><br>
+      <input type="text" name="kids" placeholder="kids"><br>
+             <label for="days">Days(sitter):</label><br>
+      <input type="text" name="days" placeholder="days"><br>
     <button type="submit">Create account</button>
   </form>
 
