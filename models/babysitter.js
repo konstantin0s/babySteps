@@ -5,6 +5,8 @@ const Schema   = mongoose.Schema;
 const babysitterSchema = new Schema({
   firstName: String,
   lastName: String,
+  username: String,
+  password: String,
   city: String,
   country: String,
   age: Number,
@@ -13,6 +15,6 @@ const babysitterSchema = new Schema({
   timestamps: true
 });
 
-const Parent = mongoose.model("Babysitter", babysitterSchema);
+const Babysitter = mongoose.model("Babysitter", babysitterSchema);
 
-module.exports = Parent;
+module.exports = Babysitter;

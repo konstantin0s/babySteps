@@ -11,20 +11,31 @@
   <title>{{title}}</title>
 </head>
 <body>  
-    <h2 class="signup">Are you a sitter?</h2>
+    <h2 class="signup"><a class="nav-link" href='/parent/signup'>Are you a Parent?</a> </h2>
 
   
-<form id="form" action="/signup" method="POST">
-    <label for="username">Username:</label><br>
-      <input type="text" name="username" placeholder="Your username"><br>
+<form id="form" action="/sitter/signup" method="POST">
+    <label for="firstName">First Name:</label><br>
+      <input type="text" name="firstName" placeholder="First Name"><br>
+         <label for="lastName">Last Name:</label><br>
+      <input type="text" name="lastName" placeholder="Last Name"><br>
+          <label for="username">Username:</label><br>
+      <input type="text" name="username" placeholder="Username"><br>
    <label for="password">Password:</label><br>
     <input type="password" name="password" placeholder="********"><br>
-    <div class="form-group col-md-4">
+      <label for="city">City:</label><br>
+      <input type="text" name="city" placeholder="City"><br>
+         <label for="country">Country:</label><br>
+      <input type="text" name="country" placeholder="Country"><br>
+          <label for="age">Age:</label><br>
+      <input type="text" name="age" placeholder="Age"><br>
+             <label for="salary">Salary($):</label><br>
+      <input type="text" name="salary" placeholder="Salary"><br>
+       <div class="form-group col-md-4">
       <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
     </div>
     <button type="submit">Create account</button>
   </form>
-
 
   {{#if errorMessage}}
   <div class="error-message">{{ errorMessage }}</div>
@@ -33,7 +44,7 @@
 
 
   <footer class="footer">
-    <p>Copyright &copy; 2019</p>
+    <p>Copyright &copy; {{title}}   2019</p>
   </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

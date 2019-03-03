@@ -11,10 +11,10 @@
   <title>{{title}}</title>
 </head>
 <body>  
-    <h2 class="signup">Are you a parent?</h2>
+    <h2 class="signup"><a class="nav-link" href='/sitter/signup'>Are you a Sitter?</a> </h2>
 
   
-<form id="form" action="/signup" method="POST">
+<form id="form" action="/parent/signup" method="POST">
     <label for="firstName">First Name:</label><br>
       <input type="text" name="firstName" placeholder="First Name"><br>
          <label for="lastName">Last Name:</label><br>
@@ -23,9 +23,6 @@
       <input type="text" name="username" placeholder="Username"><br>
    <label for="password">Password:</label><br>
     <input type="password" name="password" placeholder="********"><br>
-    <div class="form-group col-md-4">
-      <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
-    </div>
       <label for="city">City:</label><br>
       <input type="text" name="city" placeholder="City"><br>
          <label for="country">Country:</label><br>
@@ -34,6 +31,9 @@
       <input type="text" name="kids" placeholder="kids"><br>
              <label for="days">Days(sitter):</label><br>
       <input type="text" name="days" placeholder="days"><br>
+       <div class="form-group col-md-4">
+      <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
+    </div>
     <button type="submit">Create account</button>
   </form>
 
@@ -45,7 +45,7 @@
 
 
   <footer class="footer">
-    <p>Copyright &copy; 2019</p>
+      <p>Copyright &copy; {{title}}   2019</p>
   </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -60,16 +60,18 @@ mongoose
   app.locals.title = 'BabySteps';
 
 
-  const index = require('./routes/index');
-  app.use('/', index);
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
-
-
   app.get('/', function(req, res){
     res.cookie('name', 'name'); //Sets name = express
     res.render('index');
   });
+
+  const index = require('./routes/index');
+  app.use('/', index);
+  // const sitterRouter = require('./routes/auth2');
+  // app.use('/', sitterRouter);
+  const authRouter = require('./routes/auth');
+  app.use('/', authRouter);
+
   
     //add session
 
@@ -82,14 +84,16 @@ mongoose
     }                                 //    |
   }); 
 
-  const babySitters = require('./routes/babysitters');
-  app.use('/', babySitters);
-    const parent = require('./routes/parent');
-  app.use('/', parent);
-  const babysitter = require('./routes/babysitter');
-  app.use('/', babysitter);
   const parents = require('./routes/parents');
   app.use('/', parents);
+  const babySitters = require('./routes/babysitters');
+  app.use('/', babySitters);
+
+  const babysitter = require('./routes/babysitter');
+  app.use('/', babysitter);
+  const parent = require('./routes/parent');
+  app.use('/', parent);
+
 
   // const addRecipe = require('./routes/addRecipe');
   // app.use('/', addRecipe);

@@ -1,11 +1,12 @@
 const express = require('express');
 const router  = express.Router();
-let Parents = require('../models/parent');
+const Parents = require('../models/parent');
 
 
 /* GET Parents page */
-const parent = require('../routes/parent');
-router.use('/', parent);
+// const parent = require('../routes/parent');
+
+// router.use('/', parent);
 
 router.get('/parents', (req, res, next) => {
   Parents.find({}, (err, parents) => {
