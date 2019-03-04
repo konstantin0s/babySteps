@@ -1,12 +1,4 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-</head>
-<body> --}}
+
 
   <div class="cards">
     <div class="card">
@@ -27,7 +19,7 @@
 {{!-- </body>
 </html> --}}
 
- {{#if baby }}
+ {{!-- {{#if baby }}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -50,4 +42,29 @@
       </nav>
     </header>
 
+ {{/if}} --}}
+
+
+ {{#if parent}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li>
+            <a href='#'>Overview</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
  {{/if}}

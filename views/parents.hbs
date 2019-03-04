@@ -11,21 +11,18 @@
      {{/each}}
 </div>
 
-{{#if parent}}
+
  <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li>
-            <a href='#'>Overview</a>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href='/parents'>View Parents</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href='/babysitters'>View Babysitters</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+            <li class="list-group-item"><a href="/babysitter/{{this._id}}"></a>Edit Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -33,4 +30,3 @@
         </ul>
       </nav>
     </header>
- {{/if}}

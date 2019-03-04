@@ -12,7 +12,7 @@
 <div class="cards">
      {{#each babysitters}}
     <div class="card">
-    <li class="list-group-item"><a href="/babysitter/{{this._id}}">{{this.firstName}}</a></li>
+    <li class="list-group-item"><a href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></li>
     </div>
      {{/each}}
 </div>
@@ -28,11 +28,11 @@
           {{!-- <li>
             <a href='#'>Overview</a>
           </li> --}}
-          <li class="nav-item">
+          {{!-- <li class="nav-item">
             <a class="nav-link" href='/parents'>View Parents</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <li class="list-group-item"><a href="/babysitter/{{this._id}}"></a>Edit Profile</a>
+            <li class="list-group-item"><a href="/parent/{{this._id}}"></a>Edit Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>

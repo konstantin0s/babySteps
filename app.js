@@ -25,6 +25,7 @@ mongoose
   });
 
   app.set('views', path.join(__dirname, 'views'));
+  app.set('auth', path.join(__dirname, 'auth'));
   app.set('view engine', 'hbs');
   app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,6 +34,7 @@ mongoose
   app.use(cookieParser());
   app.use(session({  //setup sessions always here 
     secret: "basic-auth-secret",
+    key: 'sid',
     cookie: { maxAge: 60000 },
     resave: true,
     saveUninitialized: true,
@@ -60,18 +62,17 @@ mongoose
   app.locals.title = 'BabySteps';
 
 
-  app.get('/', function(req, res){
-    res.cookie('name', 'name'); //Sets name = express
-    res.render('index');
-  });
+  // app.get('/', function(req, res){
+  //   res.cookie('name', 'name'); //Sets name = express
+  //   res.render('index');
+  // });
 
   const index = require('./routes/index');
   app.use('/', index);
-  // const sitterRouter = require('./routes/auth2');
-  // app.use('/', sitterRouter);
   const authRouter = require('./routes/auth');
   app.use('/', authRouter);
-
+  // const sitterRouter = require('./routes/auth2');
+  // app.use('/', sitterRouter);
   
     //add session
 

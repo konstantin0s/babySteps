@@ -89,11 +89,11 @@
 //   });
 // });
 
-//  router.get("/login", (req, res, next) => {
+//  router.get("/sitter/login", (req, res, next) => {
 //   res.render("auth/sitter/login");
 // });
 
-// router.post("/login", (req, res, next) => {
+// router.post("/sitter/login", (req, res, next) => {
 //   const theUsername = req.body.username;
 //   const thePassword = req.body.password;
 
