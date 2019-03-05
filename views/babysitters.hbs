@@ -1,13 +1,13 @@
 
   <h1>{{title}}</h1>
 {{!-- <button type="button" class="btn btn-primary check" name="addBabysitter"> <a class="nav-link" href="/babysitters/add">Add babysitter</a></button> --}}
-<div class="cards">
+{{!-- <div class="cards">
      {{#each babysitters}}
     <div class="card">
     <li class="list-group-item"><a href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></li>
     </div>
      {{/each}}
-</div>
+</div> --}}
  
 
  {{#if babysitters }}
@@ -28,3 +28,67 @@
     </header>
 
  {{/if}}
+
+ <hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                               {{#each babysitters}}
+                                <tr>
+                                <th><span>User</span></th>
+                                <th><span>Created</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Email</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  
+                                    <td>
+                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <a href="#" class="user-link"><a href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></a>
+                                        <span class="user-subhead">Member</span>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span class="label label-default">pending</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{this.city}}</a>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <a href="#" class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link danger">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                      {{/each}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
