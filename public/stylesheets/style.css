@@ -663,8 +663,8 @@ a {
 /* style reviews*/
 .addRev {
 	position: relative;
-	top: -90px;
-	left: 50px;
+	top: 10px;
+	left: 0px;
 	font-size: 26px;
 }
 .review {
@@ -721,6 +721,14 @@ a {
 	position: relative;
     left: 50px;
     width: 130px;
+    height: 10px;
+}
+
+.add {
+	position: relative;
+	top: -10px;
+	color: white;
+	font-size: 20px;
 }
 
 .disRev {
