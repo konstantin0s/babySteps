@@ -11,7 +11,11 @@ const babysitterSchema = new Schema({
   country: String,
   image: String,
   age: Number,
-  salary: Number  //Array ?
+  salary: Number,
+  profession: String,
+  experience: String,
+  english: String
+
 }, {
   timestamps: true
 });

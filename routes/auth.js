@@ -69,7 +69,7 @@ router.post("/sitter/signup", (req, res, next) => {
     image
   })
   .then(() => {
-    res.redirect("auth/sitter/login");
+    res.redirect("login");
   })
 })
   .catch(error => {
@@ -192,7 +192,7 @@ router.post("/parent/signup", (req, res, next) => {
     image
   })
   .then(() => {
-    res.redirect("/auth/parent/login");
+    res.redirect("login");
   })
 })
   .catch(error => {
