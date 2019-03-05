@@ -182,8 +182,9 @@
             </form>           
         </div>
    
-
+ 
   <div class="addRevForm">
+ {{#if parent}}
  <p class="addRev">Add a review</p>
   <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
   <label for="">User:</label>
@@ -194,6 +195,7 @@
 
   <button class="btn btn-secondary" type="submit"><h2 class="add">ADD</h2></button>
 </form>
+{{/if}}
 
     <h2 class="review">Reviews:</h2>
      {{#each baby.reviews}}
