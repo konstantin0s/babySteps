@@ -34,6 +34,7 @@ router.post("/sitter/signup", (req, res, next) => {
   const country = req.body.country;
   const age = req.body.age;
   const salary = req.body.salary;
+  const image = req.body.image;
 
 
   if (username == "" || password == "") {
@@ -64,7 +65,8 @@ router.post("/sitter/signup", (req, res, next) => {
     city,
     country,
     age,
-    salary
+    salary,
+    image
   })
   .then(() => {
     res.redirect("auth/sitter/login");
@@ -93,11 +95,12 @@ router.post('/sitter/signup', function(req, res) {
   });
 });
 
- router.get("/login", (req, res, next) => {
+ router.get("/sitter/login", (req, res, next) => {
+   debugger
   res.render("auth/sitter/login");
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/sitter/login", (req, res, next) => {
   const theUsername = req.body.username;
   const thePassword = req.body.password;
 
@@ -120,7 +123,7 @@ router.post("/login", (req, res, next) => {
         // Save the login in the session!
         req.session.currentUser = user;
         // res.redirect("/parentProfile");
-        res.redirect("parents");
+        res.redirect("/parents");
       } else {
         res.render("auth/sitter/login", {
           errorMessage: "Incorrect password"
@@ -154,6 +157,7 @@ router.post("/parent/signup", (req, res, next) => {
   const country = req.body.country;
   const kids = req.body.kids;
   const days = req.body.days;
+  const image = req.body.image;
 
 
   if (username == "" || password == "") {
@@ -184,7 +188,8 @@ router.post("/parent/signup", (req, res, next) => {
     city,
     country,
     kids,
-    days
+    days,
+    image
   })
   .then(() => {
     res.redirect("/auth/parent/login");

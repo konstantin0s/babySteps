@@ -11,7 +11,7 @@
   <title>{{title}}</title>
 </head>
 <body>  
-    <h2 class="signup"><a class="nav-link" href='/sitter/signup'>Are you a Sitter?</a> </h2>
+    <h2 class="signup"><a class="nav-link href" href='/sitter/signup'>Are you a Sitter?</a> </h2>
 
   
 <form id="form" action="/parent/signup" method="POST">
@@ -31,6 +31,8 @@
       <input type="text" name="kids" placeholder="kids"><br>
              <label for="days">Days(sitter):</label><br>
       <input type="text" name="days" placeholder="days"><br>
+       <label for="image">Image:</label><br>
+        <input type='text' name='image' placeholder="Image url"/>
        <div class="form-group col-md-4">
       <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
     </div>
@@ -38,7 +40,7 @@
   </form>
 
   <p class="account-message">
-    <a href="/parent/login">Login Here</a>
+    <a class="href" href="/parent/login">Login Here</a>
   </p>
 
 

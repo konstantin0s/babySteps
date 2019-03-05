@@ -15,4 +15,24 @@ router.get('/babysitter/:id', function(req, res) {
   });
 })
 
+router.get('/photo/add', function(req, res) {
+  res.render('/babysitter');
+  });
+
+   //add submit POST route
+   router.post('/photo/add', function(req, res) {
+
+    let profilePhoto = new Babysitter();
+        profilePhoto.image = req.body.image;
+        profilePhoto.save(function(err, profilePhoto) {
+         if (err) {
+           console.log(err);
+           return;
+         } else {
+           res.redirect('/babysitter',
+           {profilePhoto});
+         }
+    });
+   });
+
 module.exports = router;

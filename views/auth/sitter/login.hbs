@@ -1,6 +1,6 @@
-  <a class="nav-link" href='/parent/login'>Log In as Parent</a>
+  <a class="nav-link href" href='/parent/login'>Log In as Parent</a>
 
-<form action="/login" method="POST" id="form">
+<form action="/sitter/login" method="POST" id="form">
   <label for="username">Username</label>
   <input type="text" name="username">
 
@@ -11,9 +11,9 @@
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
 
-  <button>Sign in</button>
+  <button type="submit">Sign in</button>
 
-  <p class="account-message">
+  <p class="account-message href">
     Don't have an account? <a href="/sitter/signup">Sign up</a>
   </p>
 </form>

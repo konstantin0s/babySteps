@@ -1,12 +1,4 @@
-{{!-- 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-</head>
-<body> --}}
+
   <h1>{{title}}</h1>
 {{!-- <button type="button" class="btn btn-primary check" name="addBabysitter"> <a class="nav-link" href="/babysitters/add">Add babysitter</a></button> --}}
 <div class="cards">
@@ -25,14 +17,8 @@
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li>
-            <a href='#'>Overview</a>
-          </li> --}}
-          {{!-- <li class="nav-item">
-            <a class="nav-link" href='/parents'>View Parents</a>
-          </li> --}}
           <li class="nav-item">
-            <li class="list-group-item"><a href="/parent/{{this._id}}"></a>Edit Profile</a>
+            <li class="list-group-item"><a href="/babysitter/{{this._id}}"></a>Edit Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>

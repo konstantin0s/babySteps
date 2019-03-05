@@ -9,8 +9,9 @@ const parentSchema = new Schema({
   password: String,
   city: String,
   country: String,
+  image: String,
   kids: Number,
-  days: Number  //Array ?
+  days: Number 
 }, {
   timestamps: true
 });

@@ -1,19 +1,20 @@
 
-
-  <h1>Profile Details:</h1>
-
   <div class="cards">
     <div class="card">
-      <h2>firstName: {{parent.firstName}}</h2>   
-      <h3>lastName: {{parent.lastName}}</h3>
+      <h1>Profile Details:</h1>
+      <h2>Name: {{parent.firstName}} {{parent.lastName}}</h2>   
       <p>City: {{parent.city}}</p>
+      <p>Country: {{parent.country}}</p>
+      <p>Kids: {{parent.kids}}</p>
+      <p>Days for kids: {{parent.days}}</p>
+      {{parent.image}}
         {{!-- <img src="{{parentProfile.country}}" alt=""> --}}
-     <button class="btn btn-default"> <a href="/profile/edit/{{parent.id}}">Edit</a></button>
-      <a href="#" class="btn btn-danger delete-recipe" data-id="{{parent.id}}">Delete</a>
+     {{!-- <button class="btn btn-default"> <a href="/profile/edit/{{parent.id}}">Edit</a></button>
+      <a href="#" class="btn btn-danger delete-recipe" data-id="{{parent.id}}">Delete</a> --}}
  </div>
     </div>
 
- {{#if parent}}
+ {{#if babysitters}}
  <header>
       <nav class='cf'>
         <ul class='cf'>

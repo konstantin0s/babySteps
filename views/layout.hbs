@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-    crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -68,7 +69,28 @@
       </nav>
     </header> --}}
 
-  {{#if parent}}
+  {{#if baby}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/parents'>View Parents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}
+
+   {{#if parent}}
  <header>
       <nav class='cf'>
         <ul class='cf'>

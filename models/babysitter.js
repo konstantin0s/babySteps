@@ -9,6 +9,7 @@ const babysitterSchema = new Schema({
   password: String,
   city: String,
   country: String,
+  image: String,
   age: Number,
   salary: Number  //Array ?
 }, {
