@@ -1,20 +1,24 @@
 
-  {{!-- <div class="cards">
-    <div class="card">
-      <h1>Profile Details:</h1>
-      <h2>Name: {{parent.firstName}} {{parent.lastName}}</h2>   
-      <p>City: {{parent.city}}</p>
-      <p>Country: {{parent.country}}</p>
-      <p>Kids: {{parent.kids}}</p>
-      <p>Days for kids: {{parent.days}}</p>
-      {{parent.image}} --}}
-        {{!-- <img src="{{parentProfile.country}}" alt=""> --}}
-     {{!-- <button class="btn btn-default"> <a href="/profile/edit/{{parent.id}}">Edit</a></button>
-      <a href="#" class="btn btn-danger delete-recipe" data-id="{{parent.id}}">Delete</a> --}}
- {{!-- </div>
-    </div> --}}
 
- {{#if babysitters}}
+  {{#if sitter}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/parents'>View Parents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}
+
+ {{#if parent}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -25,15 +29,12 @@
             <a class="nav-link" href='/babysitters'>View Babysitters</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
       </nav>
     </header>
- {{/if}}
+    {{/if}}
 
 <!-- Profile area -->
 
@@ -43,10 +44,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
+                            {{#if parent}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -68,9 +71,11 @@
                             </ul>
                         </div>
                     </div>
+                     {{#if parent}}
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{this._id}}">Edit Profile</a>
                     </div>
+                     {{/if}}
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -160,3 +165,5 @@
                 </div>
             </form>           
         </div>
+        {{!-- </body>
+        </html> --}}

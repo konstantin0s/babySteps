@@ -650,3 +650,92 @@ a {
   border-top: 1px solid #e7ebee;
   padding: 12px 8px;
 }
+
+.snippet {
+  position: relative;
+  top: 100px;
+}
+
+.snippet tr {
+  color: black;
+}
+
+/* style reviews*/
+.addRev {
+	position: relative;
+	top: -90px;
+	left: 50px;
+	font-size: 26px;
+}
+.review {
+  position: relative;
+  border-bottom: 1px solid grey;
+  top: 30px;
+  font-size: 24px;
+  left: 0px;
+  margin-bottom: 20px;
+}
+
+.review-item {
+  margin: -10px 0; 
+  padding-bottom: 12px;
+  font-size: 18px;
+ border-bottom: 1px solid grey;
+
+}
+
+.comment {
+  margin-bottom: 50px;
+  font-size: 19px;
+   position: relative;
+   top: 40px;
+   left: 0px;
+   text-transform: capitalize;
+}
+
+.span {
+  font-size: 18px;
+  color: grey;
+  position: relative;
+  top: 20px;
+  left: 0px;
+  margin-bottom: 0px;
+
+}
+
+
+.addRevForm {
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.addRevForm label {
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  color: black;
+}
+
+.addRevForm button {
+	position: relative;
+    left: 50px;
+    width: 130px;
+}
+
+.disRev {
+	margin-top: 6px;
+	 border-top: 1px solid grey;
+	background-color: white;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	border-radius: 15%;
+	 border-bottom: 1px solid grey;
+	 position: relative;
+	 top: 20px;
+}
+/* 
+input, textarea {
+  text-transform: capitalize;
+} */

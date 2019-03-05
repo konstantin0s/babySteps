@@ -1,5 +1,26 @@
-{{!-- <link rel="stylesheet" href="/stylesheets/baby.css"> --}}
-  {{#if baby}}
+
+ {{#if parent}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/profile/edit/{{parent.id}}'>Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}
+
+    {{#if sitter}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -10,11 +31,11 @@
             <a href='#'>Overview</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href='/parents'>View Parents</a>
+            <a class="nav-link" href='/babysitter/{{this._id}}'>Profile</a>
           </li>
-          <li class="nav-item">
+          {{!-- <li class="nav-item">
             <a class="nav-link" href='/profile/edit/{{baby.id}}'>Edit Profile</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
@@ -24,33 +45,18 @@
  {{/if}}
 
 
-
-{{!-- 
-     <div class="cards">
-      <div class="card">
-       <h1>Details of the Babysitter:</h1>
-      <h2>Name: {{baby.firstName}}  {{baby.lastName}}</h2>   
-      <p>City: {{baby.city}}</p>
-      <h4>Country: {{baby.country}}</h4>
-      <p>Age: {{baby.age}}</p>
-      <p>Salary: ${{baby.salary}}</p>
-      <img class="babyImg" src="{{baby.image}}" alt=""> --}}
-     {{!-- <button class="btn btn-default"> <a href="/babysitter/edit/{{baby.id}}">Edit</a></button>
-      <a href="#" class="btn btn-danger delete-recipe" data-id="{{baby.id}}">Delete</a> --}}
-    {{!-- </div>
-    <h2>Contact Babysitter</h2>
-      <h2>Send message: You can add someting here maybe?</h2> --}}
-
 <div class="container emp-profile">
             <form method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{baby.image}}" alt=""/>
+                             {{#if sitter}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -72,9 +78,12 @@
                             </ul>
                         </div>
                     </div>
+                    {{#if sitter}}
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                            <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/{{this._id}}">Edit Profile</a>
+                    
                     </div>
+                      {{/if}}
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -172,86 +181,27 @@
                 </div>
             </form>           
         </div>
+   
 
+  <div class="addRevForm">
+ <p class="addRev">Add a review</p>
+  <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
+  <label for="">User:</label>
+  <input type="text" name="user">
 
-<!-- send email -->
-<div class="container">
-	<div class="row">
-		<form role="form" id="contact-form" class="contact-form">
-                    <div class="row">
-                		<div class="col-md-6">
-                  		<div class="form-group">
-                            <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Name">
-                  		</div>
-                  	</div>
-                    	<div class="col-md-6">
-                  		<div class="form-group">
-                            <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
-                  		</div>
-                  	</div>
-                  	</div>
-                  	<div class="row">
-                  		<div class="col-md-12">
-                  		<div class="form-group">
-                            <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Message"></textarea>
-                  		</div>
-                  	</div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-12">
-                  <button type="submit" class="btn main-btn pull-right">Send a message</button>
-                  </div>
-                  </div>
-                </form>
-	</div>
+  <label for="">Comments:</label>
+  <textarea type="text" name="comments"></textarea><br>
+
+  <button class="btn btn-secondary" type="submit">ADD</button>
+</form>
+
+    <h2 class="review">Reviews:</h2>
+     {{#each baby.reviews}}
+   <div class="review-item">
+       <div class="disRev">
+    <span class="span">Name: {{this.user}}</span>
+    <p class="comment">Comment: {{this.comments}}</p>
+     </div>
+  </div>
+    {{/each}} 
 </div>
-
-{{!-- 
-        <div class="container">
-	<h2 class="text-center">Bootstrap 4 User Rating Form / Comment Form</h2>
-	
-	<div class="card">
-	    <div class="card-body">
-	        <div class="row">
-        	    <div class="col-md-2">
-        	        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-        	        <p class="text-secondary text-center">15 Minutes Ago</p>
-        	    </div>
-        	    <div class="col-md-10">
-        	        <p>
-        	            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a>
-        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-
-        	       </p>
-        	       <div class="clearfix"></div>
-        	        <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        	        <p>
-        	            <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
-        	            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
-        	       </p>
-        	    </div>
-	        </div>
-	        	<div class="card card-inner">
-            	    <div class="card-body">
-            	        <div class="row">
-                    	    <div class="col-md-2">
-                    	        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                    	        <p class="text-secondary text-center">15 Minutes Ago</p>
-                    	    </div>
-                    	    <div class="col-md-10">
-                    	        <p><a href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a></p>
-                    	        <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    	        <p>
-                    	            <a class="float-right btn btn-outline-primary ml-2">  <i class="fa fa-reply"></i> Reply</a>
-                    	            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
-                    	       </p>
-                    	    </div>
-            	        </div>
-            	    </div>
-	            </div>
-	    </div>
-	</div>
-</div> --}}

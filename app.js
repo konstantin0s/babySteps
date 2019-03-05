@@ -62,28 +62,28 @@ mongoose
   app.locals.title = 'BabySteps';
 
 
-  // app.get('/', function(req, res){
-  //   res.cookie('name', 'name'); //Sets name = express
-  //   res.render('index');
-  // });
+  app.get('/', function(req, res){
+    res.cookie('name', 'name'); //Sets name = express
+    res.render('index');
+  });
 
   const index = require('./routes/index');
   app.use('/', index);
   const authRouter = require('./routes/auth');
   app.use('/', authRouter);
-  // const sitterRouter = require('./routes/auth2');
-  // app.use('/', sitterRouter);
+  const sitterRouter = require('./routes/auth2');
+  app.use('/', sitterRouter);
   
     //add session
 
 
-  // app.use((req, res, next) => {
-  //   if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
-  //     next(); // ==> go to the next route ---
-  //   } else {                          //    |
-  //     res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
-  //   }                                 //    |
-  // }); 
+  app.use((req, res, next) => {
+    if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+      next(); // ==> go to the next route ---
+    } else {                          //    |
+      res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
+    }                                 //    |
+  }); 
 
   const parents = require('./routes/parents');
   app.use('/', parents);

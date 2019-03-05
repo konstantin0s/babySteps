@@ -15,6 +15,17 @@ router.get('/babysitter/:id', function(req, res) {
   });
 })
 
+router.post('/babysitter', (req, res, next) => {
+  const { user, comments } = req.body;
+  Babysitter.updateOne({ _id: req.query.babysitter_id }, { $push: { reviews: { user, comments }}})
+  .then(babysitter => {
+    res.redirect('/babysitter/' + req.query.babysitter_id)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+})
+
 router.get('/photo/add', function(req, res) {
   res.render('/babysitter');
   });
