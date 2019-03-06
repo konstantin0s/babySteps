@@ -4,13 +4,16 @@ const router  = express.Router();
 let Babysitter = require('../models/babysitter');
 let Parent = require('../models/parent');
 
+
 router.get('/babysitter/:id', function(req, res) {
   Babysitter.findOne({_id: req.params.id}, function(err, baby) {
     if (err) {
       console.log(err);
     } else {
-      res.render('babysitter',
-      {baby: baby, family:req.session.family, sitter:req.session.sitter});
+      // res.render('babysitter',
+      // {baby: baby});
+      res.render('babysitter', 
+      {baby: baby, family:req.session.currentUser, sitter:req.session.currentUser});
     }
   });
 })
@@ -27,7 +30,7 @@ router.post('/babysitter', (req, res, next) => {
 })
 
 router.get('/photo/add', function(req, res) {
-  res.render('/babysitter', {family:req.session.currentUser, sitter:req.session.currentUser});
+  res.render('/babysitter');
   });
 
    //add submit POST route
@@ -45,16 +48,5 @@ router.get('/photo/add', function(req, res) {
          }
     });
    });
-
-   router.get('/parent/:id', function(req, res) {
-    Parent.findOne({_id: req.params.id}, function(err, parent) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.render('/parent',
-        {parent: parent, family:req.session.currentUser, sitter:req.session.currentUser});
-      }
-    });
-  })
 
 module.exports = router;

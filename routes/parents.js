@@ -12,8 +12,6 @@ router.get('/parents', (req, res, next) => {
     if (err) {
       console.log(err);
     } else {
-    
-     
       debugger
       res.render('parents',
       {parents: parents, family:req.session.currentUser, sitter:req.session.currentUser});
@@ -21,7 +19,5 @@ router.get('/parents', (req, res, next) => {
     
   });
 });
-
-
 
 module.exports = router;

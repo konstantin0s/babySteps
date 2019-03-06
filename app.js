@@ -82,6 +82,7 @@ mongoose
 
 
   app.use('/', require('./routes/editParent'));
+  app.use('/', require('./routes/editBabysitter'));
   app.use('/', require('./routes/parent'));
   app.use('/', require('./routes/parents'));
   app.use('/', require('./routes/babysitters'));

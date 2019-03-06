@@ -1,6 +1,6 @@
 
 
- {{!-- {{#if family}} --}}
+ {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -13,7 +13,7 @@
        
           <li class="nav-item">
             {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
-              <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} Profile {{family.lastName}}</a>
+                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
           </li>
   
           <li class="nav-item">
@@ -22,9 +22,7 @@
         </ul>
       </nav>
     </header>
- {{!-- {{/if}} --}}
-
-    {{#if sitter}}
+   {{else}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -35,7 +33,7 @@
             <a href='#'>Overview</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href='/babysitter/{{this._id}}'>Profile</a>
+            <a class="nav-link" href='/babysitter/{{sitter._id}}'>Profile</a>
           </li>
           {{!-- <li class="nav-item">
             <a class="nav-link" href='/profile/edit/{{baby.id}}'>Edit Profile</a>
@@ -55,12 +53,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{baby.image}}" alt=""/>
-                        {{#if sitter}}
+                        {{#unless sitter}}
                               <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                      {{/if}}
+                      {{/unless}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -82,11 +80,11 @@
                             </ul>
                         </div>
                     </div>
-                    {{#if sitter}}
+                    {{#unless sitter}}
                     <div class="col-md-2">
                             <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/{{this._id}}">Edit Profile</a>
                     </div>
-                    {{/if}}
+                    {{/unless}}
                 </div>
                 <div class="row">
                     <div class="col-md-4">

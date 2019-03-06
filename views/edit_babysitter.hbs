@@ -1,0 +1,42 @@
+
+      <h1>Edit Profile</h1>
+<form method="POST" action="/babysitter/edit" class="form">
+<div id="form-group">
+  <label for="level">First Name:</label>
+  <input type="text" name="firstName" value="{{editBaby.firstName}}" class="form-control">
+</div>
+<div id="form-group">
+  <label for="level">Last Name</label>
+  <input type="text" name="lastName" value="{{editBaby.lastName}}" class="form-control">
+</div>
+ <div id="form-group">
+  <label for="level">Username:</label>
+  <input type="text" name="username" value="{{editBaby.username}}" class="form-control">
+</div>
+{{!-- <div id="form-group">
+  <label for="level">Password:</label>
+  <input type="text" name="password" value="{{editParent.password}}" class="form-control">
+</div> --}}
+<div id="form-group">
+  <label for="level">Image:</label>
+     <input type='text' name="image" value="{{babys.image}}" placeholder="Image url"/>
+</div>
+<div id="form-group">
+  <label for="level">City:</label>
+  <input type="text" name="city" value="{{babys.city}}" class="form-control">
+</div>
+<div id="form-group">
+  <label for="level">Country:</label>
+  <input type="text" name="country" value="{{babys.country}}" class="form-control">
+</div>
+<div id="form-group">
+  <label for="level">Age:</label>
+  <input type="number" name="age" value="{{editBaby.age}}" class="form-control">
+</div>
+<div id="form-group">
+  <label for="level">Salary:</label>
+  <input type="number" name="salary" value="{{editBaby.salary}}" class="form-control">
+</div>
+ <input type="submit" class="btn btn-primary" value="Submit">
+</div>
+</form>

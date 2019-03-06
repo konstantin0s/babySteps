@@ -1,24 +1,6 @@
 
 
-  {{#if sitter}}
- <header>
-      <nav class='cf'>
-        <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/parents'>View Parents</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
- {{/if}}
-
- {{#if family}}
+  {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -27,6 +9,22 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{else}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/parents'>View Parents</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -44,12 +42,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
-                            {{#if family}}
+                            {{#unless family}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                            {{/if}}
+                            {{/unless}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -71,7 +69,7 @@
                             </ul>
                         </div>
                     </div>
-                     {{#if family}}
+                     {{#if parent}}
                     <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                          <button class="btn btn-default"> <a href="/parent/edit/{{family.id}}">Edit</a></button>

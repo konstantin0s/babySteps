@@ -1,39 +1,35 @@
-
-{{!-- {{#if family}} --}}
-    <header>
-      <nav class='cf'>
-        <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-          {{#each parent}}
-         <li class="nav-item">
-              {{!-- <a class="nav-link" href="/parent/{{parent._id}}">Profile</a> --}}
-               {{!-- <button class="btn btn-default"> <a href="/parent/edit/{{this._id}}">Edit</a></button>
-                --}}
-              <a class="nav-link" href="/parent/{{this._id}}">{{this.firstName}} Profile {{this.lastName}}</a>
-          </li>
-          {{/each}}
-          <li class="nav-item">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
-        </ul>
-      </nav>
-      </header>
-      {{!-- {{/if}} --}}
-    
- 
-
- {{#if sitter}}
+ {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li> --}}
+       
           <li class="nav-item">
-              <a class="nav-link" href="/parents/">Check Parents</a>
+            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
           </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+   {{else}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li class="nav-item">
+              <a class="nav-link" href="/parents/">Check Parents</a>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
