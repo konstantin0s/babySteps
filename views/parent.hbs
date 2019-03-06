@@ -69,12 +69,12 @@
                             </ul>
                         </div>
                     </div>
-                     {{#if parent}}
+                     {{#unless parent}}
                     <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                          <button class="btn btn-default"> <a href="/parent/edit/{{family.id}}">Edit</a></button>
                     </div>
-                     {{/if}}
+                     {{/unless}}
                 </div>
                 <div class="row">
                     {{!-- <div class="col-md-4">

@@ -15,8 +15,6 @@
       </nav>
       </header>
       {{/if}}
- 
-
  {{#if sitter}}
  <header>
       <nav class='cf'>
@@ -24,8 +22,9 @@
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="/parents/">Check Parents</a>
+       <li class="nav-item">
+            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                 <a class="nav-link" href="/babysitter/{{sitter._id}}">{{sitter.firstName}} {{sitter.lastName}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
