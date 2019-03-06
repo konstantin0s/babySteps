@@ -1,6 +1,6 @@
 
 
-  {{#if family}}
+  {{#unless family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -16,7 +16,9 @@
         </ul>
       </nav>
     </header>
- {{else}}
+ {{/unless}}
+
+ {{#unless babysitters}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -32,7 +34,7 @@
         </ul>
       </nav>
     </header>
-    {{/if}}
+    {{/unless}}
 
 <!-- Profile area -->
 
@@ -53,7 +55,7 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Name: {{family.firstName}} {{family.lastName}}
+                                        Name: {{parent.firstName}} {{parent.lastName}}
                                     </h5>
                                     <h6>
                                         Parent
@@ -99,7 +101,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.firstName}} {{family.lastName}}</p>
+                                                <p>{{parent.firstName}} {{parent.lastName}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -107,7 +109,7 @@
                                                 <label>Username</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.username}}</p>
+                                                <p>{{parent.username}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -125,7 +127,7 @@
                                                 <label>Country</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.Country}}</p>
+                                                <p>{{parent.country}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -133,7 +135,7 @@
                                                 <label>City</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.city}}</p>
+                                                <p>{{parent.city}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -141,7 +143,7 @@
                                                 <label>Kids</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.kids}}</p>
+                                                <p>{{parent.kids}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -149,7 +151,7 @@
                                                 <label>Days</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{family.days}}</p>
+                                                <p>{{parent.days}}</p>
                                             </div>
                                         </div>
                                 <div class="row">
