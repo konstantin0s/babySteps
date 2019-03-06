@@ -82,12 +82,11 @@ mongoose
 
 
   app.use('/', require('./routes/editParent'));
-
-
+  app.use('/', require('./routes/parent'));
   app.use('/', require('./routes/parents'));
   app.use('/', require('./routes/babysitters'));
   app.use('/', require('./routes/babysitter'));
-  app.use('/', require('./routes/parent'));
+ 
 
   app.listen(3000, () => {
     console.log('Server started on port 3000');

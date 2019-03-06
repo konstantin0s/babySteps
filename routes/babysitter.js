@@ -27,7 +27,7 @@ router.post('/babysitter', (req, res, next) => {
 })
 
 router.get('/photo/add', function(req, res) {
-  res.render('/babysitter', {family:req.session.family, sitter:req.session.sitter});
+  res.render('/babysitter', {family:req.session.currentUser, sitter:req.session.currentUser});
   });
 
    //add submit POST route
@@ -52,7 +52,7 @@ router.get('/photo/add', function(req, res) {
         console.log(err);
       } else {
         res.render('/parent',
-        {parent: parent, family:req.session.family, sitter:req.session.sitter});
+        {parent: parent, family:req.session.currentUser, sitter:req.session.currentUser});
       }
     });
   })

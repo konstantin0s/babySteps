@@ -13,19 +13,6 @@ router.use(bodyParser.json());
     debugger
   res.render('edit_parent', {editParent: req.session.currentUser});
  })
-
-   //load edit form
-  //  router.get('/parent/edit/:id', function(req, res) {
-  //   Parent.findOne({_id: req.params.id}, function(err, editParent) {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       res.render('edit_parent',
-  //       {editParent: editParent});
-  //     }
-  //   });
-  // });
-
   
      //add submit POST route
      router.post('/parent/edit', function(req, res) {

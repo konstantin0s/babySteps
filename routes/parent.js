@@ -4,7 +4,8 @@ const router  = express.Router();
 let Parent = require('../models/parent');
 
 
-router.get('/parent/:id', function(req, res) {
+router.get('/parent/', function(req, res) {
+  // res.render('edit_parent', {editParent: req.session.currentUser});
   // if(req.session.family) {
     // res.status(403).send("Go away");
     // res.redirect('/babysitters');
@@ -15,7 +16,7 @@ router.get('/parent/:id', function(req, res) {
       console.log(err);
     } else {
       res.render('parent',
-      {parent: parent, family:req.session.family, sitter:req.session.sitter});
+      {parent: parent, family:req.session.currentUser, sitter:req.session.currentUser});
     }
   });
 })
