@@ -73,12 +73,13 @@
                     </div>
                      {{#if family}}
                     <div class="col-md-2">
-                        <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{this._id}}">Edit Profile</a>
+                        {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
+                         <button class="btn btn-default"> <a href="/parent/edit/{{parent.id}}">Edit</a></button>
                     </div>
                      {{/if}}
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    {{!-- <div class="col-md-4">
                         <div class="profile-work">
                             <p>WORK LINK</p>
                             <a href="">LinkedIn Link</a><br/>
@@ -91,7 +92,7 @@
                             <a href="">WooCommerce</a><br/>
                             <a href="">PHP, .Net</a><br/>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

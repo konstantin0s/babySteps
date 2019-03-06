@@ -9,6 +9,9 @@ const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
 
 const app = express();
+const Parent = require("./models/parent");
+const Babysitter = require("./models/babysitter");
+
 
 mongoose
   .connect('mongodb://localhost/babysteps', {useNewUrlParser: true})
@@ -67,17 +70,19 @@ mongoose
   app.use('/', require('./routes/auth2'));
 
   app.use(["/parent*", "/babysitter*"], (req, res, next) => {
-    debugger
     if (req.session.currentUser) { 
-  
       res.locals.sitter = req.session.currentUser.sitter;
       res.locals.family = req.session.currentUser.family; //parents
-     
+      debugger
       next(); // ==> go to the next route ---
     } else {                          //    |
       res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
     }                                 //    |
   }); 
+
+
+  app.use('/', require('./routes/editParent'));
+
 
   app.use('/', require('./routes/parents'));
   app.use('/', require('./routes/babysitters'));

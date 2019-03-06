@@ -5,6 +5,11 @@ let Parent = require('../models/parent');
 
 
 router.get('/parent/:id', function(req, res) {
+  // if(req.session.family) {
+    // res.status(403).send("Go away");
+    // res.redirect('/babysitters');
+    // return
+  // }
   Parent.findOne({_id: req.params.id}, function(err, parent) {
     if (err) {
       console.log(err);

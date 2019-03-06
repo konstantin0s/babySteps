@@ -575,13 +575,13 @@ nav a#openup {
 .col-md-6 p{
 	position: relative;
 	top: 0px;
-	left: -120px;
+	left: 70px;
 
 }
 
 .tab-pane {
 	position: relative;
-	left: -120px;
+	left: 230px;
 }
 
 .card-inner{
@@ -743,7 +743,14 @@ a {
 	 position: relative;
 	 top: 20px;
 }
-/* 
-input, textarea {
-  text-transform: capitalize;
-} */
+
+.pTitle {
+  color: black;
+  position: relative;
+  top: 100px;
+}
+
+header {
+  position: fixed;
+  z-index: 9999;  /* hides scrill page under nav bar*/
+}
