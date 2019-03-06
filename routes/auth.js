@@ -10,8 +10,6 @@ router.use(cookieParser());
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-
-const Parent = require("../models/parent");
 const Babysitter =  require('../models/babysitter');
 const bcryptSalt     = 10;
 
@@ -119,10 +117,8 @@ router.post("/sitter/login", (req, res, next) => {
         return;
       }
       if (bcrypt.compareSync(thePassword, user.password)) {
-        // res.locals.sitter = true;
-        // Save the login in the session!
         req.session.currentUser = user;
-        res.locals.sitter = req.sitter;
+        req.session.sitter = true;
         res.redirect("/parents");
       } else {
         res.render("auth/sitter/login", {

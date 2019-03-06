@@ -8,12 +8,7 @@ const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
 
-
 const app = express();
-
-
-const Parent = require("./models/parent");
-
 
 mongoose
   .connect('mongodb://localhost/babysteps', {useNewUrlParser: true})
@@ -67,41 +62,27 @@ mongoose
     res.render('index');
   });
 
-  const index = require('./routes/index');
-  app.use('/', index);
-  const authRouter = require('./routes/auth');
-  app.use('/', authRouter);
-  const sitterRouter = require('./routes/auth2');
-  app.use('/', sitterRouter);
+  app.use('/', require('./routes/index'));
+  app.use('/', require('./routes/auth'));
+  app.use('/', require('./routes/auth2'));
+
+  app.use(["/parent*", "/babysitter*"], (req, res, next) => {
+    debugger
+    if (req.session.currentUser) { 
   
-    //add session
-
-
-  app.use((req, res, next) => {
-    if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+      res.locals.sitter = req.session.currentUser.sitter;
+      res.locals.family = req.session.currentUser.family; //parents
+     
       next(); // ==> go to the next route ---
     } else {                          //    |
       res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
     }                                 //    |
   }); 
 
-  const parents = require('./routes/parents');
-  app.use('/', parents);
-  const babySitters = require('./routes/babysitters');
-  app.use('/', babySitters);
-
-  const babysitter = require('./routes/babysitter');
-  app.use('/', babysitter);
-  const parent = require('./routes/parent');
-  app.use('/', parent);
-
-
-  // const addRecipe = require('./routes/addRecipe');
-  // app.use('/', addRecipe);
-  // const edit = require('./routes/edit');
-  // app.use('/', edit);
-  // const deleteRecipe = require('./routes/delete');
-  // app.use('/', deleteRecipe);
+  app.use('/', require('./routes/parents'));
+  app.use('/', require('./routes/babysitters'));
+  app.use('/', require('./routes/babysitter'));
+  app.use('/', require('./routes/parent'));
 
   app.listen(3000, () => {
     console.log('Server started on port 3000');

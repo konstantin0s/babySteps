@@ -1,50 +1,39 @@
- {{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
-<body> --}}
-
-
-{{!-- <button type="button" class="btn btn-primary check" name="addRecipe"> <a class="nav-link" href="/recipes/add">Add recipe</a></button> --}}
-{{!-- <div class="cards">
-  <h1>List of parents:</h1>
-     {{#each parents}}
-    <div class="card">
-    <li class="list-group-item"><a href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></li>
-    </div>
-     {{/each}}
-</div> --}}
-
-{{#if parent}}
- <header>
+{{#if family}}
+    <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li class="nav-item">
-            <a class="nav-link" href='/parents'>View Parents</a>
-          </li> --}}
-          <li class="nav-item">
-               <a class="nav-link" href="/parent/{{this._id}}">Profile</a> 
-               {{!-- <a class="usr-link" href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a> --}}
+         <li class="nav-item">
+              <a class="nav-link" href="/babysitters/">Check Babysitter</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
       </nav>
-    </header>
-    {{/if}}
+      </header>
+      {{/if}}
+ 
+
+ {{#if sitter}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/parents/">Check Parents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+      </header>
+{{/if}}
 
 
 <div class="container bootstrap snippet">
@@ -109,5 +98,3 @@
         </div>
     </div>
 </div>
-{{!-- </body>
-</html> --}}

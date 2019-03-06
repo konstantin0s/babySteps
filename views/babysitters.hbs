@@ -1,13 +1,13 @@
 
-{{#if parent}}
+{{#if family}}
     <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="/parent/{{parent._id}}">Profile</a>
+         <li class="nav-item">
+              <a class="nav-link" href="/babysitters/">Check Babysitter</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -26,7 +26,7 @@
             <a class="nav-link" href="/">{{title}}</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="/babysitter/{{this._id}}">Profile</a>
+              <a class="nav-link" href="/parents/">Check Parents</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -98,6 +98,3 @@
         </div>
     </div>
 </div>
-
-{{!-- </body>
-</html> --}}

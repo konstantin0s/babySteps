@@ -1,5 +1,6 @@
 
- {{#if parent}}
+
+ {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -51,12 +52,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{baby.image}}" alt=""/>
-                             {{#if sitter}}
-                            <div class="file btn btn-lg btn-primary">
+                        {{#if sitter}}
+                              <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                            {{/if}}
+                      {{/if}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -81,9 +82,8 @@
                     {{#if sitter}}
                     <div class="col-md-2">
                             <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/{{this._id}}">Edit Profile</a>
-                    
                     </div>
-                      {{/if}}
+                    {{/if}}
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -184,7 +184,7 @@
    
  
   <div class="addRevForm">
- {{#if parent}}
+  {{!-- {{#if parent}} --}}
  <p class="addRev">Add a review</p>
   <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
   <label for="">User:</label>
@@ -195,7 +195,7 @@
 
   <button class="btn btn-secondary" type="submit"><h2 class="add">ADD</h2></button>
 </form>
-{{/if}}
+{{!-- {{/if}} --}}
 
     <h2 class="review">Reviews:</h2>
      {{#each baby.reviews}}

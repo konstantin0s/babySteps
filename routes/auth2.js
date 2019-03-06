@@ -12,7 +12,6 @@ router.use(bodyParser.json());
 
 
 const Parent = require("../models/parent");
-const Babysitter =  require('../models/babysitter');
 const bcryptSalt     = 10;
 
 // Parent area
@@ -111,7 +110,7 @@ router.post("/parent/login", (req, res, next) => {
   Parent.findOne({ "username": theUsername })
   .then(user => {
       if (!user) {
-        debugger
+        // debugger
         res.render("auth/parent/login", {
           errorMessage: "The username doesn't exist."
         });
@@ -121,8 +120,7 @@ router.post("/parent/login", (req, res, next) => {
         // Save the login in the session!
         debugger
         req.session.currentUser = user;
-        // res.locals.parent = true;
-        res.locals.parent = req.parent;
+        req.session.family = true;
         res.redirect("/babysitters");
       } else {
         res.render("auth/parent/login", {

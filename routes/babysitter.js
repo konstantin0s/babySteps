@@ -10,7 +10,7 @@ router.get('/babysitter/:id', function(req, res) {
       console.log(err);
     } else {
       res.render('babysitter',
-      {baby: baby});
+      {baby: baby, family:req.session.family, sitter:req.session.sitter});
     }
   });
 })
@@ -27,7 +27,7 @@ router.post('/babysitter', (req, res, next) => {
 })
 
 router.get('/photo/add', function(req, res) {
-  res.render('/babysitter');
+  res.render('/babysitter', {family:req.session.family, sitter:req.session.sitter});
   });
 
    //add submit POST route

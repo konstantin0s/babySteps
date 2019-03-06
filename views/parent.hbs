@@ -18,7 +18,7 @@
     </header>
  {{/if}}
 
- {{#if parent}}
+ {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -44,7 +44,7 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
-                            {{#if parent}}
+                            {{#if family}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -71,7 +71,7 @@
                             </ul>
                         </div>
                     </div>
-                     {{#if parent}}
+                     {{#if family}}
                     <div class="col-md-2">
                         <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{this._id}}">Edit Profile</a>
                     </div>
