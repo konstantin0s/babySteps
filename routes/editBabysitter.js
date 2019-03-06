@@ -37,7 +37,7 @@ router.use(bodyParser.json());
              console.log(err);
              return;
            } else {
-             res.redirect('/babysitters');
+             res.redirect('/parents');
            }
       });
      });

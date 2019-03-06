@@ -754,3 +754,14 @@ header {
   position: fixed;
   z-index: 9999;  /* hides scrill page under nav bar*/
 }
+
+label {
+  color: black; /* label class from edit pages */
+}
+
+.form {
+  position: relative;
+  top: 100px;
+  width: 40%;
+  left: 30%;
+}
