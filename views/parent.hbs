@@ -44,7 +44,7 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
-                            {{#unless family}}
+                            {{#unless baby}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -71,7 +71,7 @@
                             </ul>
                         </div>
                     </div>
-                     {{#unless parent}}
+                     {{#unless baby}}
                     <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                          <button class="btn btn-default"> <a href="/parent/edit/{{family.id}}">Edit</a></button>

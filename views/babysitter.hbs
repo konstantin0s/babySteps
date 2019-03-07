@@ -1,6 +1,54 @@
-
+{{!-- 
 
  {{#unless family}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li>
+           {{#if baby}}
+          <li class="nav-item">
+            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                 {{!-- <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+          </li>
+          {{/if}}
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+   {{/unless}}
+   {{#if baby}} --}}
+ {{!-- <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li> --}}
+          {{!-- <li>
+            <a href='#'>Overview</a>
+          </li> --}}
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href='/babysitter/{{sitter._id}}'>Profile</a>
+          </li> --}}
+          {{!-- <li class="nav-item"> --}}
+            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                 {{!-- <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a> --}}
+          {{!-- </li>
+           <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}--}} 
+
+  {{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -22,31 +70,23 @@
         </ul>
       </nav>
     </header>
-   {{/unless}}
-   {{#if baby}}
+   {{else}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li>
-            <a href='#'>Overview</a>
-          </li> --}}
           {{!-- <li class="nav-item">
-            <a class="nav-link" href='/babysitter/{{sitter._id}}'>Profile</a>
+              <a class="nav-link" href="/parents/">Check Parents</a>
           </li> --}}
-          <li class="nav-item">
-            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
-                 <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
       </nav>
-    </header>
- {{/if}}
+      </header>
+{{/if}}
 
 
 <div class="container emp-profile">
@@ -55,12 +95,12 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{baby.image}}" alt=""/>
-                        {{#if baby}}
+                        {{#unless family}}
                               <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                      {{/if}}
+                      {{/unless}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -82,11 +122,11 @@
                             </ul>
                         </div>
                     </div>
-                    {{#if baby}}
+                    {{#unless family}}
                     <div class="col-md-2">
                             <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a>
                     </div>
-                    {{/if}}
+                    {{/unless}}
 
                     
                 </div>
