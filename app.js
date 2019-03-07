@@ -73,12 +73,13 @@ mongoose
     if (req.session.currentUser) { 
       res.locals.sitter = req.session.currentUser.sitter;
       res.locals.family = req.session.currentUser.family; //parents
-      debugger
+  
       next(); // ==> go to the next route ---
     } else {                          //    |
       res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
     }                                 //    |
   }); 
+
 
 
   app.use('/', require('./routes/editParent'));

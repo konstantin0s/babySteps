@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const path         = require('path');
 const bodyParser   = require('body-parser');
-let Babysitter = require('../models/babysitter');
+const Babysitter = require('../models/babysitter');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -21,7 +21,7 @@ router.use(bodyParser.json());
       babys.firstName = req.body.firstName;
       babys.lastName = req.body.lastName;
       babys.username = req.body.username;
-      babys.password = req.body.password;
+      // babys.password = req.body.password;
       babys.city = req.body.city;
       babys.country = req.body.country;
       babys.image = req.body.image;

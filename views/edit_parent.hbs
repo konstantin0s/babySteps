@@ -1,6 +1,25 @@
 
+
+ {{#unless babysitters}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
+               <a class="usr-link" href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {{/unless}}
     
-<form method="POST" action="/parent/edit" class="form">
+<form method="POST" action="/parent/{{showParentData.id}}/edit" class="form">
   <h1 class="href">Edit Profile</h1>
 <div id="form-group">
   <label for="level">First Name:</label>
@@ -14,10 +33,10 @@
   <label for="level">Username:</label>
   <input type="text" name="username" value="{{editParent.username}}" class="form-control">
 </div>
-<div id="form-group">
+{{!-- <div id="form-group">
   <label for="level">Password:</label>
   <input type="text" name="password" value="{{editParent.password}}" class="form-control" disabled>
-</div>
+</div> --}}
 <div id="form-group">
   <label for="level">Image:</label>
      <input type='text' name="image" value="{{editParent.image}}" placeholder="Image url"/>
@@ -36,7 +55,7 @@
 </div>
 <div id="form-group">
   <label for="level">Caring days:</label>
-  <input type="number" name="number" value="{{editParent.days}}" class="form-control">
+  <input type="number" name="days" value="{{editParent.days}}" class="form-control">
 </div>
  <input type="submit" class="btn btn-primary" value="Submit">
 </div>
