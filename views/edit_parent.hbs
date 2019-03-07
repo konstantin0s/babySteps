@@ -1,6 +1,27 @@
-
-
- {{#unless babysitters}}
+ {{#if family}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href='/babysitters'>View Babysitters</a>
+          </li> --}}
+       
+          <li class="nav-item">
+            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {{/if}}
+  {{#if showParentData}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -9,7 +30,7 @@
           </li>
           <li class="nav-item">
             {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
-               <a class="usr-link" href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+               <a class="nav-link" href="/parent/{{showParentData.id}}">{{showParentData.firstName}} {{showParentData.lastName}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -17,8 +38,8 @@
         </ul>
       </nav>
     </header>
-    {{/unless}}
-    
+ {{/if}}    
+
 <form method="POST" action="/parent/{{showParentData.id}}/edit" class="form">
   <h1 class="href">Edit Profile</h1>
 <div id="form-group">

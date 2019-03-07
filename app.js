@@ -71,7 +71,7 @@ mongoose
 
   app.use(["/parent*", "/babysitter*"], (req, res, next) => {
     if (req.session.currentUser) { 
-      res.locals.sitter = req.session.currentUser.sitter;
+      res.locals.sitter = req.session.currentUser.sitter; //babysitters
       res.locals.family = req.session.currentUser.family; //parents
   
       next(); // ==> go to the next route ---

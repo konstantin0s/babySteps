@@ -1,4 +1,21 @@
-
+  {{#if editBaby}}
+ <header>
+      <nav class='cf'>
+        <ul class='cf'>
+          <li class="hide-on-small">
+            <a class="nav-link" href="/">{{title}}</a>
+          </li>
+          <li class="nav-item">
+            {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
+               <a class="nav-link" href="/parent/{{editBaby.id}}">{{editBaby.firstName}} {{editBaby.lastName}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='/logout'>Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+ {{/if}}    
    
 <form method="POST" action="/babysitter/edit" class="form">
  <h1 class="href">Edit Profile</h1>

@@ -44,12 +44,18 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
-                            {{#unless baby}}
+                            {{#unless parent}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
                             {{/unless}}
+                            {{#if parent}}
+                              <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -71,12 +77,18 @@
                             </ul>
                         </div>
                     </div>
-                     {{#unless baby}}
+                     {{#unless parent}}
                     <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                          <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
                     </div>
                      {{/unless}}
+                     {{#if parent}}
+                      <div class="col-md-2">
+                        {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
+                         <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
+                    </div>
+                     {{/if}}
                 </div>
                 <div class="row">
                     {{!-- <div class="col-md-4">
