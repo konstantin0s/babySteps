@@ -1,6 +1,5 @@
 
-
-  {{#unless family}}
+{{#if family}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -13,16 +12,15 @@
             <li>
                  <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
             </li>
-
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
       </nav>
     </header>
- {{/unless}}
+    {{/if}}
 
- {{#unless babysitters}}
+ {{!-- {{#if sitter}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -41,7 +39,7 @@
         </ul>
       </nav>
     </header>
-    {{/unless}}
+    {{/if}} --}}
 
 
 <div class="container emp-profile">
@@ -50,18 +48,22 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{baby.image}}" alt=""/>
-                        {{#unless family}}
+                        {{!-- {{#unless sitter}}
                               <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                      {{/unless}}
-                      {{#if baby}}
+                      {{/unless}} --}}
+                   {{#unless family}}
                         <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                      {{/if}}
+                  {{/unless}}
+                       {{!-- <div class="file btn btn-lg btn-primary">
+    
+                      </div> --}}
+                  {{!-- {{/if}} --}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -77,9 +79,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
-                                {{!-- <li class="nav-item">
-                                    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Timeline</a>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -88,27 +87,10 @@
                             <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a>
                     </div>
                     {{/unless}}
-                    {{#if baby}}
-                    <div class="col-md-2">
-                            <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a>
-                    </div>
-                    {{/if}}
                     
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">LinkedIn Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
-                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
@@ -181,8 +163,6 @@
                                         </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {{!-- <label>Your Bio</label><br/>
-                                        <p>Your detail description</p> --}}
                                     </div>
                                 </div>
                             </div>
@@ -194,26 +174,23 @@
    
  
   <div class="addRevForm">
-  {{!-- {{#if parent}} --}}
  <p class="addRev">Add a review</p>
   <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
-  <label for="">User:</label>
+<label for="">User:</label>
   <input type="text" name="user">
-
   <label for="">Comments:</label>
   <textarea type="text" name="comments"></textarea><br>
 
   <button class="btn btn-secondary" type="submit"><h2 class="add">ADD</h2></button>
 </form>
-{{!-- {{/if}} --}}
 
     <h2 class="review">Reviews:</h2>
      {{#each baby.reviews}}
    <div class="review-item">
-       <div class="disRev">
+    <div class="disRev">
     <span class="span">Name: {{this.user}}</span>
     <p class="comment">Comment: {{this.comments}}</p>
-     </div>
+  </div>
   </div>
     {{/each}} 
-</div>
+ </div>

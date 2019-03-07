@@ -34,28 +34,46 @@ a {
 		position: relative;
 		display: inline;
 		margin-right: 10px;
-		}
+    }
+    
   .href {
-    color: grey
+    color: grey;
+    position: relative;
+    top: 100px;
+    left:45%;
+  }
+
+  .sign {
+    position: relative;
+    left:45%;
+    left: 100px;
   }
 	
 /* .cf li{
 	margin-right: 5px;
 	list-style-type: none;
 } */
-.section-main {
-	background: url(../images/child.jpg) no-repeat top/cover;
+/* .section-main {
+	background: url(../images/child.jpg) no-repeat cover;
+} */
+
+.child {
+  width: 80%;
+  height: 40%;
+  position: relative;
+  top: 40px;
+  left: 200px;
 }
 
 .section-main h1, h2, p {
 	position: relative;
-  top: 320px;
+  top: 20px;
   color: black;
 }
 
-#music{
+/* #music{
 	background: url(../images/child.jpg) no-repeat bottom/cover;
-}
+} */
 .section {
   padding: 2rem 0;
 }
@@ -115,9 +133,24 @@ footer .footer-cols {
   font-size: 14px;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: grey;
+  height: 60px;
+  width: 100%;
+}
+
+.footer p {
+color: white;
+text-align: center;
+}
+
 footer .footer-cols ul {
   list-style: none;
 }
+
+
 
 footer .footer-cols ul li:first-child {
   font-size: 1.2rem;
@@ -330,7 +363,8 @@ nav a#openup {
   margin: 30px auto;
 	width: 380px;
 	position: relative;
-	top: 200px;
+  top: 200px;
+  padding-bottom: 60px;
 }
 
 #form label {
@@ -386,8 +420,8 @@ nav a#openup {
 
 .signup {
 	position: relative;
-	top: 100px;
-	left: 476px;
+	top: 20px;
+	left: -5%;
 }
 
 .error-message {
@@ -660,6 +694,11 @@ a {
   color: black;
 }
 
+.account-message {
+  position: relative;
+  top: 10px;
+}
+
 /* style reviews*/
 .addRev {
 	position: relative;
@@ -769,3 +808,25 @@ label {
 .fTitle {
   color: black;
 }
+
+#home {
+  position: relative;
+  left: -110px;
+}
+
+#profile {
+  position: relative;
+  left: -110px;
+}
+
+#homey {
+  position: relative;
+  left: 220px;
+}
+
+#profiley {
+  position: relative;
+  left: 220px;
+}
+
+

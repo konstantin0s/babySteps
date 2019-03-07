@@ -3,10 +3,22 @@ const router  = express.Router();
 const path         = require('path');
 const bodyParser   = require('body-parser');
 const Babysitter = require('../models/babysitter');
+const Parent = require('../models/parent');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
+
+router.get('/babysitter/edit/:id', function(req, res, next) {
+  Parent.find({}, (err, parents) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('edit_babysitter',
+      {parents: parents});
+    }
+  });
+ });
 
 //findByIdAndUpdate(req.session.user._id, {})
  router.get('/babysitter/edit' , function(req, res) {

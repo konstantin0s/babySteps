@@ -8,12 +8,12 @@
           {{!-- <li class="nav-item">
             <a class="nav-link" href='/babysitters'>View Babysitters</a>
           </li> --}}
-       
+      {{#if parent}}
           <li class="nav-item">
             {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
-                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+          <a class="nav-link" href="/parent/{{parent._id}}">{{parent.firstName}} {{parent.lastName}}</a>
           </li>
-  
+       {{/if}}
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
@@ -27,16 +27,18 @@
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          {{!-- <li class="nav-item">
-              <a class="nav-link" href="/parents/">Check Parents</a>
-          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
+         </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
       </nav>
-      </header>
+    </header>
 {{/if}}
+
+<h1 class="pTitle">Meet babysitters looking for a job:</h1>
 
 <div class="container bootstrap snippet">
     <div class="row">

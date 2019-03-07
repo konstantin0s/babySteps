@@ -28,6 +28,9 @@
           <li class="nav-item">
             <a class="nav-link" href='/parents'>View Parents</a>
           </li>
+              <li class="nav-item">
+               <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
+              </li>
           <li class="nav-item">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
@@ -44,18 +47,18 @@
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="{{parent.image}}" alt=""/>
-                            {{#unless parent}}
+                            {{!-- {{#unless parent}}
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                            {{/unless}}
-                            {{#if parent}}
+                            {{/unless}} --}}
+                            {{#unless sitter}}
                               <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
-                            {{/if}}
+                            {{/unless}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -77,18 +80,18 @@
                             </ul>
                         </div>
                     </div>
-                     {{#unless parent}}
+                     {{!-- {{#unless parent}}
                     <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
-                         <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
+                         {{!-- <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
                     </div>
-                     {{/unless}}
-                     {{#if parent}}
+                     {{/unless}} --}} 
+                     {{#unless sitter}}
                       <div class="col-md-2">
                         {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                          <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
                     </div>
-                     {{/if}}
+                     {{/unless}}
                 </div>
                 <div class="row">
                     {{!-- <div class="col-md-4">
@@ -107,7 +110,7 @@
                     </div> --}}
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="homey" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Name</label>
@@ -133,7 +136,7 @@
                                             </div>
                                         </div>
                             </div>
-                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade show active" id="profiley" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Country</label>
