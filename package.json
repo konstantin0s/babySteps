@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-		"debug-remote": "babel-node --inspect=0.0.0.0:9229 ./app.js nocluster"
+  "scripts": {  "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +27,7 @@
     "express-session": "^1.15.6",
     "hbs": "^4.0.3",
     "mongoose": "^5.4.16",
+    "nodemailer": "^5.1.1",
     "nodemon": "^1.18.10"
   }
 }

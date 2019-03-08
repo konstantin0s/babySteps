@@ -51,7 +51,7 @@
                                 <tr>
                                 <th><span>User</span></th>
                                 <th><span>Created</span></th>
-                                <th class="text-center"><span>Status</span></th>
+                                {{!-- <th class="text-center"><span>Status</span></th> --}}
                                 <th><span>City</span></th>
                                 <th>&nbsp;</th>
                                 </tr>
@@ -61,16 +61,16 @@
                                 <tr>
                                   
                                     <td>
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                                        <a href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+                                        <img src="{{this.image}}" alt="">
+                                        <a class="name" href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
                                         <span class="user-subhead">Member</span>
                                     </td>
                                     <td>{{this.createdAt}}</td>
-                                    <td class="text-center">
+                                    {{!-- <td class="text-center">
                                         <span class="label label-default">pending</span>
-                                    </td>
+                                    </td> --}}
                                     <td>
-                                        <a href="#">{{this.city}}</a>
+                                        <a class="name" href="#">{{this.city}}</a>
                                     </td>
                                     <td style="width: 20%;">
                                         <a href="#" class="table-link">

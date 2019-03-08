@@ -7,14 +7,14 @@ const cors = require('cors');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
-
+require("dotenv").config();
 const app = express();
 const Parent = require("./models/parent");
 const Babysitter = require("./models/babysitter");
 
 
-mongoose
-  .connect('mongodb://localhost/babysteps', {useNewUrlParser: true})
+mongoose 
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

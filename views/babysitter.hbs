@@ -6,13 +6,13 @@
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item right">
             <a class="nav-link" href='/babysitters'>View Babysitters</a>
           </li>
             <li>
                  <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
             </li>
-          <li class="nav-item">
+          <li class="nav-item right">
             <a class="nav-link" href='/logout'>Logout</a>
           </li>
         </ul>
@@ -84,7 +84,7 @@
                     </div>
                     {{#unless family}}
                     <div class="col-md-2">
-                            <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a>
+                            <button class="btn btn-default">  <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a> </button>
                     </div>
                     {{/unless}}
                     
