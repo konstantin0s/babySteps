@@ -1,27 +1,35 @@
-  <header>
-      <nav class='cf'>
-        <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  
-<form action="/parent/login" method="POST" id="form">
-  <label for="username">Username</label>
-  <input type="text" name="username">
+<header>
+  <nav class='cf'>
+    <ul class='cf'>
+      <li class="nav-item">
+        <a class="nav-link logoTitle" href="/">{{title}}</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+{{!-- <h2 class="signup"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h2> --}}
 
-  <label for="password">Password</label>
-  <input type="password" name="password">
+<div class="form-group">
 
-  {{#if errorMessage }}
+  <form action="/parent/login" method="POST" id="form">
+    <label for="username">Username</label>
+    <input type="text" name="username">
+
+    <label for="password">Password</label>
+    <input type="password" name="password">
+
+    {{#if errorMessage }}
     <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
+    {{/if}}
 
-  <button type="submit">Sign in</button>
+    <button type="submit">Sign in</button>
 
-  <p class="account-message">
-    Don't have an account? <a class="sign" href="/parent/signup">Sign up</a>
-  </p>
-</form>
+    <p class="account-message">
+      Don't have an account? <a class="sign" href="/parent/signup">Sign up</a>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <p>Copyright &copy; {{title}} 2019</p>
+</footer>

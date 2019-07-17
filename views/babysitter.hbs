@@ -1,26 +1,25 @@
-
 {{#if family}}
- <header>
-      <nav class='cf'>
+<header>
+    <nav class='cf'>
         <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-          <li class="nav-item right">
-            <a class="nav-link" href='/babysitters'>View Babysitters</a>
-          </li>
-            <li>
-                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+            <li class="nav-item">
+                <a class="nav-link logoTitle" href="/">{{title}}</a>
             </li>
-          <li class="nav-item right">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
+            <li class="nav-item right">
+                <a class="nav-link" href='/babysitters'>View Babysitters</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+            </li>
+            <li class="nav-item right">
+                <a class="nav-link" href='/logout'>Logout</a>
+            </li>
         </ul>
-      </nav>
-    </header>
-    {{/if}}
+    </nav>
+</header>
+{{/if}}
 
- {{!-- {{#if sitter}}
+{{!-- {{#if sitter}}
  <header>
       <nav class='cf'>
         <ul class='cf'>
@@ -43,154 +42,162 @@
 
 
 <div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="{{baby.image}}" alt=""/>
-                        {{!-- {{#unless sitter}}
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{{baby.image}}" alt="" />
+                    {{!-- {{#unless sitter}}
                               <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
                             </div>
                       {{/unless}} --}}
-                   {{#unless family}}
-                        <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                  {{/unless}}
-                       {{!-- <div class="file btn btn-lg btn-primary">
-    
-                      </div> --}}
-                  {{!-- {{/if}} --}}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        Name: {{baby.firstName}}  {{baby.lastName}}
-                                    </h5>
-                                    <h6>
-                                        City {{baby.city}}
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     {{#unless family}}
-                    <div class="col-md-2">
-                            <button class="btn btn-default">  <a class="profile-edit-btn" name="btnAddMore" href="/babysitter/edit{{this._id}}">Edit Profile</a> </button>
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file" />
                     </div>
                     {{/unless}}
-                    
+                    {{!-- <div class="file btn btn-lg btn-primary">
+
+                      </div> --}}
+                    {{!-- {{/if}} --}}
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{baby.firstName}} {{baby.firstName}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Username</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{baby.username}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Babysitter</p>
-                                            </div>
-                                        </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        Name: {{baby.firstName}} {{baby.lastName}}
+                    </h5>
+                    <h6>
+                        City {{baby.city}}
+                    </h6>
+                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {{#unless family}}
+            <div class="col-md-2">
+                <button class="btn btn-default"> <a class="profile-edit-btn" name="btnAddMore"
+                        href="/babysitter/edit{{this._id}}">Edit Profile</a> </button>
+            </div>
+            {{/unless}}
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
                             </div>
-                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Babysitting Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>3 Years</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{baby.salary}}$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <p>{{baby.firstName}} {{baby.firstName}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{baby.username}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>123 456 7890</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Profession</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Babysitter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Babysitting Experience</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>3 Years</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Hourly Rate</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{baby.salary}}$/hr</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>English Level</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Expert</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Availability</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>6 months</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>           
+            </div>
         </div>
-   
- 
-  <div class="addRevForm">
- <p class="addRev">Add a review</p>
-  <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
-<label for="">User:</label>
-  <input type="text" name="user">
-  <label for="">Comments:</label>
-  <textarea type="text" name="comments"></textarea><br>
+    </form>
+</div>
 
-  <button class="btn btn-secondary" type="submit"><h2 class="add">ADD</h2></button>
-</form>
+
+<div class="addRevForm">
+    <p class="addRev">Add a review</p>
+    <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
+        <label for="">User:</label>
+        <input type="text" name="user">
+        <label for="">Comments:</label>
+        <textarea type="text" name="comments"></textarea><br>
+
+        <button class="btn btn-secondary" type="submit">
+            <h2 class="add">ADD</h2>
+        </button>
+    </form>
 
     <h2 class="review">Reviews:</h2>
-     {{#each baby.reviews}}
-   <div class="review-item">
-    <div class="disRev">
-    <span class="span">Name: {{this.user}}</span>
-    <p class="comment">Comment: {{this.comments}}</p>
-  </div>
-  </div>
-    {{/each}} 
- </div>
+    {{#each baby.reviews}}
+    <div class="review-item">
+        <div class="disRev">
+            <span class="span">Name: {{this.user}}</span>
+            <p class="comment">Comment: {{this.comments}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<footer class="footer">
+    <p>Copyright &copy; {{title}} 2019</p>
+</footer>

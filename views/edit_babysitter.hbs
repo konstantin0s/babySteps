@@ -1,56 +1,60 @@
-  {{#if editBaby}}
- <header>
-      <nav class='cf'>
-        <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-          <li class="nav-item">
-            {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
-               <a class="nav-link" href="/parent/{{editBaby.id}}">{{editBaby.firstName}} {{editBaby.lastName}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
- {{/if}}    
-   
+{{#if editBaby}}
+<header>
+  <nav class='cf'>
+    <ul class='cf'>
+      <li class="nav-item">
+        <a class="nav-link logoTitle" href="/">{{title}}</a>
+      </li>
+      <li class="nav-item">
+        {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
+        <a class="nav-link" href="/parent/{{editBaby.id}}">{{editBaby.firstName}} {{editBaby.lastName}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href='/logout'>Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+{{/if}}
+
 <form method="POST" action="/babysitter/edit" class="form">
- <h1 class="href">Edit Profile</h1>
-<div id="form-group">
-  <label for="level">First Name:</label>
-  <input type="text" name="firstName" value="{{editBaby.firstName}}" class="form-control">
-</div>
-<div id="form-group">
-  <label for="level">Last Name</label>
-  <input type="text" name="lastName" value="{{editBaby.lastName}}" class="form-control">
-</div>
- <div id="form-group">
-  <label for="level">Username:</label>
-  <input type="text" name="username" value="{{editBaby.username}}" class="form-control">
-</div>
-<div id="form-group">
-  <label for="level">Image:</label>
-     <input type='text' name="image" value="{{editBaby.image}}" placeholder="Image url"/>
-</div>
-<div id="form-group">
-  <label for="level">City:</label>
-  <input type="text" name="city" value="{{editBaby.city}}" class="form-control">
-</div>
-<div id="form-group">
-  <label for="level">Country:</label>
-  <input type="text" name="country" value="{{editBaby.country}}" class="form-control">
-</div>
-<div id="form-group">
-  <label for="level">Age:</label>
-  <input type="number" name="age" value="{{editBaby.age}}" class="form-control">
-</div>
-<div id="form-group">
-  <label for="level">Salary:</label>
-  <input type="number" name="salary" value="{{editBaby.salary}}" class="form-control">
-</div>
- <input type="submit" class="btn btn-primary" value="Submit">
-</div>
+  <h1 class="href">Edit Profile</h1>
+  <div id="form-group">
+    <label for="level">First Name:</label>
+    <input type="text" name="firstName" value="{{editBaby.firstName}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Last Name</label>
+    <input type="text" name="lastName" value="{{editBaby.lastName}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Username:</label>
+    <input type="text" name="username" value="{{editBaby.username}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Image:</label>
+    <input type='text' name="image" value="{{editBaby.image}}" placeholder="Image url" />
+  </div>
+  <div id="form-group">
+    <label for="level">City:</label>
+    <input type="text" name="city" value="{{editBaby.city}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Country:</label>
+    <input type="text" name="country" value="{{editBaby.country}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Age:</label>
+    <input type="number" name="age" value="{{editBaby.age}}" class="form-control">
+  </div>
+  <div id="form-group">
+    <label for="level">Salary:</label>
+    <input type="number" name="salary" value="{{editBaby.salary}}" class="form-control">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit">
+  </div>
 </form>
+
+<footer class="footer">
+  <p>Copyright &copy; {{title}} 2019</p>
+</footer>

@@ -1,39 +1,39 @@
 {{#if family}}
-    <header>
-      <nav class='cf'>
+<header>
+    <nav class='cf'>
         <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-         <li class="nav-item">
-              <a class="nav-link" href="/babysitters/">Check Babysitter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link logoTitle" href="/">{{title}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/babysitters/">Check Babysitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href='/logout'>Logout</a>
+            </li>
         </ul>
-      </nav>
-      </header>
-      {{/if}}
- {{#if sitter}}
- <header>
-      <nav class='cf'>
+    </nav>
+</header>
+{{/if}}
+{{#if sitter}}
+<header>
+    <nav class='cf'>
         <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-          
-       <li class="nav-item">
-            {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
-                 <a class="nav-link" href="/babysitter/{{bab.id}}">{{bab.firstName}} {{bab.lastName}}</a>
-          </li>
-    
-          <li class="nav-item">
-            <a class="nav-link" href='/logout'>Logout</a>
-          </li>
+            <li class="hide-on-small">
+                <a class="nav-link" href="/">{{title}}</a>
+            </li>
+
+            <li class="nav-item">
+                {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+                <a class="nav-link" href="/babysitter/{{bab.id}}">{{bab.firstName}} {{bab.lastName}}</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href='/logout'>Logout</a>
+            </li>
         </ul>
-      </nav>
-      </header>
+    </nav>
+</header>
 {{/if}}
 
 <h1 class="pTitle">Meet families looking for sitter:</h1>
@@ -47,20 +47,21 @@
                         <table class="table user-list">
                             <thead>
                                 <tr>
-                                <th><span>User</span></th>
-                                <th><span>Created</span></th>
-                                {{!-- <th class="text-center"><span>Status</span></th> --}}
-                                <th><span>City</span></th>
-                                <th>&nbsp;</th>
+                                    <th><span>User</span></th>
+                                    <th><span>Created</span></th>
+                                    {{!-- <th class="text-center"><span>Status</span></th> --}}
+                                    <th><span>City</span></th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
-                               {{#each parents}}
+                            {{#each parents}}
                             <tbody>
                                 <tr>
-                                  
+
                                     <td>
                                         <img src="{{this.image}}" alt="">
-                                        <a class="usr-link name" href="/parent/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+                                        <a class="usr-link name" href="/parent/{{this._id}}">{{this.firstName}}
+                                            {{this.lastName}}</a>
                                         <span class="user-subhead">Member</span>
                                     </td>
                                     <td>{{this.createdAt}}</td>
@@ -87,7 +88,7 @@
                                             </span>
                                         </a>
                                     </td>
-                                      {{/each}}
+                                    {{/each}}
                                 </tr>
                             </tbody>
                         </table>
@@ -97,3 +98,7 @@
         </div>
     </div>
 </div>
+
+<footer class="footer">
+    <p>Copyright &copy; {{title}} 2019</p>
+</footer>

@@ -1,12 +1,12 @@
-  <header>
-      <nav class='cf'>
-        <ul class='cf'>
-          <li class="hide-on-small">
-            <a class="nav-link" href="/">{{title}}</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<header>
+  <nav class='cf'>
+    <ul class='cf'>
+      <li class="nav-item">
+        <a class="nav-link logoTitle" href="/">{{title}}</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 
 <form action="/sitter/login" method="POST" id="form">
   <label for="username">Username</label>
@@ -16,7 +16,7 @@
   <input type="password" name="password">
 
   {{#if errorMessage }}
-    <div class="error-message">{{ errorMessage }}</div>
+  <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
 
   <button type="submit">Sign in</button>
@@ -25,3 +25,8 @@
     Don't have an account? <a href="/sitter/signup">Sign up</a>
   </p>
 </form>
+
+
+<footer class="footer">
+  <p>Copyright &copy; {{title}} 2019</p>
+</footer>
