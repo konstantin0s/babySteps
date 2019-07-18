@@ -16,6 +16,11 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+
+  min-height: 400px;
+  margin-bottom: 400px;
+  clear: both;
+
 }
 
 .user-link:nth-child(5n+3) {
@@ -170,6 +175,46 @@ a {
 
 }
 
+.editProfy {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* height: 100vh;
+  background-color: yellow; */
+  overflow-y: hidden;
+}
+
+.href {
+  position: relative;
+  text-align: center;
+  /* color: orange; */
+  display: flex;
+  flex-direction: row;
+}
+
+.editProfy .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  top: -450px;
+}
+
+
+.editProfy .href {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  top: -180px;
+  color: orange;
+}
+
+
+
 
 
 .sign {
@@ -295,6 +340,10 @@ footer .footer-cols ul li:first-child {
 footer .footer-bottom {
   background-color: #333;
   padding: 1rem;
+  bottom: 0;
+  position: fixed;
+  margin: 0;
+  width: 100%;
 }
 
 /* Utility Classes */
@@ -455,6 +504,8 @@ nav a#openup {
   position: relative;
   top: 200px;
   padding-bottom: 60px;
+  height: 100vh;
+
 }
 
 #form label {

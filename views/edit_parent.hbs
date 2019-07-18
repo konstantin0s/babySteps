@@ -41,48 +41,53 @@
 </header>
 {{/if}}
 
-<h1 class="href">Edit Profile</h1>
-<form method="POST" action="/parent/{{showParentData.id}}/edit" class="form">
-  <div id="form-group">
-    <label for="level">First Name:</label>
-    <input type="text" name="firstName" value="{{editParent.firstName}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Last Name</label>
-    <input type="text" name="lastName" value="{{editParent.lastName}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Username:</label>
-    <input type="text" name="username" value="{{editParent.username}}" class="form-control">
-  </div>
-  {{!-- <div id="form-group">
+<div class="col-lg-12 editProfy">
+  <h1 class="href">Edit Profile</h1>
+  <form method="POST" action="/parent/{{showParentData.id}}/edit" class="form">
+    <div id="form-group">
+      <label for="level">First Name:</label>
+      <input type="text" name="firstName" value="{{editParent.firstName}}" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Last Name</label>
+      <input type="text" name="lastName" value="{{editParent.lastName}}" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Username:</label>
+      <input type="text" name="username" value="{{editParent.username}}" class="form-control">
+    </div>
+    {{!-- <div id="form-group">
   <label for="level">Password:</label>
   <input type="text" name="password" value="{{editParent.password}}" class="form-control" disabled>
 </div> --}}
-  <div id="form-group">
-    <label for="level">Image:</label>
-    <input type='text' name="image" value="{{editParent.image}}" placeholder="Image url" />
-  </div>
-  <div id="form-group">
-    <label for="level">City:</label>
-    <input type="text" name="city" value="{{editParent.city}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Country:</label>
-    <input type="text" name="country" value="{{editParent.country}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Kids:</label>
-    <input type="number" name="kids" value="{{editParent.kids}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Caring days:</label>
-    <input type="number" name="days" value="{{editParent.days}}" class="form-control">
-  </div>
-  <input type="submit" class="btn btn-primary" value="Submit">
-  </div>
+    <div id="form-group">
+      <label for="level">Image:</label>
+      <input type='text' name="image" value="{{editParent.image}}" placeholder="Image url" />
+    </div>
+    <div id="form-group">
+      <label for="level">City:</label>
+      <input type="text" name="city" value="{{editParent.city}}" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Country:</label>
+      <input type="text" name="country" value="{{editParent.country}}" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Kids:</label>
+      <input type="number" name="kids" value="{{editParent.kids}}" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Caring days:</label>
+      <input type="number" name="days" value="{{editParent.days}}" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</div>
 </form>
+</div>
 
+{{!-- <div class="footer-bottom text-center">
+  Copyright &copy; 2019 {{title}}
+</div> --}}
 <footer class="footer">
   <p>Copyright &copy; {{title}} 2019</p>
 </footer>
