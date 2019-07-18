@@ -33,7 +33,6 @@
     "request": "^2.88.0"
   },
   "engines": {
-    "node": "*",
-    "npm": "*"
+    "node": "10.x"
   }
 }
