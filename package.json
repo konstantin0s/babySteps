@@ -31,5 +31,9 @@
     "nodemailer": "^5.1.1",
     "nodemon": "^1.19.1",
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "*",
+    "npm": "*"
   }
 }
