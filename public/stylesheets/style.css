@@ -137,7 +137,7 @@ a {
 }
 
 .cf .logoTitle:hover {
-  background-color: #444;
+  f background-color: #444;
 }
 
 .cf li a:hover {
@@ -152,12 +152,25 @@ a {
   text-align: center;
 }
 
-.href {
+.signup a {
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  width: 100%;
+  left: 40px;
+  cursor: pointer;
+
   color: grey;
   position: relative;
   top: 100px;
-  left: 45%;
+
 }
+
+
 
 .sign {
   position: relative;
@@ -165,13 +178,14 @@ a {
   left: 100px;
 }
 
-/* .cf li{
-	margin-right: 5px;
-	list-style-type: none;
-} */
-/* .section-main {
-	background: url(../images/child.jpg) no-repeat cover;
-} */
+a:hover {
+  color: orange;
+}
+
+.sign:hover,
+.signup a:hover {
+  color: orange;
+}
 
 .child {
   width: 80%;
@@ -407,29 +421,29 @@ nav a#openup {
 
 
 
-.cfs {
+.cf {
   zoom: 1;
   margin: 0;
   padding: 0;
   top: 0px;
 }
 
-.cfs li {
+.cf li {
   /* zoom: 0.9; */
   margin: 0;
   padding: 0;
   top: 0px;
 }
 
-.cfs:before,
-.cfs:after {
+.cf:before,
+.cf:after {
   content: '';
   display: table;
   margin: 0;
   padding: 0;
 }
 
-.cfs:after {
+.cf:after {
   clear: both;
   margin: 0;
   padding: 0;
@@ -492,12 +506,6 @@ nav a#openup {
   position: relative;
   top: 100px;
   left: 476px;
-}
-
-.signup {
-  position: relative;
-  top: 20px;
-  left: -5%;
 }
 
 .error-message {
@@ -938,7 +946,7 @@ label {
 }
 
 
-@media only screen and (min-width: 420px) and (max-width: 788px) {
+@media only screen and (min-width: 420px) and (max-width: 600px) {
 
   .gift-cards {
     grid-template-columns: 1fr;
@@ -948,69 +956,149 @@ label {
     display: none;
   }
 
-  nav {
-    height: 45px;
+  #showcase {
+    position: relative;
     width: 100%;
     background-color: #333;
     color: #eee;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  nav ul {
+  #showcase ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     padding: 0;
-    margin: 0;
+    margin: 0 -90px;
+    /* height: 30px; */
     width: 100%;
   }
 
-  /* nav li {
+  #showcase h1 {
+    font-size: 0.5rem;
+  }
+
+  #showcase h2 {
+    font-size: 0.5rem;
+  }
+
+  #openup {
     position: relative;
-    top: 20px;
-    display: inline;
-    list-style-type: none;
-    color: white;
-  } */
 
-  .cf {
     margin: 0;
-    top: 0;
+    padding: 0;
+    height: 10px;
+    border-bottom: 0;
+  }
+
+  .cf::after {
+    /* height: 10px; */
+    margin: 0;
+    padding: 0;
+    height: auto;
+
+  }
+
+  nav a {
+    text-align: left;
+    width: 100%;
+    text-indent: 15px;
+    background: #333;
+    border-bottom: 1px solid #555;
+  }
+
+  nav a:hover {
+    background: #444;
     width: 100%;
   }
 
-  header .cf {
+  #showcase .logoTitle {
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 15px;
+    float: left;
+  }
+
+  #showcase header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+
+  .cf .nav-item {
+    position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+
+    /* left: -80px; */
+    float: right;
+    width: 100%;
+    font-size: 0.7rem;
+    text-align: center;
+    align-content: center;
   }
+
+  .cf ul {
+    width: 100%;
+    display: flex;
+    height: 10vh;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
 
   nav a#openup {
-    display: none;
-  }
-
-
-  .cf ul li a {
-    position: relative;
-    top: 1px;
-    /* float: left; */
-    /* zoom: 0.9; */
-    margin: 0;
-    padding: 0 15px;
-    /* top: -26px; */
+    display: block;
+    background-color: #333;
     width: 100%;
-    height: 48px;
+    position: relative;
+    height: 0vh;
     color: white;
   }
 
-
-  .cf ul li a:hover {
-    width: 100%;
+  nav a#openup:after {
+    content: '|||';
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg);
+    /* Safari and Chrome */
+    width: 30px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    left: 150px;
+    top: 25px;
   }
 
-  /* .cf .nav-item a {
+  .form-group {
+    position: relative;
+    top: -200px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    align-items: center;
-    text-align: center;
-  } */
+    /* background-color: red; */
+    height: 600px;
+    padding: 10px;
+  }
+
+  #form {
+    width: 100%;
+  }
 
   .section-main {
     position: relative;
@@ -1053,6 +1141,14 @@ label {
   #form {
     width: 60%;
   }
+
+  .footer-bottom {
+    position: fixed;
+    bottom: 0;
+    background-color: #333;
+    height: 60px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -1060,10 +1156,10 @@ label {
     display: none;
   }
 
-  .cfs #openup {
+  /* .cfs #openup {
     display: none;
     visibility: hidden;
-  }
+  } */
 
   #showcase {
     height: 50vh;
@@ -1155,34 +1251,33 @@ label {
     overflow-y: hidden;
   }
 
-  header .cf {
+  #showcase {
     height: 45px;
     width: 100%;
     background-color: #333;
     color: #eee;
-    position: fixed;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: stretch;
   }
 
-  /* nav a#openup {
-    display: none;
-  } */
 
 
-
-  nav ul {
+  #showcase ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 0;
-    margin: 0;
+    margin: 10px 0;
     width: 100%;
   }
 
-  header .logoTitle {
-    position: relative;
-    top: 5px;
-    display: inline;
-    color: white;
+  .cf li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
 
   #showcase {
@@ -1194,7 +1289,7 @@ label {
   }
 
   #showcase h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   #showcase h2 {
@@ -1204,18 +1299,6 @@ label {
   nav {
     height: auto;
     border-bottom: 0;
-  }
-
-  nav ul {
-    display: none;
-    height: auto;
-  }
-
-  nav li {
-    width: 100%;
-    float: left;
-    position: relative;
-    list-style: none;
   }
 
   nav a {
@@ -1228,11 +1311,46 @@ label {
 
   nav a:hover {
     background: #444;
+    width: 100%;
   }
 
-  .logoTitle {
+  #showcase .logoTitle {
     color: white;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 5px;
+    left: 25px;
+  }
+
+  #showcase header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+
+  .cf .nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: -80px;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+  }
+
+  nav a#openup {
+    display: block;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+    color: white;
   }
 
   nav a#openup:after {
@@ -1246,15 +1364,8 @@ label {
     height: 30px;
     display: inline-block;
     position: absolute;
-    right: 5px;
-    top: 20px;
-  }
-
-  nav a#openup {
-    display: block;
-    background-color: #333;
-    width: 100%;
-    position: relative;
+    right: 235px;
+    top: 25px;
   }
 
   .form-group {

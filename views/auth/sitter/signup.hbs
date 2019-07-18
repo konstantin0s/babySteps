@@ -10,33 +10,36 @@
     </ul>
   </nav>
 </header>
-<h2 class="signup"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h2>
 
 
-<form id="form" action="/sitter/signup" method="POST">
-  <label for="firstName">First Name:</label><br>
-  <input type="text" name="firstName" placeholder="First Name"><br>
-  <label for="lastName">Last Name:</label><br>
-  <input type="text" name="lastName" placeholder="Last Name"><br>
-  <label for="username">Username:</label><br>
-  <input type="text" name="username" placeholder="Username"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" name="password" placeholder="********"><br>
-  <label for="city">City:</label><br>
-  <input type="text" name="city" placeholder="City"><br>
-  <label for="country">Country:</label><br>
-  <input type="text" name="country" placeholder="Country"><br>
-  <label for="age">Age:</label><br>
-  <input type="text" name="age" placeholder="Age"><br>
-  <label for="salary">Salary($):</label><br>
-  <input type="text" name="salary" placeholder="Salary"><br>
-  <label for="image">Image:</label><br>
-  <input type='text' name='image' placeholder="Image url" />
-  <div class="form-group col-md-4">
-    <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
-  </div>
-  <button type="submit">Create account</button>
-</form>
+
+<div class="container">
+  <h2 class="signup"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h2>
+  <form id="form" action="/sitter/signup" method="POST">
+    <label for="firstName">First Name:</label><br>
+    <input type="text" name="firstName" placeholder="First Name"><br>
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" name="lastName" placeholder="Last Name"><br>
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" placeholder="Username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" placeholder="********"><br>
+    <label for="city">City:</label><br>
+    <input type="text" name="city" placeholder="City"><br>
+    <label for="country">Country:</label><br>
+    <input type="text" name="country" placeholder="Country"><br>
+    <label for="age">Age:</label><br>
+    <input type="text" name="age" placeholder="Age"><br>
+    <label for="salary">Salary($):</label><br>
+    <input type="text" name="salary" placeholder="Salary"><br>
+    <label for="image">Image:</label><br>
+    <input type='text' name='image' placeholder="Image url" />
+    <div class="form-group col-md-4">
+      <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
+    </div>
+    <button type="submit">Create account</button>
+  </form>
+</div>
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>

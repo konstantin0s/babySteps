@@ -8,23 +8,26 @@
   </nav>
 </header>
 
-<form action="/sitter/login" method="POST" id="form">
-  <label for="username">Username</label>
-  <input type="text" name="username">
+<div class="container">
 
-  <label for="password">Password</label>
-  <input type="password" name="password">
+  <form action="/sitter/login" method="POST" id="form">
+    <label for="username">Username</label>
+    <input type="text" name="username">
 
-  {{#if errorMessage }}
-  <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
+    <label for="password">Password</label>
+    <input type="password" name="password">
 
-  <button type="submit">Sign in</button>
+    {{#if errorMessage }}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
 
-  <p class="account-message href">
-    Don't have an account? <a href="/sitter/signup">Sign up</a>
-  </p>
-</form>
+    <button type="submit">Sign in</button>
+
+    <p class="account-message href">
+      Don't have an account? <a href="/sitter/signup">Sign up</a>
+    </p>
+  </form>
+</div>
 
 
 <footer class="footer">
