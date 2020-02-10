@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
     "hbs": "^4.0.3",
     "mongoose": "^5.4.16",
     "nodemailer": "^5.1.1",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.4",
     "request": "^2.88.0"
   },
   "engines": {
