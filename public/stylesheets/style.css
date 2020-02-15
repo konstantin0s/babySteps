@@ -232,8 +232,7 @@ a:hover {
 }
 
 .section-main h1,
-h2,
-p {
+h2 {
   position: relative;
   top: -90px;
   color: black;
@@ -589,6 +588,9 @@ nav a#openup {
 
 .profile-img {
   text-align: center;
+  left: 20px;
+  width: 200px;
+  height: 150px;
 }
 
 .profile-img img {
@@ -681,6 +683,18 @@ nav a#openup {
 
 .profile-work ul {
   list-style: none;
+}
+
+.profile-tab {
+  left: 100px;
+  position: relative;
+  color: black;
+  top: 20px;
+  margin-bottom: 200px;
+}
+
+.babys {
+  left: -10px !important;
 }
 
 .profile-tab label {
@@ -836,6 +850,7 @@ a {
   font-size: 19px;
   position: relative;
   top: 40px;
+  color: #333;
   left: 0px;
   text-transform: capitalize;
 }
@@ -855,6 +870,8 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 200px;
+ 
 }
 
 .addRevForm label {
@@ -1267,7 +1284,7 @@ label {
     top: -20px;
   }
 
-  .section-main  h2, p {
+  .section-main  h2 {
     display: none;
   }
 
