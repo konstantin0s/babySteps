@@ -23,9 +23,8 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
-
   min-height: 400px;
-  margin-bottom: 400px;
+  /* margin-bottom: 400px; */
   clear: both;
 
 }
@@ -172,24 +171,6 @@ a:hover {
   font-weight: bold;
 }
 
-.signup a {
-
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  top: 80px;
-  width: 100%;
-  left: 40px;
-  cursor: pointer;
-
-  color: grey;
-  position: relative;
-  top: 100px;
-
-}
-
 .editProfy {
   position: absolute;
   top: 10px;
@@ -208,6 +189,7 @@ a:hover {
   /* color: orange; */
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .editProfy .form {
@@ -231,13 +213,14 @@ a:hover {
 
 .sign {
   position: relative;
-  left: 45%;
-  left: 100px;
+  left: auto;
+  text-decoration: none;
 }
 
 .sign:hover,
-.signup a:hover {
-  color: orange;
+.signup-title a:hover {
+  color: orange; 
+  text-decoration: none;
 }
 
 .child {
@@ -292,6 +275,7 @@ section#entertainment {
   height: 100vh;
   position: relative;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 #showcase .container {
@@ -507,54 +491,7 @@ nav a#openup {
   padding: 0;
 }
 
-#form {
-  margin: 30px auto;
-  width: 380px;
-  position: relative;
-  top: 200px;
-  padding-bottom: 60px;
-  height: 100vh;
 
-}
-
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
-}
-
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .3s ease background;
-  width: 100%;
-}
-
-#form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: .3s ease background;
-}
 
 .form {
   position: relative;
@@ -562,11 +499,12 @@ nav a#openup {
   left: 300px;
 }
 
-.login {
+
+/* .login {
   position: relative;
   top: 100px;
   left: 476px;
-}
+} */
 
 .error-message {
   background: #F02B63;
@@ -861,6 +799,11 @@ a {
 .account-message {
   position: relative;
   top: 10px;
+  text-decoration: none;
+}
+
+.href {
+  text-decoration: none;
 }
 
 /* style reviews*/
@@ -1207,17 +1150,6 @@ label {
     top: 25px;
   }
 
-  .form-group {
-    position: relative;
-    top: -200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    /* background-color: red; */
-    height: 600px;
-    padding: 10px;
-  }
 
   #form {
     width: 100%;

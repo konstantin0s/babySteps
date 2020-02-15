@@ -11,12 +11,9 @@
   </nav>
 </header>
 
-
-
-
-<div class="container">
-  <h2 class="signup"><a class="nav-link href" href='/sitter/signup'>Are you a Sitter?</a> </h2>
-  <form id="form" action="/parent/signup" method="POST">
+<div class="container signup-container">
+  <h2 class="signup-title"><a class="nav-link href" href='/sitter/signup'>Are you a Sitter?</a> </h2>
+  <form id="form" class="parent-form" action="/parent/signup" method="POST">
     <label for="firstName">First Name:</label><br>
     <input type="text" name="firstName" placeholder="First Name"><br>
     <label for="lastName">Last Name:</label><br>
@@ -48,7 +45,10 @@
 {{/if}}
 
 
+<!-- Footer -->
+<footer>
 
-<footer class="footer">
-  <p>Copyright &copy; {{title}} 2019</p>
+  <div class="footer-bottom text-center">
+    Copyright &copy; <script>document.write(new Date().getFullYear())</script> {{title}}
+  </div>
 </footer>

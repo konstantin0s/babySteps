@@ -1,3 +1,4 @@
+
 <header>
   <nav class='cf'>
     <ul class='cf'>
@@ -9,9 +10,9 @@
 </header>
 {{!-- <h2 class="signup"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h2> --}}
 
-<div class="form-group">
+<div class="form-group login-container">
 
-  <form action="/parent/login" method="POST" id="form">
+  <form action="/parent/login" class="login" method="POST" id="form">
     <label for="username">Username</label>
     <input type="text" name="username">
 
@@ -24,12 +25,17 @@
 
     <button type="submit">Sign in</button>
 
-    <p class="account-message">
+    <p class="account-message href">
       Don't have an account? <a class="sign" href="/parent/signup">Sign up</a>
     </p>
   </form>
 </div>
 
-<footer class="footer">
-  <p>Copyright &copy; {{title}} 2019</p>
+
+<!-- Footer -->
+<footer>
+
+  <div class="footer-bottom text-center">
+    Copyright &copy; <script>document.write(new Date().getFullYear())</script> {{title}}
+  </div>
 </footer>
