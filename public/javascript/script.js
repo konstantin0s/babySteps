@@ -18,7 +18,7 @@ function searchHandler(event) {
 if (a) {
   txtValue = a.textContent || a.innerText;
 
-  console.log(txtValue);
+  // console.log(txtValue);
   if (txtValue.indexOf(filter) > -1) {
     td[i].style.display = "";
   } else {

@@ -36,7 +36,18 @@
 </header>
 {{/if}}
 
-<h1 class="pTitle">Meet families looking for sitter:</h1>
+
+<div class="title-container">
+  <h1 class="pTitle">Meet Parents:</h1>
+
+</div>
+  <div class="formless">
+        <form>
+        <input id="input" class="input" type="text"
+        placeholder="Search" aria-label="Search" />
+         <div class="search-x"></div>
+      </form>
+  </div>
 
 <div class="container bootstrap snippet">
     <div class="row">
@@ -44,17 +55,19 @@
             <div class="main-box no-header clearfix">
                 <div class="main-box-body clearfix">
                     <div class="table-responsive">
-                        <table class="table user-list">
+                        <table id="table" class="table user-list">
                             <thead>
                                 <tr>
                                     <th><span>User</span></th>
-                                    <th><span>Created</span></th>
+                                    {{!-- <th><span>Created</span></th> --}}
                                     {{!-- <th class="text-center"><span>Status</span></th> --}}
                                     <th><span>City</span></th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
+
                             {{#each parents}}
+
                             <tbody>
                                 <tr>
 
@@ -64,7 +77,7 @@
                                             {{this.lastName}}</a>
                                         <span class="user-subhead">Member</span>
                                     </td>
-                                    <td>{{this.createdAt}}</td>
+                                    {{!-- <td>{{this.createdAt}}</td> --}}
                                     <td>
                                         <a class="usr-link name" href="#">{{this.city}}</a>
                                     </td>
