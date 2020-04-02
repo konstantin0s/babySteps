@@ -1,3 +1,39 @@
+//implement search
+var inputSearch = document.getElementById('input')
+  inputSearch.addEventListener('keyup', () => {
+    this.searchHandler();
+  });
+  
+
+
+function searchHandler(event) {
+  var filter, table, txtValue;
+  filter = jsUcfirst(inputSearch.value);
+  // console.log(filter)
+  table = document.getElementById("table");
+ var td = table.getElementsByTagName('td');
+
+ for (var i = 0; i < td.length; i++) {
+  var a = td[i].getElementsByTagName("a")[0];
+if (a) {
+  txtValue = a.textContent || a.innerText;
+
+  console.log(txtValue);
+  if (txtValue.indexOf(filter) > -1) {
+    td[i].style.display = "";
+  } else {
+    td[i].style.display = "none";
+  }
+}
+}
+}
+
+jsUcfirst = str => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
+
 // Responsive Nav
 (function ($) {
   menu = $('nav ul');

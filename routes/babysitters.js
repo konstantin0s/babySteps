@@ -14,7 +14,7 @@ router.get('/babysitters', (req, res, next) => {
       res.render('babysitters', 
       {babysitters: babysitters, family:req.session.family, sitter:req.session.sitter});
     }
-    
+   
   });
 });
 

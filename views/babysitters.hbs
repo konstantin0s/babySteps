@@ -38,7 +38,14 @@
 </header>
 {{/if}}
 
-<h1 class="pTitle">Meet babysitters looking for a job:</h1>
+<div class="title-container">
+  <h1 class="pTitle">Meet babysitters:</h1>
+  <form className="active-pink active-pink-2">
+        <input id="input" class="form-item input" type="text"
+        placeholder="Search" aria-label="Search" />
+         <div className="search"></div>
+      </form>
+</div>
 
 <div class="container bootstrap snippet">
   <div class="row">
@@ -46,11 +53,11 @@
       <div class="main-box no-header clearfix">
         <div class="main-box-body clearfix">
           <div class="table-responsive">
-            <table class="table user-list">
+            <table id="table" class="table user-list">
               <thead>
                 <tr>
-                  <th><span>User</span></th>
-                  <th><span>Created</span></th>
+                  <th><span>Babysitter</span></th>
+                  {{!-- <th><span>Created</span></th> --}}
                   {{!-- <th class="text-center"><span>Status</span></th> --}}
                   <th><span>City</span></th>
                   <th>&nbsp;</th>
@@ -58,14 +65,14 @@
               </thead>
               {{#each babysitters}}
               <tbody>
-                <tr>
+                <tr id="tr">
 
                   <td>
                     <img src="{{this.image}}" alt="">
                     <a class="name" href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
-                    <span class="user-subhead">Member</span>
+                    <span class="user-subhead">Babysitter</span>
                   </td>
-                  <td>{{this.createdAt}}</td>
+                  {{!-- <td id="date">{{this.createdAt}}</td> --}}
                   {{!-- <td class="text-center">
                                         <span class="label label-default">pending</span>
                                     </td> --}}

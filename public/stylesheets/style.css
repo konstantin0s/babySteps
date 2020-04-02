@@ -11,9 +11,9 @@
 
 html,
 body {
-   margin:0;
-   padding:0;
-   height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -119,6 +119,7 @@ a {
   display: inline;
   margin-right: 10px;
 }
+
 /*navigation */
 .cf {
   margin: 0;
@@ -220,7 +221,7 @@ a:hover {
 
 .sign:hover,
 .signup-title a:hover {
-  color: orange; 
+  color: orange;
   text-decoration: none;
 }
 
@@ -870,7 +871,7 @@ a {
   align-items: center;
   flex-direction: column;
   margin-bottom: 200px;
- 
+
 }
 
 .addRevForm label {
@@ -907,11 +908,60 @@ a {
   top: 20px;
 }
 
+.title-container {
+  width: 100%;
+  height: 350px;
+  background: url('https://images.pexels.com/photos/590491/pexels-photo-590491.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+#table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#table th,
+#table td {
+  text-align: left;
+  padding: 12px;
+}
+
+#table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* 
+#table tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+} */
+
+#input {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
 .pTitle {
-  color: black;
+  color: rgb(117, 109, 109);
   position: relative;
-  top: 100px;
-  left: 500px;
+  top: 45px;
+  align-self: center;
+  width: 80%;
+  background: #fff;
+  padding: 1em;
+  height: 150px;
+  font-size: 1.6em;
 }
 
 header {
@@ -956,9 +1006,9 @@ label {
   left: 220px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 950px) and (orientation:landscape)  { 
+@media screen and (min-width: 600px) and (max-width: 950px) and (orientation:landscape) {
 
-    footer .footer-cols {
+  footer .footer-cols {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -967,11 +1017,11 @@ label {
     font-size: 14px;
     margin-bottom: 250px;
     text-align: center;
-}  
+  }
 
-.footer-cols {
-  margin-bottom: 2em;
-}
+  .footer-cols {
+    margin-bottom: 2em;
+  }
 }
 
 
@@ -985,7 +1035,7 @@ label {
 
 
 /* @media only screen and (min-width: 420px) and (max-width: 600px) { */
-  @media only screen and (min-width: 481px) and (max-width: 600px) and (orientation:portrait) {
+@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation:portrait) {
 
   .gift-cards {
     grid-template-columns: 1fr;
@@ -1032,7 +1082,8 @@ label {
     border-bottom: 0;
   }
 
-  .cf::before, .cf::after {
+  .cf::before,
+  .cf::after {
     content: '';
     display: table;
     margin: 0;
@@ -1210,7 +1261,7 @@ label {
     width: 60%;
   }
 
-  
+
   footer .footer-cols {
     display: grid;
     grid-gap: 20px;
@@ -1220,7 +1271,7 @@ label {
     font-size: 14px;
     margin-bottom: 250px;
     text-align: center;
-}  
+  }
 
   .footer-bottom {
     position: fixed;
@@ -1232,7 +1283,7 @@ label {
 }
 
 @media only screen and (max-width: 479px) {
-  
+
   body {
     height: 40vh;
   }
@@ -1252,7 +1303,7 @@ label {
     font-size: 22px;
 
   }
-  
+
   .hide-on-small {
     display: none;
   }
@@ -1279,7 +1330,7 @@ label {
     top: -20px;
   }
 
-  .section-main  h2 {
+  .section-main h2 {
     display: none;
   }
 
@@ -1357,7 +1408,7 @@ label {
 
 }
 
- /* @media screen and (min-width: 480px) and (max-width: 541px) {
+/* @media screen and (min-width: 480px) and (max-width: 541px) {
    body {
     height: 40vh;
   }
