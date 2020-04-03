@@ -14,7 +14,7 @@ router.get('/parents', (req, res, next) => {
     } else {
       debugger
       res.render('parents',
-      {parents: parents, family:req.session.family, sitter:req.session.sitter});
+      {parents: parents, family:req.session.family, sitter:req.session.currentUser});
     }
     
   });

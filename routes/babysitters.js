@@ -12,7 +12,9 @@ router.get('/babysitters', (req, res, next) => {
       console.log(err);
     } else {
       res.render('babysitters', 
-      {babysitters: babysitters, family:req.session.family, sitter:req.session.sitter});
+      {babysitters: babysitters, family:req.session.currentUser, sitter:req.session.sitter});
+      console.log('family', req.session.currentUser);
+      console.log('family', req.session.sitter);
     }
    
   });

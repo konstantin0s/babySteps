@@ -1,19 +1,24 @@
-{{#if family}}
+
 <header>
   <nav class='cf'>
     <ul class='cf'>
       <li class="nav-item">
         <a class="nav-link logoTitle" href="/">{{title}}</a>
       </li>
-      {{!-- <li class="nav-item">
-            <a class="nav-link" href='/babysitters'>View Babysitters</a>
-          </li> --}}
-      {{#if parent}}
+
+     {{!-- {{#if parent}}
       <li class="nav-item">
         <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a>
         <a class="nav-link" href="/parent/{{parent._id}}">{{parent.firstName}} {{parent.lastName}}</a>
       </li>
-      {{/if}}
+      {{/if}} --}}
+
+
+      {{#if family}}
+
+          <li class="nav-item">
+  <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href='/logout'>Logout</a>
       </li>

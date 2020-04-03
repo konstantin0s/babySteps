@@ -127,13 +127,13 @@ a {
 }
 
 
-.cf ul li a {
+/* .cf ul li a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 100%;
-}
+} */
 
 .cf li a:hover {
   background-color: #444;
@@ -284,12 +284,12 @@ section#entertainment {
 }
 
 #showcase h1 {
-  font-size: 4rem;
+  font-size: 1.5em;
   margin-bottom: 0;
 }
 
 #showcase h2 {
-  font-size: 2rem;
+  font-size: 1em;
 }
 
 /* Footer */
@@ -306,13 +306,12 @@ footer .footer-cols {
 .footer {
   position: fixed;
   bottom: 0;
-  /* background-color: grey; */
   background-color: #333;
   height: 60px;
   width: 100%;
 }
 
-.footer p {
+.footer .footer-bottom p {
   color: white;
   text-align: center;
 }
@@ -336,8 +335,9 @@ footer .footer-bottom {
   bottom: 0;
   position: fixed;
   margin: 0;
+  color: #fff;
   width: 100%;
-  padding: 40px;
+  padding: 22px;
 }
 
 /* Utility Classes */
@@ -352,7 +352,9 @@ footer .footer-bottom {
 }
 
 .lead {
-  font-size: 1.3rem;
+  font-size: 1em !important;
+  position: relative;
+  top: -71px;
 }
 
 .text-center {
@@ -428,12 +430,21 @@ nav li {
   list-style-type: none;
 }
 
+.cf li:nth-child(1) {
+  position: absolute;
+  left: 0em;
+}
+
 .cf li:nth-child(2) {
+  position: absolute;
   float: right;
+  left: 63%;
 }
 
 .cf li:nth-child(3) {
+  position: absolute;
   float: right;
+  left: 83%;
 }
 
 
@@ -461,19 +472,27 @@ nav a#openup {
   width: 40%;
 }
 
-
+.cf li a:hover {
+  color: #c9c505;
+  text-decoration: none;
+}
 
 .cf {
   zoom: 1;
   margin: 0;
   padding: 0;
   top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .cf li {
-  margin: 0;
   padding: 0;
   top: 0px;
+  margin: 0 1em;
+  width: 140px;
+  font-size: 1em;
 }
 
 .cf:before,
@@ -1332,11 +1351,11 @@ label {
   }
 
   #showcase h1 {
-    font-size: 3rem;
+    font-size: 1.5em;
   }
 
   #showcase h2 {
-    font-size: 1.5rem;
+    font-size: 1em;
   }
 
   nav {
