@@ -8,7 +8,7 @@
             <li class="nav-item right">
                 <a class="nav-link" href='/parents'>To Parents</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
             </li>
             <li class="nav-item logout">
@@ -41,18 +41,13 @@
     {{/if}} 
 
 
-<div class="container emp-profile">
-    <form method="post">
+<div class="emp-profile">
+    <form class="form-container" method="post">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="profile-img">
                     <img src="{{baby.image}}" alt="" />
-                    {{!-- {{#unless sitter}}
-                              <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                      {{/unless}} --}}
+                  
                     {{#if sitter}}
                     <div class="file btn btn-lg btn-primary">
                         
@@ -60,42 +55,40 @@
                         href="/babysitter/edit{{this._id}}"> Change Photo</a> 
                     </div>
                     {{/if}}
-                    {{!-- <div class="file btn btn-lg btn-primary">
-
-                      </div> --}}
-                    {{!-- {{/if}} --}}
+                
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="profile-head">
-                    <h5>
-                        Name: {{baby.firstName}} {{baby.lastName}}
-                    </h5>
-                    <h6>
-                        City {{baby.city}}
-                    </h6>
-                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                  
+                    <p class="profile-rating">RANKINGS : <span>8/10</span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                 aria-controls="home" aria-selected="true">About</a>
                         </li>
+                           <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" 
+                            href="#profile" role="tab" aria-controls="profile" aria-selected="true">Extra Info</a>
+                        </li>
+                 <li class="nav-item">
+                    {{#if sitter}}
+                    <div>
+                        <button class="btn btn-default"> <a class="profile-edit-btn" name="btnAddMore"
+                                href="/babysitter/edit{{this._id}}">Settings</a> </button>
+                    </div>
+                 {{/if}}
+                </li>
+
                     </ul>
                 </div>
             </div>
-            {{#if sitter}}
-            <div class="col-md-2">
-                <button class="btn btn-success"> <a class="profile-edit-btn" name="btnAddMore"
-                        href="/babysitter/edit{{this._id}}">Edit Profile</a> </button>
-            </div>
-            {{/if}}
 
         </div>
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-8">
-                <div class="tab-content profile-tab babys" id="myTabContent">
+
+        <div class="row under-pic">
+        <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
                             <div class="col-md-6">
@@ -129,7 +122,17 @@
                                 <p>Babysitter</p>
                             </div>
                         </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                                <label>City</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{baby.city}}</p>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
                             <div class="col-md-6">
@@ -165,6 +168,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
+                                <label>Joined at</label><br />
+                                <p>{{baby.createdAt}}</p>
                             </div>
                         </div>
                     </div>

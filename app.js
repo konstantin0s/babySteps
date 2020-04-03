@@ -4,13 +4,21 @@ const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const moment = require('moment');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
 const app = express();
-const Parent = require("./models/parent");
-const Babysitter = require("./models/babysitter");
+
+
+// hbsEngine = hbs.create({
+//   helpers: {
+//       formatDate: function (date, format) {
+//           return moment(date).format(format);
+//       }
+//   }
+// });
 
 
 mongoose
