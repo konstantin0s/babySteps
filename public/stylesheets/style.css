@@ -327,10 +327,20 @@ footer .footer-cols {
 .footer {
   position: fixed;
   bottom: 0;
+  color: #fff;
+  text-align: center;
   background-color: #333;
   height: 60px;
   width: 100%;
 }
+
+.footer p {
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 1em;
+}
+
 
 .footer .footer-bottom p {
   color: white;
@@ -389,8 +399,24 @@ footer .footer-bottom {
   display: inline-block;
 }
 
+.btn-success {
+  width: 70%;
+  color: #fff;
+}
+
+.btn-success a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .btn-primary {
   background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary a:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
 .btn-primary:hover {
