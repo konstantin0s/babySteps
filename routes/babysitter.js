@@ -12,7 +12,7 @@ router.get('/babysitter/:id', function(req, res) {
       // res.render('babysitter',
       // {baby: baby});
       res.render('babysitter', 
-      {baby: baby, family:req.session.currentUser, sitter:req.session.currentUser});
+      {baby: baby, family:req.session.family, sitter:req.session.sitter});
     }
   });
 })

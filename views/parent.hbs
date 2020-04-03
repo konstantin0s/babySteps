@@ -1,38 +1,39 @@
-{{!-- {{#unless parent}} --}}
+ {{#if family}} 
 <header>
     <nav class='cf'>
         <ul class='cf'>
             <li class="nav-item">
                 <a class="nav-link logoTitle" href="/">{{title}}</a>
             </li>
+        
             <li class="nav-item">
-                <a class="nav-link" href='/babysitters'>View Babysitters</a>
+                <a class="nav-link" href="#">{{parent.firstName}} {{parent.lastName}}</a>
             </li>
-                     <li class="nav-item">
-  <a class="nav-link" href="#">{{parent.firstName}} {{parent.lastName}}</a>
-      </li>
-            <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link third" href='/babysitters'>To Sitters</a>
+            </li>
+            <li class="nav-item logout">
                 <a class="nav-link" href='/logout'>Logout</a>
             </li>
         </ul>
     </nav>
 </header>
-{{!-- {{/unless}} --}}
+{{/if}} 
 
-{{#if babysitters}}
+{{#if sitter}}
 <header>
     <nav class='cf'>
         <ul class='cf'>
             <li class="hide-on-small">
                 <a class="nav-link" href="/">{{title}}</a>
             </li>
-            {{!-- <li class="nav-item">
-                <a class="nav-link" href='/parents'>View Parents</a>
-            </li> --}}
             <li class="nav-item">
-                <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
+                <a class="nav-link" href='/parents'>To Parents</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/babysitter/{{sitter._id}}">{{sitter.firstName}} {{sitter.lastName}}</a>
+            </li>
+            <li class="nav-item logout">
                 <a class="nav-link" href='/logout'>Logout</a>
             </li>
         </ul>
@@ -54,12 +55,12 @@
                                 <input type="file" name="file"/>
                             </div>
                             {{/unless}} --}}
-                    {{#unless parent}}
+                    {{#if family}}
                     <div class="file btn btn-lg btn-primary">
                         Change Photo
                         <input type="file" name="file" />
                     </div>
-                    {{/unless}}
+                    {{/if}}
                 </div>
             </div>
             <div class="col-md-6">
@@ -88,12 +89,12 @@
             {{!-- <button class="btn btn-default"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
                     </div>
                      {{/unless}} --}}
-            {{#unless sitter}}
+            {{#if family}}
             <div class="col-md-2">
                 {{!-- <a class="profile-edit-btn" name="btnAddMore" href="/parent/{{parent._id}}">Edit Profile</a> --}}
                 <button class="btn btn-success"> <a href="/parent/{{parent.id}}/edit">Edit</a></button>
             </div>
-            {{/unless}}
+            {{/if}}
         </div>
         <div class="row">
             <div class="col-md-8">

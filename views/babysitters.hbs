@@ -2,9 +2,6 @@
 <header>
   <nav class='cf'>
     <ul class='cf'>
-      <li class="nav-item">
-        <a class="nav-link logoTitle" href="/">{{title}}</a>
-      </li>
 
      {{!-- {{#if parent}}
       <li class="nav-item">
@@ -16,11 +13,15 @@
 
       {{#if family}}
 
+         <li class="nav-item">
+          <a class="nav-link logoTitle" href="/">{{title}}</a>
+        </li>
+
           <li class="nav-item">
   <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href='/logout'>Logout</a>
+        <a class="nav-link logout" href='/logout'>Logout</a>
       </li>
     </ul>
   </nav>
@@ -35,7 +36,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item logout">
         <a class="nav-link" href='/logout'>Logout</a>
       </li>
     </ul>

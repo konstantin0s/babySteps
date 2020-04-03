@@ -71,9 +71,10 @@ app.use('/', require('./routes/auth2'));
 
 app.use(["/parent*", "/babysitter*"], (req, res, next) => {
   if (req.session.currentUser) {
-    res.locals.sitter = req.session.currentUser.sitter; //babysitters
-    res.locals.family = req.session.currentUser.family; //parents
-
+    res.locals.sitter = req.session.sitter; //babysitters
+    res.locals.family = req.session.family; //parents
+    console.log('res local sitter', res.locals.sitter);
+    console.log('res local family', res.locals.family);
     next(); // ==> go to the next route ---
   } else {                          //    |
     res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up

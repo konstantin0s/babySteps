@@ -120,7 +120,9 @@ router.post("/parent/login", (req, res, next) => {
         // Save the login in the session!
         debugger
         req.session.currentUser = user;
-        req.session.family = true;
+        req.session.family = user;
+        // req.session.family = user;
+        console.log('session sitter',req.session.sitter);
         res.redirect("/babysitters");
       } else {
         res.render("auth/parent/login", {
