@@ -29,6 +29,7 @@ router.get('/parent/:id', function(req, res) {
       res.render('parent',
       {parent: parent, family:req.session.currentUser, sitter:req.session.currentUser});
       // debugger;
+      console.log('parent', parent);
     }
   });
 })
