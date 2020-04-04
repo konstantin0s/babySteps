@@ -33,14 +33,13 @@ body {
 .cf .login {
   position: absolute;
   left: -9px;
-  width: 130px;
-  /* top: -30px; */
+  width: 180px;
 }
 
 
 .cf .register {
   position: absolute;
-  width: 130px;
+  width: 180px;
   left: 80%;
 }
 
@@ -105,9 +104,13 @@ th {
 
 header .nav-link {
   margin-right: 80px;
-
+  padding: 0.5rem 2.6rem;
   left: 10px;
   height: 45px;
+}
+
+header .nav-link:hover {
+  width: 180px;
 }
 
 header .right {
@@ -164,7 +167,8 @@ a {
 .cf .nav-item a {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 180px;
+  font-size: 1em;
   align-items: center;
   text-align: center;
 }
@@ -554,10 +558,11 @@ nav a#openup {
   width: 40%;
 }
 
-.cf li a:hover {
+.cf li a:hover,
+.cf .navlink {
   color: #c9c505;
   text-decoration: none;
-  width: 148px;
+  width: 180px;
   font-size: 1em;
 }
 
@@ -576,7 +581,7 @@ nav a#openup {
   padding: 0;
   top: 0px;
   margin: 0 1em;
-  width: 140px;
+  width: 180px;
   font-size: 1em;
 }
 
