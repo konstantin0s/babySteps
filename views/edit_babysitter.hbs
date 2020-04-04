@@ -17,7 +17,13 @@
 </header>
 {{/if}}
 
-<form method="POST" action="/babysitter/edit" class="form">
+<div class="col-lg-12 editProfy text-center">
+ <div class="before-form text-center">
+     <div class="panel-body text-center">
+           <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-circle profile-avatar" alt="User avatar">
+      </div>
+ </div>
+<form method="POST" action="/babysitter/edit" class="form-center">
   <h1 class="href">Edit Profile</h1>
   <div id="form-group">
     <label for="level">First Name:</label>
@@ -33,7 +39,8 @@
   </div>
   <div id="form-group">
     <label for="level">Image:</label>
-    <input type='text' name="image" value="{{editBaby.image}}" placeholder="Image url" />
+    <input type='text' name="image" value="{{editBaby.image}}" class="form-control"
+     placeholder="Image url" />
   </div>
   <div id="form-group">
     <label for="level">City:</label>
@@ -51,9 +58,10 @@
     <label for="level">Salary:</label>
     <input type="number" name="salary" value="{{editBaby.salary}}" class="form-control">
   </div>
-  <input type="submit" class="btn btn-primary" value="Submit">
+  <input type="submit" id="button" class="btn btn-primary" value="Submit">
   </div>
 </form>
+</div>
 
 <footer class="footer">
   <p>Copyright &copy; {{title}} <script>document.write(new Date().getFullYear())</script></p>

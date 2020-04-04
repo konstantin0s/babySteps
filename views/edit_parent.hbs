@@ -33,7 +33,7 @@
         <a class="nav-link" href="/parent/{{showParentData.id}}">{{showParentData.firstName}}
           {{showParentData.lastName}}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item logout">
         <a class="nav-link" href='/logout'>Logout</a>
       </li>
     </ul>
@@ -49,6 +49,7 @@
  </div>
   <form method="POST" action="/parent/{{showParentData.id}}/edit"
    class="form-center">
+    <h1 class="href">Edit Profile</h1>
     <div id="form-group">
       <label for="level">First Name:</label>
       <input type="text" name="firstName" value="{{editParent.firstName}}" class="form-control">
