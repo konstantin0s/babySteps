@@ -75,3 +75,46 @@
     color: rgb(243, 250, 250);
     background-color: rgb(170, 162, 162);
 }
+
+/*edit page */
+.before-form {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* background-color: rgb(190, 181, 181); */
+    background-color: #fff;
+    top: 40px;
+}
+
+.editProfy {
+    background-color: rgb(230, 217, 217);
+}
+
+.before-form img {
+    width: 20%;
+    top: 20px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.form-center #form-group {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 0.5em;
+}
+
+#form-group label {
+    display: inline-block;
+    width: 35%;
+    position: relative;
+    top: 0.5em;
+}
+
+#button {
+    width: 100px !important;
+    position: relative;
+    left: 14em;
+}
+
+/* endi of edit page */

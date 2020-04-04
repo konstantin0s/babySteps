@@ -201,8 +201,6 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  /* height: 100vh;
-  background-color: yellow; */
   overflow-y: hidden;
 }
 
@@ -215,12 +213,16 @@ a:hover {
   justify-content: space-around;
 }
 
-.editProfy .form {
+.editProfy .form-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-self: center;
   height: 100vh;
-  top: -450px;
+  width: 70%;
+  /* left: 0em; */
+  top: 25px;
+  margin-bottom: 7em;
 }
 
 
@@ -413,6 +415,7 @@ footer .footer-bottom {
 .btn-primary {
   background: var(--primary-color);
   color: #fff;
+  width: 30%;
 }
 
 .btn-primary a:hover {
@@ -571,14 +574,6 @@ nav a#openup {
   clear: both;
   margin: 0;
   padding: 0;
-}
-
-
-
-.form {
-  position: relative;
-  top: 300px;
-  left: 300px;
 }
 
 
@@ -1046,12 +1041,6 @@ label {
   /* label class from edit pages */
 }
 
-.form {
-  position: relative;
-  top: 100px;
-  width: 40%;
-  left: 30%;
-}
 
 .fTitle {
   color: black;
