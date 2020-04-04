@@ -106,6 +106,7 @@ header .nav-link {
   margin-right: 80px;
   padding: 0.5rem 2.6rem;
   left: 10px;
+  width: 180px;
   height: 45px;
 }
 
@@ -559,10 +560,10 @@ nav a#openup {
 }
 
 .cf li a:hover,
-.cf .navlink {
+.cf .nav-link {
   color: #c9c505;
   text-decoration: none;
-  width: 180px;
+  width: 190px !important;
   font-size: 1em;
 }
 
@@ -1239,7 +1240,7 @@ label {
     flex-direction: row;
     justify-content: space-around;
     float: right;
-    width: 100%;
+    width: 180px;
     font-size: 0.7rem;
     text-align: center;
     align-content: center;
