@@ -1,79 +1,79 @@
 .signup-title {
-    position: relative;
-    top: -30px;
-    color: black;
-    left: -40px;
+  position: relative;
+  top: -30px;
+  color: black;
+  left: -40px;
 }
 
 .signup-title a {
 
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    top: 80px;
-    width: 100%;
-    left: 40px;
-    cursor: pointer;
-  
-    color: grey;
-    position: relative;
-    top: 100px;
-  
-  }
-  
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  width: 100%;
+  left: 40px;
+  cursor: pointer;
+
+  color: grey;
+  position: relative;
+  top: 100px;
+
+}
+
 
 .parent-form {
-    margin: 30px auto;
-    width: 380px;
-    position: relative;
-    top: 100px;
-    padding-bottom: 260px;
-    height: auto;
-  
-  }
+  margin: 30px auto;
+  width: 380px;
+  position: relative;
+  top: 100px;
+  padding-bottom: 260px;
+  height: auto;
 
-  
-  .parent-form label {
-    color: #666;
-    display: inline-block;
-    margin-bottom: 10px;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .parent-form input,
-  .parent-form button {
-    box-sizing: border-box;
-    font-size: 14px;
-    outline: 0;
-    padding: 4px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .parent-form button {
-    background: #43a3e6;
-    border: 1px solid #43a3e6;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .3s ease background;
-    width: 100%;
-  }
-  
-  .parent-form button:hover {
-    background: #fff;
-    color: #43a3e6;
-    transition: .3s ease background;
-  }
-  
+}
+
+
+.parent-form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.parent-form input,
+.parent-form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  /* margin-bottom: 20px; */
+}
+
+.parent-form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+.parent-form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: .3s ease background;
+}
+
 .signup-container {
-    margin-bottom: 150px;
+  margin-bottom: 150px;
 }
