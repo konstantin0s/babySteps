@@ -226,6 +226,24 @@ a:hover {
 }
 
 
+.addRevForm .form-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  height: 100vh;
+  width: 70%;
+  position: relative;
+  top: -124px;
+  margin-bottom: 7em;
+}
+
+.addRevForm #buttom {
+  position: relative;
+  left: -4em;
+  width: 100px;
+}
+
 .editProfy .href {
   display: flex;
   flex-direction: column;
@@ -900,16 +918,25 @@ a {
 /* style reviews*/
 .addRev {
   position: relative;
-  top: 10px;
-  left: 0px;
+  top: 80px;
+  left: -4em;
+  color: rgb(79, 146, 81);
   font-size: 26px;
+}
+
+.h5-comm {
+  color: rgb(79, 146, 81);
+  font-size: 1em;
+  position: relative;
+  top: 100px;
+  left: -10em;
 }
 
 .review {
   position: relative;
   border-bottom: 1px solid grey;
-  top: 30px;
-  font-size: 24px;
+  top: -150px;
+  font-size: 0.8em;
   left: 0px;
   margin-bottom: 20px;
 }
@@ -917,29 +944,33 @@ a {
 .review-item {
   margin: -10px 0;
   padding-bottom: 12px;
-  font-size: 18px;
+  font-size: 0.8em;
+  background-color: rgb(184, 178, 171);
+  position: relative;
+  top: -161px;
   border-bottom: 1px solid grey;
 
 }
 
 .comment {
-  margin-bottom: 50px;
-  font-size: 19px;
+  margin-bottom: 47px;
+  margin-top: 1em;
+  font-size: 1em;
   position: relative;
-  top: 40px;
+  top: 22px;
   color: #333;
   left: 0px;
   text-transform: capitalize;
 }
 
 .span {
-  font-size: 18px;
+  font-size: 0.9em;
   color: grey;
-  position: relative;
-  top: 20px;
-  left: 0px;
-  margin-bottom: 0px;
-
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  margin-right: 16px;
+  margin-bottom: 9px;
 }
 
 
@@ -948,7 +979,9 @@ a {
   align-items: center;
   flex-direction: column;
   margin-bottom: 200px;
-
+  width: 100%;
+  position: relative;
+  top: -80px;
 }
 
 .addRevForm label {
@@ -958,31 +991,35 @@ a {
   color: black;
 }
 
-.addRevForm button {
+.addRevForm .form-comments {
+  background-color: rgb(184, 178, 171);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  height: 100vh;
+  width: 70%;
   position: relative;
-  left: 50px;
-  width: 130px;
-  height: 10px;
+  top: -444px;
+  margin-bottom: 7em;
 }
 
-.add {
-  position: relative;
-  top: -10px;
-  color: white;
-  font-size: 20px;
-}
+.addRevForm .form-comments .review {}
 
 .disRev {
   margin-top: 6px;
   border-top: 1px solid grey;
-  background-color: white;
-  width: 400px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   text-align: center;
-  border-radius: 15%;
   border-bottom: 1px solid grey;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   top: 20px;
+  font-size: 1em;
+  padding: 0 1em;
 }
 
 .title-container {

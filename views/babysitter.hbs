@@ -181,27 +181,42 @@
 
 
 <div class="addRevForm">
-    <p class="addRev">Add a review</p>
-    <form action="/babysitter?babysitter_id={{baby._id}}" method="post">
-        <label for="">User:</label>
-        <input type="text" name="user">
-        <label for="">Comments:</label>
-        <textarea type="text" name="comments"></textarea><br>
+    <p class="addRev">Leave a Reply</p>
+    <h5 class="h5-comm">Comment</h5>
+    <form  action="/babysitter?babysitter_id={{baby._id}}" method="post" 
+     class="form-center">
+      <div id="form-group">
+            <label for="">User:</label>
+        <input class="form-control" type="text" name="user">
+      </div>
+    
+    <div id="form-group">
+            <label for="">Comments:</label>
+        <textarea class="form-control"
+         type="text" name="comments"></textarea>
+    </div>
+         <br>
 
-        <button class="btn btn-secondary" type="submit">
-            <h2 class="add">ADD</h2>
+      <div id="form-group">
+          <label></label>
+            <button class="btn btn-secondary" id="buttom" type="submit">
+        Submit
         </button>
+      </div>
     </form>
 
-    <h2 class="review">Reviews:</h2>
+<div class="form-comments">
+        <h2 class="review">Reviews:</h2>
     {{#each baby.reviews}}
     <div class="review-item">
         <div class="disRev">
-            <span class="span">Name: {{this.user}}</span>
-            <p class="comment">Comment: {{this.comments}}</p>
+            <span class="span">{{this.user}} says:</span>
+            <p class="comment">{{this.comments}}</p>
         </div>
     </div>
     {{/each}}
+</div>
+
 </div>
 
 <footer class="footer">
