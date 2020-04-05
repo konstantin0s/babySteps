@@ -1,3 +1,11 @@
+
+  //load with fadein on page
+  window.onload = function() {
+    document.body.classList.add('loaderx');
+  }
+
+
+
 //implement search
 var inputSearch = document.getElementById('input')
   inputSearch.addEventListener('keyup', () => {
