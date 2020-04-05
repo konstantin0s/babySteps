@@ -99,9 +99,9 @@ router.post("/parent/login", (req, res, next) => {
   const theUsername = req.body.username;
   const thePassword = req.body.password;
   debugger
-  if (theUsername === "" || thePassword === "") {
+  if (theUsername === "" || thePassword === "" || thePassword.length < 3 || theUsername.length < 3) {
     res.render("auth/parent/login", {
-      errorMessage: "Please enter both, username and password to sign up."
+      errorMessage: "Please check both, username and password to log in."
     });
     return;
   }
@@ -112,7 +112,7 @@ router.post("/parent/login", (req, res, next) => {
       if (!user) {
         // debugger
         res.render("auth/parent/login", {
-          errorMessage: "The username doesn't exist."
+          errorMessage: `The username > ${theUsername} < doesn't exist.`
         });
         return;
       }
@@ -122,11 +122,11 @@ router.post("/parent/login", (req, res, next) => {
         req.session.currentUser = user;
         req.session.family = user;
         // req.session.family = user;
-        console.log('session sitter',req.session.sitter);
+        // console.log('session sitter',req.session.sitter);
         res.redirect("/babysitters");
       } else {
         res.render("auth/parent/login", {
-          errorMessage: "Incorrect password"
+          errorMessage: "Incorrect login, try again!"
         });
       }
   })

@@ -35,18 +35,21 @@ router.post("/sitter/signup", (req, res, next) => {
   const image = req.body.image;
 
 
-  if (username == "" || password == "") {
+  if (username === "" || password === "" || username.length < 3 || password.length < 3) {
     res.render("auth/sitter/signup", {
-      errorMessage: "Indicate a username and a password to sign up"
+      errorMessage: "You username or the password requires attention!"
     });
     return;
   }
+
+
+
 
   Babysitter.findOne({"username": username})
   .then(user => {
     if (user !== null) {
       res.render("auth/sitter/signup", {
-        errorMessage: "The username already exists!"
+        errorMessage: `The username ${username} already exists!`
       });
       return;
     }
@@ -101,9 +104,9 @@ router.post("/sitter/login", (req, res, next) => {
   const theUsername = req.body.username;
   const thePassword = req.body.password;
 
-  if (theUsername === "" || thePassword === "") {
+  if (theUsername === "" || thePassword === "" || thePassword.length < 3 || theUsername.length < 3) {
     res.render("auth/sitter/login", {
-      errorMessage: "Please enter both, username and password to sign up."
+      errorMessage: "Please check both, username and password to log in."
     });
     return;
   }
@@ -112,7 +115,7 @@ router.post("/sitter/login", (req, res, next) => {
   .then(user => {
       if (!user) {
         res.render("auth/sitter/login", {
-          errorMessage: "The username doesn't exist."
+          errorMessage: `The username > ${theUsername} < doesn't exist.`
         });
         return;
       }
@@ -120,11 +123,11 @@ router.post("/sitter/login", (req, res, next) => {
         req.session.currentUser = user;
         req.session.sitter = user;
         // req.session.sitter = user;
-        console.log('session sitter',req.session.sitter);
+        // console.log('session sitter',req.session.sitter);
         res.redirect("/parents");
       } else {
         res.render("auth/sitter/login", {
-          errorMessage: "Incorrect password"
+          errorMessage: "Incorrect login, try again!"
         });
       }
   })
