@@ -39,7 +39,7 @@ body.loaderx {
 
 .navbar-toggler {
 	position: absolute;
-	top: 0.5em;
+	top: 0.1em;
 	z-index: 2000;
 }
 
@@ -522,14 +522,39 @@ nav ul {
 
 nav li {
 	display: inline;
-	float: left;
 	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
-.cf li:nth-child(1) {
+.cf .parentx {
 	position: absolute;
-	left: 0em;
+	left: 70%;
 }
+
+.cf .parent {
+	position: absolute;
+	left: 70%;
+}
+
+.cf .babysitter {
+	position: absolute;
+	left: 70%;
+}
+
+.cf .to-sitter {
+	position: absolute;
+	left: 55%;
+}
+
+.cf .to-parents {
+	position: absolute;
+	left: 55%;
+}
+
+
+
 
 
 nav a {
@@ -665,40 +690,6 @@ nav a#openup {
 }
 
 /* Profile area*/
-
-/* body{
-  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-} */
-/* .emp-profile {
-  padding: 3%;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  border-radius: 0.5rem;
-  background: #fff;
-}
-
-.profile-img {
-  text-align: center;
-  left: 20px;
-  width: 200px;
-  height: 150px;
-}
-
-.profile-img img {
-  width: 70%;
-  height: 100%;
-}
-
-.profile-img .file {
-  position: relative;
-  overflow: hidden;
-  margin-top: -20%;
-  width: 70%;
-  border: none;
-  border-radius: 0;
-  font-size: 15px;
-  background: #212529b8;
-} */
 
 .profile-img .file input {
 	position: absolute;
@@ -1102,6 +1093,17 @@ label {
 }
 
 @media screen and (min-width: 600px) and (max-width: 950px) and (orientation: landscape) {
+
+	#showcase .cf .login {
+		left: 45%;
+	}
+
+	#showcase .cf .register {
+		left: 60%;
+	}
+
+
+
 	footer .footer-cols {
 		display: grid;
 		grid-gap: 20px;
@@ -1122,14 +1124,10 @@ label {
 	#showcase p.lead {
 		display: none;
 	}
-
-	.lead {
-		display: none;
-	}
 }
 
 /* @media only screen and (min-width: 420px) and (max-width: 600px) { */
-@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation: portrait) {
+@media only screen and (min-width: 350px) and (max-width: 600px) and (orientation: portrait) {
 	.lead {
 		display: none;
 	}
@@ -1177,12 +1175,43 @@ label {
 		justify-content: center;
 	}
 
-	/* .navbar-collapse.show .logoTitle {
-		font-size: 1em;
-	} */
+	#showcase .cf .login,
+	#showcase .cf .register {
+		top: 16em;
+		left: 1em;
+	}
+
+	#showcase .cf .register {
+		margin-top: 3em;
+	}
+
 
 	.navbar-collpase.show .cf li a:hover {
 		color: #c9c505;
+	}
+
+
+	#nav ul li a {
+		text-align: center;
+		width: 100%;
+		font-size: 1.4em;
+		background: #333;
+		border-bottom: 3px solid #c9c505;
+	}
+
+	#nav ul li a:hover {
+		background: #444;
+		width: 100%;
+	}
+
+	#showcase .logoTitle {
+		position: relative;
+		top: -215px;
+		left: 1em;
+	}
+
+	.navbar-nav .nav-link:hover {
+		color: #c9c505 !important;
 	}
 
 	#showcase ul {
@@ -1227,30 +1256,6 @@ label {
 		height: auto;
 	}
 
-	#nav ul li a {
-		text-align: center;
-		width: 100%;
-		text-indent: 40px;
-		font-size: 1.4em;
-		background: #333;
-		border-bottom: 3px solid #c9c505;
-	}
-
-	#nav ul li a:hover {
-		background: #444;
-		width: 100%;
-	}
-
-	#showcase .logoTitle {
-		position: relative;
-		top: -215px;
-		left: 3em;
-		text-indent: 34px;
-	}
-
-	.navbar-nav .nav-link:hover {
-		color: #c9c505 !important;
-	}
 
 	#showcase header {
 		position: relative;
@@ -1364,21 +1369,6 @@ label {
 		height: 40vh;
 	}
 
-	nav #openup:after {
-		content: '|||';
-		transform: rotate(-90deg);
-		-ms-transform: rotate(-90deg);
-		-webkit-transform: rotate(-90deg);
-		width: 30px;
-		height: 30px;
-		display: block;
-		position: absolute;
-		right: 16px;
-		top: 25px;
-		font-weight: bold;
-		font-size: 22px;
-	}
-
 	.hide-on-small {
 		display: none;
 	}
@@ -1387,15 +1377,10 @@ label {
 		display: none !important;
 	}
 
-	/* .cfs #openup {
-    display: none;
-    visibility: hidden;
-  } */
-
 	.section {
 		position: relative;
 		padding: 2rem 0;
-		top: 100px;
+		top: 100px !important;
 	}
 
 	.section-main h1 {

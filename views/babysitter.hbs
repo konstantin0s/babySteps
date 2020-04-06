@@ -1,14 +1,20 @@
 {{#if family}}
 <header>
-    <nav class='cf'>
-        <ul class='cf'>
+          <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      id="nav-collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto cf">
             <li class="nav-item">
                 <a class="nav-link logoTitle" href="/">{{title}}</a>
             </li>
-            <li class="nav-item right">
+            <li class="nav-item right to-parents">
                 <a class="nav-link" href='/parents'>To Parents</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item babysitter">
                 <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
             </li>
             <li class="nav-item logout">
@@ -21,15 +27,21 @@
 
  {{#if sitter}}
  <header>
-      <nav class='cf'>
-        <ul class='cf'>
+           <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      id="nav-collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto cf">
           <li class="hide-on-small">
             <a class="nav-link" href="/">{{title}}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item to-parents">
             <a class="nav-link" href='/parents'>View Parents</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item babysitter">
             <a class="nav-link" href="#">{{baby.firstName}} {{baby.lastName}}</a>
          </li>
           <li class="nav-item logout">

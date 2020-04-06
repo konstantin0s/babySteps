@@ -1,16 +1,18 @@
-{{#if family}}
+{{!-- {{#if family}}
 <header>
-  <nav class='cf'>
-    <ul class='cf'>
+      <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      id="nav-collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto cf">
       <li class="nav-item">
         <a class="nav-link logoTitle" href="/">{{title}}</a>
       </li>
-      {{!-- <li class="nav-item">
-            <a class="nav-link" href='/babysitters'>View Babysitters</a>
-          </li> --}}
 
-      <li class="nav-item">
-        {{!-- <a class="nav-link" href='/parent/edit/{{parent.id}}'>Edit Profile</a> --}}
+      <li class="nav-item parent">
         <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
       </li>
 
@@ -20,16 +22,22 @@
     </ul>
   </nav>
 </header>
-{{/if}}
+{{/if}} --}}
+
 {{#if showParentData}}
 <header>
-  <nav class='cf'>
-    <ul class='cf'>
+ <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      id="nav-collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto cf">
       <li class="hide-on-small">
         <a class="nav-link" href="/">{{title}}</a>
       </li>
-      <li class="nav-item">
-        {{!-- <a class="nav-link" href='/parent'>View Parents</a> --}}
+      <li class="nav-item parent">
         <a class="nav-link" href="/parent/{{showParentData.id}}">{{showParentData.firstName}}
           {{showParentData.lastName}}</a>
       </li>
