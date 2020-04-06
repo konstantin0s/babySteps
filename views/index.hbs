@@ -2,20 +2,28 @@
 
 <div id="showcase">
   <header>
-    <nav class='cf'>
-      <ul class='cf'>
+      <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      id="nav-collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto cf">
+    {{!-- <nav class='cf'>
+      <ul class='cf'> --}}
         <li class="nav-item">
           <a class="nav-link logoTitle" href="/">{{title}}</a>
         </li>
-          <li class="">
-          <a class="nav-link login" href='/parent/login'>Log In</a>
+          <li class="nav-item login">
+          <a class="nav-link" href='/parent/login'>Log In</a>
         </li>
-        <li class="">
-          <a class="nav-link register" href='/parent/signup'>Sign Up</a>
+        <li class="nav-item register">
+          <a class="nav-link" href='/parent/signup'>Sign Up</a>
         </li>
 
       </ul>
-      <a class="nav-link" href='#' id='openup'></a>
+      {{!-- <a class="nav-link" href='#' id='openup'></a> --}}
     </nav>
   </header>
 
