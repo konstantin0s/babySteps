@@ -1153,8 +1153,9 @@ label {
   }
 
   .navbar-collapse.show .cf {
-    position: relative;
-    left: 120px;
+    position: absolute;
+    left: 130px;
+    top: 5em;
   }
 
   .navbar-collpase.show .cf li a {
@@ -1163,10 +1164,10 @@ label {
     justify-content: center;
   }
 
-  #showcase .cf .login,
-  #showcase .cf .register {
-    top: 16em;
-    left: 1em;
+  .navbar-collpase.show ul .login,
+  .navbar-collpase.show ul .register {
+    top: 12em;
+    left: 0em;
   }
 
   #showcase .cf .register {
@@ -1252,11 +1253,14 @@ label {
     align-items: center;
   }
 
-  .cf ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .navbar-collapse.show .cf .login,
+  .navbar-collapse.show .cf .logoTitle {
+    left: 5%;
+  }
+
+  .navbar-collapse.show .cf .login {
+    top: 15em;
+    left: 0em;
   }
 
   .navbar-collapse.show .cf li {
@@ -1265,10 +1269,9 @@ label {
     top: 350px;
     font-size: 1em;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
   }
 
   .navbar-collapse.show .cf li:hover {
