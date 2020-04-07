@@ -1230,6 +1230,10 @@ label {
     height: auto;
   }
 
+  .login-sitter h1 {
+    color: #fff !important;
+  }
+
   #showcase header {
     position: relative;
     width: 100%;
@@ -1242,7 +1246,7 @@ label {
 
   .navbar-collapse.show .cf .logoTitle {
     position: absolute;
-    left: 5%;
+    left: 2em;
     top: 3em;
   }
 
@@ -1252,6 +1256,18 @@ label {
     width: 220px;
     top: 15em;
     left: 0em;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 8px;
+  }
+
+  #showcase .cf .login {
+    position: absolute;
+    left: 0%;
+    width: 180px;
+    top: 17em;
   }
 
   #showcase .cf li {
@@ -1315,6 +1331,11 @@ label {
   #form {
     width: 60%;
     height: auto;
+  }
+
+  .text-center #button {
+    position: relative;
+    left: 6.2em;
   }
 
   .profile-head {
@@ -1506,6 +1527,11 @@ label {
 
   #form {
     width: 80%;
+  }
+
+  #button {
+    position: relative;
+    left: 6.2em;
   }
 }
 
