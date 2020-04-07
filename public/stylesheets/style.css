@@ -173,7 +173,6 @@ a {
 }
 
 .nav-link {
-  /* color: white; */
   color: white;
   position: relative;
   display: inline;
@@ -194,10 +193,9 @@ a {
   background-color: #444;
   opacity: 1;
   color: #c9c505 !important;
-  /* width: 150px; */
 }
 
-*/ .cf .logoTitle {
+.cf .logoTitle {
   position: relative;
   top: 5px;
   float: left;
@@ -207,8 +205,6 @@ a {
   top: 0px;
   width: 100%;
   height: 49px;
-  /* color: rgb(158, 147, 147);
-  opacity: 0.5; */
 }
 
 .cf .logoTitle:hover {
@@ -235,7 +231,6 @@ a:hover {
 .href {
   position: relative;
   text-align: center;
-  /* color: orange; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -973,7 +968,6 @@ a {
 }
 
 .addRevForm .form-comments {
-  /* background-color: rgb(184, 178, 171); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -983,9 +977,6 @@ a {
   position: relative;
   top: -444px;
   margin-bottom: 7em;
-}
-
-.addRevForm .form-comments .review {
 }
 
 .disRev {
@@ -1031,11 +1022,6 @@ a {
 #table tr {
   border-bottom: 1px solid #ddd;
 }
-
-/* 
-#table tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-} */
 
 .pTitle {
   color: rgb(117, 109, 109);
@@ -1084,46 +1070,6 @@ label {
   left: 220px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 950px) and (orientation: landscape) {
-  #showcase .cf .logoTitle {
-    top: -8px;
-    position: relative;
-    left: 2em;
-  }
-
-  #showcase .cf .login {
-    left: 45%;
-    position: absolute;
-  }
-
-  #showcase .cf .register {
-    left: 65%;
-    position: absolute;
-  }
-
-  footer .footer-cols {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
-    text-align: left;
-    font-size: 14px;
-    margin-bottom: 250px;
-    text-align: center;
-  }
-
-  .footer-cols {
-    margin-bottom: 2em;
-  }
-}
-
-@media screen and (max-height: 580px) {
-  #showcase p.lead {
-    display: none;
-  }
-}
-
-/* @media only screen and (min-width: 420px) and (max-width: 600px) { */
 @media only screen and (min-width: 350px) and (max-width: 600px) and (orientation: portrait) {
   .lead {
     display: none;
@@ -1205,49 +1151,39 @@ label {
     left: 1em;
   }
 
-	
-  .cf .logout {
-	/* position: absolute;
-	left: 74%; */
-  }
-
   .cf .parent,
   .cf .babysitter,
   .cf .parentx,
   .cf .to-parents,
-  .cf .to-sitter
-  .cf .logoTitle,
-  .cf .logout 
-   {
-	position: absolute;
-	left: 5%;
+  .cf .to-sitter .cf .logoTitle,
+  .cf .logout {
+    position: absolute;
+    left: 5%;
   }
 
   .cf .logoTitle {
-	  top: 2em;
+    top: 2em;
   }
 
+  .cf .parent,
+  .cf .babysitter {
+    top: 9em;
+  }
 
-  .cf .parent, .cf .babysitter {
-	top: 9em;
-}
-
-
-.cf .parentx {
-	top: 10em;
-}
+  .cf .parentx {
+    top: 10em;
+  }
 
   .cf .logout {
-	  top: 14em;
+    top: 14em;
   }
 
   .cf .to-parents,
   .cf .to-sitter {
-	  position: absolute;
-	top: -3em;
-	left: 5%;
+    position: absolute;
+    top: -3em;
+    left: 5%;
   }
-}
 
   .navbar-nav .nav-link:hover {
     color: #c9c505 !important;
@@ -1259,7 +1195,6 @@ label {
     justify-content: center;
     text-align: center;
     padding: 0;
-    /* margin: 0 -90px; */
     height: 100%;
     width: 100%;
   }
@@ -1313,8 +1248,8 @@ label {
 
   .navbar-collapse.show .cf .login,
   .navbar-collapse.show .cf .register {
-	position: absolute;
-	width: 220px;
+    position: absolute;
+    width: 220px;
     top: 15em;
     left: 0em;
   }
@@ -1333,11 +1268,6 @@ label {
   .navbar-collapse.show .cf li:hover {
     color: #c9c505;
   }
-
-  /* 
-	#form {
-		width: 100%;
-	} */
 
   .section-main {
     position: relative;
@@ -1378,7 +1308,6 @@ label {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    /* background-color: red; */
     height: 600px;
     padding: 10px;
   }
@@ -1386,6 +1315,33 @@ label {
   #form {
     width: 60%;
     height: auto;
+  }
+
+  .profile-head {
+    position: relative;
+    top: 13em;
+    left: -2em;
+    width: 84%;
+    margin-bottom: 8em;
+  }
+
+  #myTab {
+    position: relative;
+    left: 4em;
+    margin-bottom: 2em;
+  }
+
+  .profile-tab {
+    left: 50px;
+  }
+
+  .form-container #home,
+  .form-container #profile {
+    left: -38px;
+  }
+
+  .profile-tab .col-md-6 {
+    width: 70%;
   }
 
   footer .footer-cols {
@@ -1417,37 +1373,46 @@ label {
 }
 
 @media only screen and (max-width: 479px) {
-
-
-	
-
   body {
     height: 40vh;
-  }
-
-  	
-  .cf .logout {
-	/* position: absolute;
-	left: 74%; */
   }
 
   .cf .parent,
   .cf .babysitter,
   .cf .parentx,
   .cf .to-parents,
-  .cf .to-sitter
-  .cf .logoTitle,
-  .cf .logout 
-   {
-	position: absolute;
-	left: 5%;
+  .cf .to-sitter .cf .logoTitle,
+  .cf .logout {
+    position: absolute;
+    left: 5%;
   }
 
-  .cf .to-parents,
-  .cf .to-sitter {
-
+  .profile-head {
+    position: relative;
+    top: 13em;
+    left: -2em;
+    width: 84%;
+    margin-bottom: 8em;
   }
-}
+
+  #myTab {
+    position: relative;
+    left: 4em;
+    margin-bottom: 2em;
+  }
+
+  .profile-tab {
+    left: 50px;
+  }
+
+  .form-container #home,
+  .form-container #profile {
+    left: -38px;
+  }
+
+  .profile-tab .col-md-6 {
+    width: 70%;
+  }
 
   .hide-on-small {
     display: none;
@@ -1541,6 +1506,74 @@ label {
 
   #form {
     width: 80%;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+  .profile-head {
+    position: relative;
+    top: 13em;
+    left: -2em;
+    width: 84%;
+    margin-bottom: 8em;
+  }
+
+  #myTab {
+    position: relative;
+    left: 4em;
+    margin-bottom: 2em;
+  }
+
+  .profile-tab {
+    left: 50px;
+  }
+
+  .form-container #home,
+  .form-container #profile {
+    left: -38px;
+  }
+
+  .profile-tab .col-md-6 {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 950px) and (orientation: landscape) {
+  #showcase .cf .logoTitle {
+    top: -8px;
+    position: relative;
+    left: 2em;
+  }
+
+  #showcase .cf .login {
+    left: 45%;
+    position: absolute;
+  }
+
+  #showcase .cf .register {
+    left: 65%;
+    position: absolute;
+  }
+
+  footer .footer-cols {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 250px;
+    text-align: center;
+  }
+
+  .footer-cols {
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  #showcase p.lead {
+    display: none;
   }
 }
 
