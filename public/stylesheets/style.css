@@ -1085,12 +1085,20 @@ label {
 }
 
 @media screen and (min-width: 600px) and (max-width: 950px) and (orientation: landscape) {
+  #showcase .cf .logoTitle {
+    top: -8px;
+    position: relative;
+    left: 2em;
+  }
+
   #showcase .cf .login {
     left: 45%;
+    position: absolute;
   }
 
   #showcase .cf .register {
-    left: 60%;
+    left: 65%;
+    position: absolute;
   }
 
   footer .footer-cols {
@@ -1253,17 +1261,20 @@ label {
     align-items: center;
   }
 
-  .navbar-collapse.show .cf .login,
   .navbar-collapse.show .cf .logoTitle {
+    position: absolute;
     left: 5%;
+    top: 3em;
   }
 
-  .navbar-collapse.show .cf .login {
+  .navbar-collapse.show .cf .login,
+  .navbar-collapse.show .cf .register {
+    position: absolute;
     top: 15em;
-    left: 0em;
+    left: 1em;
   }
 
-  .navbar-collapse.show .cf li {
+  #showcase .cf li {
     padding: 0;
     width: 180px;
     top: 350px;
@@ -1459,3 +1470,39 @@ label {
     width: 80%;
   }
 }
+
+@media (min-width: 649px) and (max-width: 800px) {
+  .navbar-collapse.show .cf .logoTitle {
+    top: -8px;
+    position: relative;
+    left: 2em;
+  }
+
+  /* .navbar-collapse.show .cf .login {
+    left: 40%;
+  }
+
+  .navbar-collapse.show .cf .register {
+    left: 65%;
+    position: relative;
+    top: -53px;
+  } */
+}
+
+/* @media (min-width: 801px) and (max-width: 950px) {
+  .navbar-collapse.show .cf .logoTitle {
+    top: -8px;
+    position: relative;
+    left: 2em;
+  }
+
+  .navbar-collapse.show .cf .login {
+    left: 40%;
+  }
+
+  .navbar-collapse.show .cf .register {
+    left: 65%;
+    position: relative;
+    top: -53px;
+  }
+} */
