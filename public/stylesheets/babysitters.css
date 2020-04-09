@@ -2,7 +2,7 @@
 .formless {
     position: absolute;
     margin: auto;
-    top: 100px;
+    top: -157px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -134,3 +134,21 @@
 }
 
 /* end of seach bar style */
+
+@media screen and (max-width: 689px) {
+
+    .formless {
+        top: -157px;
+    }
+
+    #input:focus {
+        width: 300px;
+        opacity: 1;
+        cursor: text;
+    }
+
+    #input:focus~.search-x {
+        right: -330px;
+    }
+
+}
