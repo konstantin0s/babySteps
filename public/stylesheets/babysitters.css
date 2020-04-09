@@ -2,7 +2,7 @@
 .formless {
     position: absolute;
     margin: auto;
-    top: -157px;
+    top: 57px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -21,7 +21,7 @@
     left: 0;
     width: 80px;
     height: 80px;
-    background: crimson;
+    background: rgb(82, 180, 16);
     border-radius: 50%;
     transition: all 1s;
     z-index: 4;
@@ -74,16 +74,16 @@
     bottom: 0;
     left: 0;
     width: 50px;
+    font-weight: bold;
     height: 50px;
     outline: none;
     border: none;
-    background: crimson;
+    background: rgb(82, 180, 16);
     color: white;
-    text-shadow: 0 0 10px crimson;
+    text-shadow: 0 0 10px rgb(82, 180, 16);
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 0 crimson,
-        0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px 0 rgb(82, 180, 16) 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     transition: all 1s;
     opacity: 0;
     z-index: 5;
@@ -139,6 +139,7 @@
 
     .formless {
         top: -157px;
+        margin-bottom: 2em;
     }
 
     #input:focus {
