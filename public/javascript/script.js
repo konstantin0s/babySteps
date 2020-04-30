@@ -7,11 +7,15 @@
 
 
 //implement search
-var inputSearch = document.getElementById('input')
+var inputSearch = document.getElementById('input');
+if (inputSearch) {
   inputSearch.addEventListener('keyup', () => {
     this.searchHandler();
   });
   
+} else {
+
+}
 
 
 function searchHandler(event) {
