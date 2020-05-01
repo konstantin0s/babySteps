@@ -9,6 +9,9 @@ router.get('/', (req, res, next) => {
 req.session.errors = null;
 });
 
+router.get('/cookies', (req, res) => {
+  res.render('cookie-policy.hbs')
+})
 
 
 module.exports = router;
