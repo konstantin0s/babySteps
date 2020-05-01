@@ -27,7 +27,8 @@
 	line-height: 20px;
 	display: block;
 	margin-top: 10px;
-} .cookieConsentContainer .cookieDesc a {
+}
+ .cookieConsentContainer .cookieDesc a {
 	font-family: OpenSans, arial, "sans-serif";
 	color: #FFFFFF;
 	text-decoration: underline;
