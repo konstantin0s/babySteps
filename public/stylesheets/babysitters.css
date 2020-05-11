@@ -1,6 +1,6 @@
 /* seach bar style */
 .formless {
-    position: absolute;
+    position: relative;
     margin: auto;
     top: -127px;
     left: 0;
@@ -138,7 +138,7 @@
 @media screen and (max-width: 689px) {
 
     .formless {
-        top: -157px;
+        top: 157px;
     }
 
     #input:focus {

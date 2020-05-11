@@ -1,7 +1,8 @@
 
   //load with fadein on page
   window.onload = function() {
-    document.body.classList.add('loaderx');
+let body = document.getElementById('fadein');
+body.classList.add('loaderx');
   }
 
 
