@@ -7,7 +7,7 @@
 
 
 //implement search
-var inputSearch = document.getElementById('input');
+let inputSearch = document.getElementById('input');
 if (inputSearch) {
   inputSearch.addEventListener('keyup', () => {
     this.searchHandler();
@@ -19,14 +19,14 @@ if (inputSearch) {
 
 
 function searchHandler(event) {
-  var filter, table, txtValue;
+  let filter, table, txtValue;
   filter = jsUcfirst(inputSearch.value);
   // console.log(filter)
   table = document.getElementById("table");
- var td = table.getElementsByTagName('td');
+ let td = table.getElementsByTagName('td');
 
- for (var i = 0; i < td.length; i++) {
-  var a = td[i].getElementsByTagName("a")[0];
+ for (let i = 0; i < td.length; i++) {
+  let a = td[i].getElementsByTagName("a")[0];
 if (a) {
   txtValue = a.textContent || a.innerText;
 
@@ -56,14 +56,14 @@ jsUcfirst = str => {
   });
 
   $(window).resize(function () {
-    var w = $(this).width();
+    let w = $(this).width();
     if (w > 480 && menu.is(':hidden')) {
       menu.removeAttr('style');
     }
   });
 
   $('nav li').on('click', function (e) {
-    var w = $(window).width();
+    let w = $(window).width();
     if (w < 480) {
       menu.slideToggle();
     }

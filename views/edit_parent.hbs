@@ -1,28 +1,4 @@
-{{!-- {{#if family}}
-<header>
-      <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" 
-      id="nav-collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto cf">
-      <li class="nav-item">
-        <a class="nav-link logoTitle" href="/">{{title}}</a>
-      </li>
 
-      <li class="nav-item parent">
-        <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
-      </li>
-
-      <li class="nav-item logout">
-        <a class="nav-link" href='/logout'>Logout</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-{{/if}} --}}
 
 {{#if showParentData}}
 <header>
@@ -70,10 +46,6 @@
       <label for="level">Username:</label>
       <input type="text" name="username" value="{{editParent.username}}" class="form-control">
     </div>
-    {{!-- <div id="form-group">
-  <label for="level">Password:</label>
-  <input type="text" name="password" value="{{editParent.password}}" class="form-control" disabled>
-</div> --}}
     <div id="form-group">
       <label for="level">Image:</label>
       <input type='text' class="form-control"
@@ -99,10 +71,6 @@
 </div>
 </form>
 </div>
-
-{{!-- <div class="footer-bottom text-center">
-  Copyright &copy; 2019 {{title}}
-</div> --}}
 <footer class="footer">
   <p>Copyright &copy; {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
