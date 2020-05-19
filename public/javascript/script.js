@@ -1,12 +1,4 @@
 
-  //load with fadein on page
-  window.onload = function() {
-let body = document.getElementById('fadein');
-body.classList.add('loaderx');
-  }
-
-
-
 //implement search
 let inputSearch = document.getElementById('input');
 if (inputSearch) {
