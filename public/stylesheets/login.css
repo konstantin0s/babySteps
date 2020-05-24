@@ -85,18 +85,19 @@
 @media only screen and (max-width: 600px) and (min-width: 350px) and (orientation: portrait) {
   #nav ul .login a {
     text-align: center;
-    width: 150px;
-    font-size: 1.4em;
     background: #333;
     border-bottom: 3px solid #c9c505;
     position: absolute;
-    top: -147px;
-    left: 0%;
+    /* top: -147px; */
+    top: 0px;
+    padding-bottom: 1.8em;
+    /* left: 1em; */
+    width: 75%;
   }
 
   .cf .login {
     position: absolute;
-    left: 60%;
+    left: 10%;
   }
 
   .logoTitle {

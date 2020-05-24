@@ -88,17 +88,17 @@ body {
 
 .user-link:nth-child(5n + 3) {
   text-transform: capitalize;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .user-link {
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   text-decoration: none;
   color: grey;
 }
 
 .user-link:hover {
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   text-decoration: none;
   color: black;
 }
@@ -110,7 +110,7 @@ a {
 }
 
 .name:hover {
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   text-decoration: none;
   color: black;
 }
@@ -135,7 +135,7 @@ th {
 
 .btn a {
   text-decoration: none;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   color: white;
 }
 
@@ -147,9 +147,9 @@ header .nav-link {
   margin: 0 10px;
 }
 
-header .nav-link:hover {
+/* header .nav-link:hover {
   width: 180px;
-}
+} */
 
 header .right {
   right: 500px;
@@ -217,7 +217,7 @@ a {
 /* nav li a */
 a:hover {
   color: orange;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .editProfy {
@@ -572,7 +572,7 @@ nav a#openup {
   color: #c9c505;
   text-decoration: none;
   width: 190px !important;
-  font-size: 1em;
+  /* font-size: 1em; */
 }
 
 .cf {
@@ -845,6 +845,11 @@ a {
   outline: none !important;
 }
 
+#table .name {
+  position: relative;
+  left: 2em;
+}
+
 .user-list tbody td>img {
   position: relative;
   max-width: 50px;
@@ -1077,6 +1082,14 @@ label {
     display: none;
   }
 
+  /* header .nav-link {
+    padding: 0.5rem 2.6rem;
+  }
+
+  header .nav-link:hover {
+    padding: 0.5rem 2.6rem;
+  } */
+
   .fixed-top {
     height: 3.5em;
   }
@@ -1111,6 +1124,9 @@ label {
   .navbar-collapse.show .cf {
     position: absolute;
     top: 5em;
+    text-align: center;
+    font-size: 1.3em;
+    width: 100%;
   }
 
   .navbar-collpase.show .cf li a {
@@ -1125,31 +1141,32 @@ label {
 
   #nav ul .login a {
     text-align: center;
-    width: 150px;
-    font-size: 1.4em;
     background: #333;
     border-bottom: 3px solid #c9c505;
-    position: relative;
+    position: absolute;
     top: -40px;
   }
 
   #nav .show .register {
-    margin-top: 3em;
-    left: 4em;
-    top: 10px;
+    left: 0em;
+    width: 250px;
+    position: relative;
+    display: inline-block;
+    top: -210px;
+    font-size: 2em;
   }
 
   #nav .show .register a {
     text-align: center;
-    width: 150px;
-    font-size: 1.4em;
     background: #333;
     border-bottom: 3px solid #c9c505;
     position: absolute;
     top: 10px;
+    padding-bottom: 1.8em;
   }
 
-  #nav ul li a:hover {
+  #nav ul li a:hover,
+  #nav .show .register a:hover {
     background: #444;
     width: 100%;
   }
@@ -1255,10 +1272,10 @@ label {
 
   .navbar-collapse.show .cf .login,
   .navbar-collapse.show .cf .register {
-    position: absolute;
-    width: 220px;
-    top: 18em;
-    left: 57%;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.3em;
   }
 
   .navbar-toggler {
@@ -1268,24 +1285,27 @@ label {
 
   #showcase .cf .login {
     position: absolute;
-    left: 4em;
-    width: 180px;
-    top: 17em;
+    left: 0em;
+    display: inline-block;
+    width: 250px;
+    top: 5em;
+    font-size: 2em;
   }
 
-  .show .cf li {
-    padding: 0;
+  .show .cf .nav-item {
+    /* padding: 0 1em; */
+    padding: 0.5em 1em;
     width: 100%;
-    top: 350px;
     margin-left: 10%;
-    font-size: 1em;
     align-items: center;
     display: inline-block;
     margin-top: 60px;
   }
 
-  .navbar-collapse.show .cf li:hover {
-    color: #c9c505;
+  .cf ul li a {
+    margin: 0;
+    border-bottom: 3px solid #c9c505;
+    font-size: 1.3em;
   }
 
   .section-main {
@@ -1316,10 +1336,10 @@ label {
     width: 50%;
   }
 
-  footer {
-    position: relative;
-    top: -160px;
-  }
+  /* footer {
+      position: relative;
+      top: -160px;
+    } */
 
   footer .footer-cols {
     display: grid;

@@ -137,8 +137,18 @@
 
 @media screen and (max-width: 689px) {
 
+    .pTitle {
+        width: 100%;
+    }
+
     .formless {
-        top: 157px;
+        top: 15px;
+        text-align: center;
+        left: -2em;
+    }
+
+    .formless form {
+        display: inline-block;
     }
 
     #input:focus {
