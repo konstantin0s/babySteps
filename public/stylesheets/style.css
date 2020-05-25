@@ -1152,8 +1152,8 @@ label {
     width: 250px;
     position: relative;
     display: inline-block;
-    top: -210px;
-    font-size: 2em;
+    top: -159px;
+    font-size: 1.3em;
   }
 
   #nav .show .register a {
@@ -1285,27 +1285,28 @@ label {
 
   #showcase .cf .login {
     position: absolute;
-    left: 0em;
+    left: 2em;
     display: inline-block;
     width: 250px;
-    top: 5em;
-    font-size: 2em;
+    top: 4em;
+    font-size: 1.3em;
   }
 
   .show .cf .nav-item {
-    /* padding: 0 1em; */
     padding: 0.5em 1em;
     width: 100%;
     margin-left: 10%;
+    left: 0%;
     align-items: center;
     display: inline-block;
-    margin-top: 60px;
   }
 
   .cf ul li a {
     margin: 0;
     border-bottom: 3px solid #c9c505;
     font-size: 1.3em;
+    width: 70%;
+    display: inline-block;
   }
 
   .section-main {
