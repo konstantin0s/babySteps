@@ -22,21 +22,23 @@
     }
 
     .cf .parent {
-        width: 30%;
+        left: 42%;
+    }
+
+    .cf .to-parents {
+        left: 30%;
     }
 
     .cf ul li .user {
         width: 100%;
     }
 
-
-
     .cf .babysitter {
         left: 60%;
     }
 
     .cf .logout {
-        left: 60%;
+        left: 82%;
     }
 
     .form-center #form-group {

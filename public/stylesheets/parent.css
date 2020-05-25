@@ -127,4 +127,26 @@
     }
 }
 
+
+/* portrait  tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #button {
+        position: absolute;
+        top: 660px;
+        left: 6.5em;
+    }
+
+}
+
+/* Landscape tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+    #button {
+        position: absolute;
+        top: 660px;
+        left: 8em;
+    }
+
+}
+
 /* end of edit page */

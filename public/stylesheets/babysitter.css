@@ -84,3 +84,20 @@
   }
 
 }
+
+/* portrait  tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .addRevForm .form-center {
+    top: 60px;
+  }
+
+}
+
+/* Landscape tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+  .addRevForm .form-center {
+    top: -74px;
+  }
+
+}
