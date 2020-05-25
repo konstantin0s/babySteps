@@ -84,15 +84,15 @@
 
 @media only screen and (max-width: 600px) and (min-width: 350px) and (orientation: portrait) {
   #nav ul .login a {
-    text-align: center;
-    background: #333;
-    border-bottom: 3px solid #c9c505;
-    position: absolute;
-    /* top: -147px; */
+    color: #333 !important;
+    border: 3px solid #fff;
+    font-size: 1.3em;
+    display: inline-block;
+    padding: 0.2em 0.4em 0 0.4em;
+    background: yellow;
+    width: 70%;
     top: 0px;
     padding-bottom: 1.8em;
-    /* left: 1em; */
-    width: 75%;
   }
 
   .cf .login {

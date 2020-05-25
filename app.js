@@ -11,14 +11,7 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 const app = express();
 
-
-// hbsEngine = hbs.create({
-//   helpers: {
-//       formatDate: function (date, format) {
-//           return moment(date).format(format);
-//       }
-//   }
-// });
+hbs.registerHelper('date', require('helper-date'));
 
 
 mongoose

@@ -66,3 +66,21 @@
   color: rgb(243, 250, 250);
   background-color: rgb(170, 162, 162);
 } */
+
+@media screen and (min-width: 300px]) and (max-width: 550px) {
+
+  .addRevForm .form-comments {
+    width: 85%;
+  }
+
+  .addRevForm #buttom {
+    left: 0em;
+    top: -10px;
+  }
+
+  .emp-profile .addRevForm #buttom {
+    left: 0em;
+    top: -10px;
+  }
+
+}

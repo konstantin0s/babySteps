@@ -1,3 +1,5 @@
+
+
 {{#if family}}
 <header>
           <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
@@ -186,7 +188,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div
         </div>
     </form>
 </div>
@@ -194,17 +196,16 @@
 
 <div class="addRevForm">
     <p class="addRev">Leave a Reply</p>
-    <h5 class="h5-comm">Comment</h5>
     <form  action="/babysitter?babysitter_id={{baby._id}}" method="post" 
      class="form-center">
       <div id="form-group">
             <label for="">User:</label>
-        <input class="form-control" type="text" name="user">
+        <input class="form-control" type="text" name="user" placeholder="You name..">
       </div>
     
     <div id="form-group">
             <label for="">Comments:</label>
-        <textarea class="form-control"
+        <textarea class="form-control" placeholder="Add your comment.."
          type="text" name="comments"></textarea>
     </div>
          <br>

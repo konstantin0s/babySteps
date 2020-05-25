@@ -677,6 +677,9 @@ nav a#openup {
 }
 
 /* Profile area*/
+.profile-img {
+  z-index: 100;
+}
 
 .profile-img .file input {
   position: absolute;
@@ -1082,13 +1085,6 @@ label {
     display: none;
   }
 
-  /* header .nav-link {
-    padding: 0.5rem 2.6rem;
-  }
-
-  header .nav-link:hover {
-    padding: 0.5rem 2.6rem;
-  } */
 
   .fixed-top {
     height: 3.5em;
@@ -1157,18 +1153,30 @@ label {
   }
 
   #nav .show .register a {
-    text-align: center;
-    background: #333;
-    border-bottom: 3px solid #c9c505;
-    position: absolute;
-    top: 10px;
+    color: #333 !important;
+    border: 3px solid #fff;
+    font-size: 1.3em;
+    left: -1.5em;
+    display: inline-block;
+    padding: 0.2em 0.4em 0 0.4em;
+    background: yellow;
+    width: 98%;
+    top: 41px;
     padding-bottom: 1.8em;
   }
 
-  #nav ul li a:hover,
-  #nav .show .register a:hover {
+  #nav ul li a:hover {
     background: #444;
-    width: 100%;
+    color: yellow !important;
+    width: 70% !important;
+  }
+
+  .navbar-collapse.show .cf .hide-on-small a {
+    display: none;
+  }
+
+  #nav .show .register a:hover {
+    width: 98% !important;
   }
 
   .cf .parent,
@@ -1199,6 +1207,10 @@ label {
 
   .cf .logout {
     top: 14em;
+  }
+
+  .cf .logout a {
+    width: 36%;
   }
 
   .cf .to-parents,
@@ -1288,7 +1300,7 @@ label {
     left: 2em;
     display: inline-block;
     width: 250px;
-    top: 4em;
+    top: 3em;
     font-size: 1.3em;
   }
 
@@ -1302,9 +1314,12 @@ label {
   }
 
   .cf ul li a {
-    margin: 0;
-    border-bottom: 3px solid #c9c505;
+    color: #333 !important;
+    border: 3px solid #fff;
     font-size: 1.3em;
+    display: inline-block;
+    padding: 0 0.4em 0 0.4em;
+    background: yellow;
     width: 70%;
     display: inline-block;
   }
@@ -1337,10 +1352,16 @@ label {
     width: 50%;
   }
 
-  /* footer {
-      position: relative;
-      top: -160px;
-    } */
+  /* profile*/
+
+
+  .before-form .panel-body img {
+    top: 121px;
+  }
+
+  .editProfy .href {
+    top: -200px;
+  }
 
   footer .footer-cols {
     display: grid;
@@ -1472,6 +1493,11 @@ label {
   .cf .logout {
     position: absolute;
     left: 62%;
+  }
+
+  .cf .to-parents a,
+  .cf .babysitters a {
+    width: 51%;
   }
 
   .profile-head {

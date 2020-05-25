@@ -117,4 +117,14 @@
     left: 14em;
 }
 
-/* endi of edit page */
+@media screen and (min-width: 300px) and (max-width: 550px) {
+    .emp-profile .profile-img {
+        width: 96%;
+    }
+
+    #form-group label {
+        display: none;
+    }
+}
+
+/* end of edit page */
