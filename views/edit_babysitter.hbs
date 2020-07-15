@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/babysitter.css" />
+  <script src="/javascript/fadeEffect.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>{{title}}</title>
+</head>
+
+<body id="fadein">
+
 {{#if editBaby}}
 <header>
       <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
@@ -24,11 +41,15 @@
 {{/if}}
 
 <div class="col-lg-12 editProfy text-center">
- <div class="before-form text-center">
-     <div class="panel-body text-center">
-           <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-circle profile-avatar" alt="User avatar">
-      </div>
- </div>
+  <div class="before-form text-center">
+    <div class="panel-body text-center">
+    </div>
+  </div>
+
+  <div class="ppic-container">
+    <img class="profile-image" src={{editBaby.image}} alt="profile-image" />
+  </div>
+
 <form method="POST" action="/babysitter/edit" class="form-center">
   <h1 class="href">Edit Profile</h1>
   <div id="form-group">
@@ -72,3 +93,10 @@
 <footer class="footer">
   <p>Copyright &copy; {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/javascript/main.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+</body>
+</html>

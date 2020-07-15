@@ -2,56 +2,45 @@
     .form-center #form-group {
         width: 80%;
     }
-
     .form-center #form-group {
         top: -369px;
         position: relative;
     }
-
     .cf li {
         width: 30%;
     }
-
 }
 
-/* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 
+/* Landscape */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     .form-center #form-group {
         width: 70%;
     }
-
     .cf .parent {
         left: 42%;
     }
-
     .cf .to-parents {
         left: 30%;
     }
-
     .cf ul li .user {
         width: 100%;
     }
-
     .cf .babysitter {
         left: 60%;
     }
-
     .cf .logout {
         left: 82%;
     }
-
     .form-center #form-group {
         top: -121px;
         position: relative;
     }
-
     .before-form img {
         top: 2px;
     }
-
     .editProfy .href {
         top: -73px;
     }
-
 }

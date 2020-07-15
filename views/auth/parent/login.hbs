@@ -1,4 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="/javascript/fadeEffect.js"></script>
+  <title>{{title}}</title>
+</head>
+
+<body id="fadein">
 <header>
       <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
       <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -21,11 +36,18 @@
 <div class="login-container">
  <h1 class="text-center">LOGIN AREA</h1>
   <form action="/parent/login" class="loginx" method="POST" id="form">
-    <label for="username"></label>
-    <input type="text" class="form-control" placeholder="Username" name="username">
 
-    <label for="password"></label>
-    <input type="password" class="form-control" placeholder="Password" name="password">
+        <h3 class="log-title">Log in to your account</h3>
+        <div class="inner-addon left-addon">
+          <i class="fa fa-user"></i>
+          <input type="text" class="form-control" placeholder="Username" name="username">
+        </div>
+        
+        <div class="inner-addon left-addon">
+          <i class="fa fa-lock"></i>
+          <input type="password" class="form-control" placeholder="Password" name="password">
+        </div>
+
 
     {{#if errorMessage }}
     <div class="error-message">{{ errorMessage }}</div>
@@ -47,3 +69,12 @@
     Copyright &copy; <script>document.write(new Date().getFullYear())</script> {{title}}
   </div>
 </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/javascript/main.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+</body>
+
+</html>

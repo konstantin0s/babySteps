@@ -1,102 +1,170 @@
 /*sitter area */
+
 .signup-sitter {
-  overflow-x: hidden;
-  background: url('https://images.pexels.com/photos/1327403/pexels-photo-1327403.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  background-size: cover;
-  height: 100%;
-  position: absolute;
-  width: 100%;
+    overflow-x: hidden;
+    background: url('https://images.pexels.com/photos/1327403/pexels-photo-1327403.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .signup-title {
-  position: relative;
-  top: -30px;
-  color: black;
-  left: -40px;
+    position: relative;
+    top: -30px;
+    color: black;
+    left: -40px;
 }
 
 .signup-title a {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  top: 80px;
-  width: 100%;
-  left: 40px;
-  cursor: pointer;
-  color: rgb(233, 212, 212);
-  font-weight: bold;
-  position: relative;
-  top: 100px;
-
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    width: 100%;
+    left: 40px;
+    cursor: pointer;
+    color: rgb(233, 212, 212);
+    font-weight: bold;
+    position: relative;
+    top: 100px;
 }
 
-
-.sitter-form,
-.parent-form {
-  width: 380px;
-  position: relative;
-  top: 100px;
-  padding-bottom: 260px;
-  padding: 1em 2em;
-  border-radius: 1em;
-  height: auto;
-  background-color: #fff;
-  margin: auto auto 100px;
+#form h3 {
+    position: relative;
+    text-align: center;
 }
 
+.sitter-form {
+    width: 380px;
+    position: relative;
+    top: 100px;
+    padding-bottom: 260px;
+    padding: 1em 2em;
+    border-radius: 1em;
+    height: auto;
+    background-color: #fff;
+    margin: auto auto 100px;
+}
 
-.sitter-form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
+#form input {
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: 0;
+    height: 2.6em;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .sitter-form input,
 .sitter-form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  /* margin-bottom: 20px; */
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: 0;
+    padding: 4px;
+    width: 100%;
 }
 
 .sitter-form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .3s ease background;
-  width: 100%;
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s ease background;
+    width: 100%;
 }
 
 .sitter-form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: .3s ease background;
+    background: #fff;
+    color: #43a3e6;
+    transition: .3s ease background;
 }
 
-/*end of sitter area */
 
-/* parent area */
+/* enable absolute positioning */
 
-.signup-parent {
-  overflow-x: hidden;
-  background: url('https://images.pexels.com/photos/208188/pexels-photo-208188.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  background-size: cover;
-  height: 100%;
-  position: absolute;
-  width: 100%;
+.inner-addon {
+    position: relative;
 }
 
-/* end of parent area  */
+
+/* style icon */
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+/* style icon */
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+/* align icon */
+
+.left-addon .fa {
+    left: 0px;
+}
+
+
+/* add padding  */
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+@media (min-width: 300px) and (max-width: 550px) {
+    .sitter-form {
+        margin: 30px auto;
+        width: 88%;
+        position: relative;
+        top: 100px;
+        height: auto;
+        margin-bottom: 120px;
+    }
+    .sitter-form p,
+    .sitter-form p a {
+        color: #333;
+        position: relative;
+        display: flex;
+        top: 15px;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    .sitter-form p a {
+        top: 0;
+        margin-left: 0.7em;
+    }
+    .sitter-form button {
+        margin-top: 2em;
+    }
+    .signup-title {
+        position: absolute;
+        top: 35px;
+        color: #fff;
+        text-align: center;
+        left: 0px;
+        width: 100%;
+    }
+    .signup-title a {
+        display: inline-block;
+        top: 5px;
+        margin: 1em 0;
+        left: 0;
+    }
+}

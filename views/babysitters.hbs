@@ -1,4 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/babysitters.css" />
+  <script src="/javascript/fadeEffect.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <title>{{title}}</title>
+</head>
+
+<body id="fadein">
 <header>
       <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
       <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -16,7 +30,7 @@
         </li>
 
           <li class="nav-item parent">
-  <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}} {{family.lastName}}</a>
+  <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}}</a>
       </li>
       <li class="nav-item logout">
         <a class="nav-link" href='/logout'>Logout</a>
@@ -38,7 +52,7 @@
         <a class="nav-link logoTitle" href="/">{{title}}</a>
       </li>
       <li class="nav-item babysitter">
-        <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} {{baby.lastName}}</a>
+        <a class="nav-link" href="/babysitter/{{baby._id}}">{{baby.firstName}} </a>
       </li>
       <li class="nav-item logout">
         <a class="nav-link" href='/logout'>Logout</a>
@@ -48,10 +62,14 @@
 </header>
 {{/if}}
 
-<div class="title-container">
-  <h1 class="pTitle">Meet babysitters:</h1>
-
-</div>
+<div class="main-container">
+    <div class="logo-container">
+      <img class="logo" src="/images/logo.png" alt="Babysteps">
+    </div>
+    <div class="title-container">
+      <!--background image container -->
+    </div>
+    <h1 class="pTitle">Meet Parents:</h1>
   <div class="formless">
         <form>
         <input id="input" class="input" type="text"
@@ -80,11 +98,11 @@
 
                   <td>
                     <img src="{{this.image}}" alt="">
-                    <a class="name" href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
-                    {{!-- <span class="user-subhead">Babysitter</span> --}}
+                    <a class="usr-link name" href="/babysitter/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+                
                   </td>
                   <td>
-                    <a class="name" href="#">{{this.city}}</a>
+                    <a class="usr-link name" href="#">{{this.city}}</a>
                   </td>
                   {{/each}}
                 </tr>
@@ -100,3 +118,12 @@
 <footer class="footer">
   <p>Copyright &copy; {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/javascript/main.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    </body>
+    
+    </html>

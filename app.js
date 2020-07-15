@@ -15,13 +15,13 @@ hbs.registerHelper('date', require('helper-date'));
 
 
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+    .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+    .then(x => {
+        console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    })
+    .catch(err => {
+        console.error('Error connecting to mongo', err)
+    });
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('auth', path.join(__dirname, 'auth'));
@@ -31,55 +31,57 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session({  //setup sessions always here
-  secret: "basic-auth-secret",
-  key: 'sid',
-  cookie: { maxAge: 60000 },
-  resave: true,
-  saveUninitialized: true,
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
-  })
+app.use(session({ //setup sessions always here
+    secret: "basic-auth-secret",
+    key: 'sid',
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 24 * 60 * 60 // 1 day
+    })
 }));
 
 //enables cors
 app.use(cors({
-  'allowedHeaders': ['sessionId', 'Content-Type'],
-  'exposedHeaders': ['sessionId'],
-  'origin': '*',
-  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  'preflightContinue': false
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposedHeaders': ['sessionId'],
+    'origin': '*',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
 }));
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 app.locals.title = 'BabySteps';
 
 
-app.get('/', function (req, res) {
-  res.cookie('name', 'name'); //Sets name = express
-  res.render('index');
-});
+// app.get('/', function(req, res) {
+//     res.cookie('name', 'name'); //Sets name = express
+//     res.render('index', );
+// });
 
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/auth'));
-app.use('/', require('./routes/auth2'));
+app.use('/', require('./routes/auth', {
+    layout: false
+}));
+app.use('/', require('./routes/auth2', { layout: false }));
 
 app.use(["/parent*", "/babysitter*"], (req, res, next) => {
-  if (req.session.currentUser) {
-    res.locals.sitter = req.session.sitter; //babysitters
-    res.locals.family = req.session.family; //parents
-    console.log('res local sitter', res.locals.sitter);
-    console.log('res local family', res.locals.family);
-    next(); // ==> go to the next route ---
-  } else {                          //    |
-    res.redirect("/sitter/login");         //    |  <-- it redirects here afte sign up
-  }                                 //    |
+    if (req.session.currentUser) {
+        res.locals.sitter = req.session.sitter; //babysitters
+        res.locals.family = req.session.family; //parents
+        console.log('res local sitter', res.locals.sitter);
+        console.log('res local family', res.locals.family);
+        next(); // ==> go to the next route ---
+    } else { //    |
+        res.redirect("/sitter/login"); //    |  <-- it redirects here after sign up
+    } //    |
 });
 
 
@@ -93,16 +95,16 @@ app.use('/', require('./routes/babysitter'));
 
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server started on port 5000...Happy Surfing`);
+    console.log(`Server started on port 5000...Happy Surfing`);
 });
 
 
 //close mongodb
-process.on('SIGINT', function () {
-  mongoose.connection.close(function () {
-    console.log('Mongoose disconnected on app termination');
-    process.exit(0);
-  });
+process.on('SIGINT', function() {
+    mongoose.connection.close(function() {
+        console.log('Mongoose disconnected on app termination');
+        process.exit(0);
+    });
 });
 
 module.exports = app;

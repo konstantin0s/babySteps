@@ -1,36 +1,172 @@
 header {
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding: 0;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
 }
 
-
 .login-sitter h1 {
-  position: relative;
-  top: 140px;
-  font-size: 1.5em;
-  color: rgb(63, 60, 60);
-  font-weight: bold;
+    position: relative;
+    top: 140px;
+    font-size: 1.5em;
+    color: rgb(63, 60, 60);
+    font-weight: bold;
 }
 
 .login-sitter {
-  background: url('https://images.pexels.com/photos/51953/mother-daughter-love-sunset-51953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  background-size: cover;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
+    background: url('https://images.pexels.com/photos/1257105/pexels-photo-1257105.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .login-sitter .loginx {
-  width: 380px;
-  position: relative;
-  top: 160px;
-  padding-bottom: 60px;
-  padding: 1em 2em;
-  border-radius: 1em;
-  height: auto;
-  background-color: #fff;
-  margin: auto;
+    width: 380px;
+    position: relative;
+    top: 160px;
+    padding-bottom: 60px;
+    padding: 1em 2em;
+    border-radius: 1em;
+    height: auto;
+    background-color: #fff;
+    margin: auto;
+}
+
+#form input {
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: 0;
+    height: 2.6em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#form button {
+    margin-top: 20px;
+}
+
+#form h3 {
+    position: relative;
+    text-align: center;
+    margin: 1em 0 1.5em 0;
+}
+
+#form input,
+#form button {
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: 0;
+    width: 100%;
+}
+
+#form button {
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s ease background;
+    width: 100%;
+}
+
+#form button:hover {
+    background: #fff;
+    color: #43a3e6;
+    transition: .3s ease background;
+}
+
+
+/* enable absolute positioning */
+
+.inner-addon {
+    position: relative;
+}
+
+
+/* style icon */
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+/* style icon */
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+/* align icon */
+
+.left-addon .fa {
+    left: 0px;
+}
+
+
+/* add padding  */
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 890px) {
+    .login-container h1 {
+        top: 75px;
+    }
+    .login-container .loginx {
+        top: 85px;
+    }
+    .login-sitter h1 {
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 350px) and (orientation: portrait) {
+    #nav ul .login a {
+        color: #333 !important;
+        border: 3px solid #fff;
+        font-size: 1.3em;
+        display: inline-block;
+        padding: 0.2em 0.4em 0 0.4em;
+        background: #c9c505;
+        ;
+        width: 70%;
+        top: 180px;
+        padding-bottom: 1.8em;
+    }
+    .cf .login {
+        position: absolute;
+        left: 10%;
+    }
+    .logoTitle {
+        display: none;
+    }
+}
+
+
+/* Tablet menu */
+
+@media all and (min-width: 768px) and (max-width:950px) {
+    .cf {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    #nav .cf .login {
+        left: 55%;
+    }
 }

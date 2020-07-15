@@ -1,7 +1,10 @@
+//load with fadein on page
+function fadeEffect() {
+    let fadein = document.getElementById('fadein');
+    if (!fadein.classList.contains('loaderx')) {
+        fadein.classList.add('loaderx');
+    }
 
-  //load with fadein on page
-  function loaderBody() {
-               document.getElementById('fadein').className = 'loaderx';
-      }
+}
 
-      window.addEventListener('load', loaderBody);
+window.addEventListener('load', fadeEffect);

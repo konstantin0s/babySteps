@@ -1,145 +1,81 @@
-
 //implement search
 let inputSearch = document.getElementById('input');
 if (inputSearch) {
-  inputSearch.addEventListener('keyup', () => {
-    this.searchHandler();
-  });
-  
+    inputSearch.addEventListener('keyup', () => {
+        this.searchHandler();
+    });
+
 } else {
 
 }
 
 
 function searchHandler(event) {
-  let filter, table, txtValue;
-  filter = jsUcfirst(inputSearch.value);
-  // console.log(filter)
-  table = document.getElementById("table");
- let td = table.getElementsByTagName('td');
+    let filter, table, txtValue;
+    filter = jsUcfirst(inputSearch.value);
+    // console.log(filter)
+    table = document.getElementById("table");
+    let td = table.getElementsByTagName('td');
 
- for (let i = 0; i < td.length; i++) {
-  let a = td[i].getElementsByTagName("a")[0];
-if (a) {
-  txtValue = a.textContent || a.innerText;
+    for (let i = 0; i < td.length; i++) {
+        let a = td[i].getElementsByTagName("a")[0];
+        if (a) {
+            txtValue = a.textContent || a.innerText;
 
-  // console.log(txtValue);
-  if (txtValue.indexOf(filter) > -1) {
-    td[i].style.display = "";
-  } else {
-    td[i].style.display = "none";
-  }
-}
-}
+            // console.log(txtValue);
+            if (txtValue.indexOf(filter) > -1) {
+                td[i].style.display = "";
+            } else {
+                td[i].style.display = "none";
+            }
+        }
+    }
 }
 
 jsUcfirst = str => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 
+$(document).ready(function() {
+    //search 
+    $("#search-query").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: "/search-result",
+                type: "GET",
+                data: request, // request is the value of search input
+                success: function(data) {
+                    // Map response values to fiedl label and value
+                    response($.map(data, function(el) {
+                        return {
+                            label: el.title,
+                            value: el._id
+                        };
+                    }));
+                }
+            });
+        },
 
-// Responsive Nav
-(function ($) {
-  menu = $('nav ul');
+        // The minimum number of characters a user must type before a search is performed.
+        minLength: 3,
 
-  $('#openup').on('click', function (e) {
-    e.preventDefault();
-    menu.slideToggle();
-  });
-
-  $(window).resize(function () {
-    let w = $(this).width();
-    if (w > 480 && menu.is(':hidden')) {
-      menu.removeAttr('style');
-    }
-  });
-
-  $('nav li').on('click', function (e) {
-    let w = $(window).width();
-    if (w < 480) {
-      menu.slideToggle();
-    }
-  });
-  $('.open-menu').height($(window).height());
-})(jQuery);
-
-// Smooth Scrolling
-$('.cf a').on('click', function (event) {
-  if (this.hash !== '') {
-    event.preventDefault();
-
-    const hash = this.hash;
-
-    $('html, body').animate(
-      {
-        scrollTop: $(hash).offset().top
-      },
-      800,
-      function () {
-        window.location.hash = hash;
-      }
-    );
-  }
-});
-
-
-
-$(document).ready(function () {
-  $('.delete-recipe').on('click', function (e) {
-    $target = $(e.target);
-    const id = $target.attr('data-id');
-    $.ajax({
-      type: 'DELETE',
-      url: '/recipe/' + id,
-      success: function (response) {
-        alert('Deleting recipe');
-        window.location.href = '/';
-      },
-      error: function (err) {
-        console.log(err);
-      }
-    });
-  });
-
-
-  $("#search-query").autocomplete({
-    source: function (request, response) {
-      $.ajax({
-        url: "/search-result",
-        type: "GET",
-        data: request,  // request is the value of search input
-        success: function (data) {
-          // Map response values to fiedl label and value
-          response($.map(data, function (el) {
-            return {
-              label: el.title,
-              value: el._id
-            };
-          }));
+        // set an onFocus event to show the result on input field when result is focused
+        focus: function(event, ui) {
+            this.value = ui.item.label;
+            // Prevent other event from not being execute
+            event.preventDefault();
+        },
+        select: function(event, ui) {
+            // Prevent value from being put in the input:
+            this.value = ui.item.label;
+            // Set the id to the next input hidden field
+            $(this).next("input").val(ui.item.value);
+            // Prevent other event from not being execute
+            event.preventDefault();
+            // optionnal: submit the form after field has been filled up
+            $('#quicksearch').submit();
         }
-      });
-    },
-
-    // The minimum number of characters a user must type before a search is performed.
-    minLength: 3,
-
-    // set an onFocus event to show the result on input field when result is focused
-    focus: function (event, ui) {
-      this.value = ui.item.label;
-      // Prevent other event from not being execute
-      event.preventDefault();
-    },
-    select: function (event, ui) {
-      // Prevent value from being put in the input:
-      this.value = ui.item.label;
-      // Set the id to the next input hidden field
-      $(this).next("input").val(ui.item.value);
-      // Prevent other event from not being execute
-      event.preventDefault();
-      // optionnal: submit the form after field has been filled up
-      $('#quicksearch').submit();
-    }
-  });
+    });
 
 });
