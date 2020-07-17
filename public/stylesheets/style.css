@@ -14,12 +14,34 @@
     --hover-color: #c9c505;
 }
 
+@font-face {
+    font-family: 'Font-Awesome';
+    src: url('/fonts/fontawesome-webfont.woff2') format("woff2"), url('/fonts/fontawesome-webfont.woff') format('woff'), url('/fonts/fontawesome-webfont.ttf') format('truetype');
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: Font-Awesome;
+    text-rendering: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+input,
+li {
+    font-family: Font-Awesome;
+    text-rendering: auto;
 }
 
 body {
@@ -105,6 +127,8 @@ th {
 
 .btn a {
     text-decoration: none;
+    font-family: Font-Awesome;
+    text-rendering: auto;
     /* color: white; */
 }
 
@@ -165,58 +189,6 @@ img {
 
 a:hover {
     color: var(--primary-link-color);
-}
-
-.addRevForm .form-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    height: 100vh;
-    width: 70%;
-    position: relative;
-    top: -124px;
-    margin-bottom: 7em;
-    padding-bottom: 6em;
-}
-
-.addRevForm #buttom {
-    position: relative;
-    left: -4em;
-    width: 100px;
-}
-
-.editProfy {
-    position: absolute;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    overflow-y: hidden;
-}
-
-.editProfy .href {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--primary-link-color);
-    text-align: center;
-}
-
-.editProfy .form-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    height: 100vh;
-    width: 70%;
-    left: 12%;
-    padding-right: 2em;
-    position: relative;
-    top: 172px;
-    margin-bottom: 7em;
-    background-color: rgb(235, 224, 224);
 }
 
 .sign {
@@ -807,7 +779,7 @@ nav a#openup {
 }
 
 a {
-    color: #3498db;
+    color: #3498db !important;
     outline: none !important;
 }
 
@@ -1193,10 +1165,6 @@ label {
         padding: 0;
         height: auto;
     }
-    .login-sitter .text-center {
-        color: #fff !important;
-        top: 69px;
-    }
     #showcase header {
         position: relative;
         width: 100%;
@@ -1225,7 +1193,7 @@ label {
         display: inline-block;
         margin: 1em 0px;
         position: relative;
-        top: 7em;
+        top: 3em;
     }
     .cf ul li a {
         color: #333 !important;
@@ -1287,10 +1255,6 @@ label {
         width: 100%;
         height: 600px;
         padding: 10px;
-    }
-    .text-center #button {
-        position: relative;
-        left: 6.2em;
     }
     .profile-head {
         position: relative;
@@ -1480,10 +1444,6 @@ label {
         width: 100%;
         height: 600px;
         padding: 10px;
-    }
-    #button {
-        position: relative;
-        left: 6.2em;
     }
 }
 

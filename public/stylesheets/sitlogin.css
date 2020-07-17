@@ -129,9 +129,6 @@ header {
     .login-container .loginx {
         top: 85px;
     }
-    .login-sitter h1 {
-        color: #fff;
-    }
 }
 
 @media only screen and (max-width: 600px) and (min-width: 350px) and (orientation: portrait) {

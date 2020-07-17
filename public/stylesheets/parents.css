@@ -193,7 +193,7 @@
 }
 
 
-/* end of seach bar style */
+/* end of search bar style */
 
 @media screen and (max-width: 689px) {
     .pTitle {
@@ -282,5 +282,14 @@
     }
     .collapse.show .user {
         width: auto;
+    }
+    .cf .parent {
+        position: absolute;
+        left: 56%;
+    }
+    .cf .logout {
+        position: absolute;
+        float: right;
+        left: 77%;
     }
 }

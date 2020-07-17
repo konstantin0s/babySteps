@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        {{!-- <link rel="stylesheet" href="/stylesheets/babysitters.css" /> --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/babysitter.css" />
     <script src="/javascript/fadeEffect.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{{title}}</title>
 </head>
 
@@ -34,7 +36,7 @@
                 <a class="nav-link" href='/babysitters'>To Sitters</a>
             </li>
             <li class="nav-item babysitter">
-                <a class="nav-link" href="/parent/{{family._id}}">{{family.firstName}}</a>
+                <a class="nav-link" href="/parent/{{family._id}}/edit">Settings</a>
             </li>
             <li class="nav-item logout">
                 <a class="nav-link" href='/logout'>Logout</a>
@@ -54,14 +56,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto cf">
-          <li class="hide-on-small">
+        <li class="nav-item">
             <a class="nav-link logoTitle" href="/">{{title}}</a>
-          </li>
+        </li>
           <li class="nav-item to-parents">
             <a class="nav-link" href='/parents'>View Parents</a>
           </li>
           <li class="nav-item babysitter">
-            <a class="nav-link" href="/babysitter/{{baby.id}}/edit">{{baby.firstName}}</a>
+            <a class="nav-link" href="/babysitter/{{baby.id}}/edit">Settings</a>
          </li>
           <li class="nav-item logout">
             <a class="nav-link" href='/logout'>Logout</a>
@@ -73,52 +75,52 @@
 
 
 <div class="emp-profile">
+ <div class="before-form text-center">
+    <div class="panel-body text-center">
+    </div>
+</div>
+
     <form class="form-container" method="post">
         <div class="row">
             <div class="col-md-3">
                 <div class="profile-img">
                     <img src="{{baby.image}}" alt="" />
-                  
                     {{#if sitter}}
                     <div class="file btn btn-lg btn-primary">
-                        
                      <a class="profile-edit-btn" name="btnAddMore"
                         href="/babysitter/{{baby.id}}/edit"> Change Photo</a> 
-                    </div>
+                    </div> <!-- btn primary -->
                     {{/if}}
-                
-                </div>
-            </div>
+                </div> <!--profile image -->
+            </div> <!--col md 3 -->
+
             <div class="col-md-6">
                 <div class="profile-head">
-                  
                     <p class="profile-rating">RANKINGS : <span>8/10</span></p>
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                       <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                 aria-controls="home" aria-selected="true">About</a>
-                        </li>
+                           </li>
                            <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" 
-                            href="#profile" role="tab" aria-controls="profile" aria-selected="true">Extra Info</a>
-                        </li>
-                 <li class="nav-item">
-                    {{#if sitter}}
-                    <div>
-                        <button class="btn btn-default"> <a class="profile-edit-btn" name="btnAddMore"
+                             <a class="nav-link" id="profile-tab" data-toggle="tab" 
+                               href="#profile" role="tab" aria-controls="profile" aria-selected="true">Extra Info</a>
+                          </li>
+                         <li class="nav-item">
+                          {{#if sitter}}
+                          <div>
+                           <button class="btn btn-default"> <a class="profile-edit-btn" name="btnAddMore"
                                 href="/babysitter/{{baby.id}}/edit">Settings</a>
-                    </div>
-                 {{/if}}
-                </li>
-
-                    </ul>
-                </div>
-            </div>
-
-        </div>
+                         </div>
+                          {{/if}}
+                         </li>
+                        </ul>
+                </div><!--col md-6 -->
+            </div> <!--profile head -->
+        </div> <!-- row  -->
 
         <div class="row under-pic">
-        <div class="col-md-8">
+          <div class="col-md-8">
                 <div class="tab-content profile-tab" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
@@ -128,7 +130,7 @@
                             <div class="col-md-6">
                                 <p>{{baby.firstName}} {{baby.firstName}}</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Username</label>
@@ -136,7 +138,7 @@
                             <div class="col-md-6">
                                 <p>{{baby.username}}</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Phone</label>
@@ -144,25 +146,25 @@
                             <div class="col-md-6">
                                 <p>123 456 7890</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
                                 <p>Babysitter</p>
-                            </div>
+                            </div> <!-- row  -->
                         </div>
 
                           <div class="row">
-                            <div class="col-md-6">
-                                <label>City</label>
-                            </div>
-                            <div class="col-md-6">
+                             <div class="col-md-6">
+                                 <label>City</label>
+                             </div>
+                             <div class="col-md-6">
                                 <p>{{baby.city}}</p>
                             </div>
-                        </div>
-                    </div>
+                          </div> <!-- row  -->
+                    </div> <!-- tab pane div  -->
 
                     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
@@ -172,7 +174,7 @@
                             <div class="col-md-6">
                                 <p>3 Years</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Hourly Rate</label>
@@ -180,7 +182,7 @@
                             <div class="col-md-6">
                                 <p>{{baby.salary}}$/hr</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>English Level</label>
@@ -188,7 +190,7 @@
                             <div class="col-md-6">
                                 <p>Expert</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Availability</label>
@@ -196,19 +198,20 @@
                             <div class="col-md-6">
                                 <p>6 months</p>
                             </div>
-                        </div>
+                        </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Joined at</label><br />
                                 <p>{{baby.createdAt}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div
-        </div>
-    </form>
-</div>
+                            </div> <!-- col-md-12  -->
+                        </div> <!-- row  -->
+                    </div> <!-- tab pane div  -->
+                </div> <!-- tab content div -->
+            </div <!-- col md 8 div  -->
+         </div> <!-- row under pic  -->
+            </div> <!-- row  -->
+    </form> <!-- form  -->
+
 
 
 <div class="addRevForm">
@@ -216,22 +219,18 @@
     <form  action="/babysitter?babysitter_id={{baby._id}}" method="post" 
      class="form-center">
       <div id="form-group">
-         
         <div class="inner-addon left-addon">
             <i class="fa fa-user"></i>
             <input class="form-control" type="text" name="user" placeholder="You name..">
         </div>
       </div>
-    
     <div id="form-group">
-
                 <div class="inner-addon left-addon">
                     <i class="fa fa-comment"></i>
                 <textarea class="form-control" placeholder="Leave a comment.." type="text" name="comments"></textarea>
                 </div>
     </div>
          <br>
-
       <div id="form-group">
           <label></label>
             <button class="btn btn-secondary" id="buttom" type="submit">
@@ -249,22 +248,20 @@
                     <i class="fa fa-user"></i>
               <span class="span">{{this.user}} says:</span>
                 <p class="comment">{{this.comments}}</p>
-                </div>
-          
+                </div> 
         </div>
     </div>
     {{/each}}
 </div>
-
+</div>
 </div>
 
 <footer class="footer">
-    <p>Copyright &copy; {{title}} <script>document.write(new Date().getFullYear())</script></p>
+    <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/javascript/main.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+</body>
 </html>

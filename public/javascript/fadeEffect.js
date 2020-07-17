@@ -1,4 +1,4 @@
-//load with fadein on page
+//load with fade in on page
 function fadeEffect() {
     let fadein = document.getElementById('fadein');
     if (!fadein.classList.contains('loaderx')) {
