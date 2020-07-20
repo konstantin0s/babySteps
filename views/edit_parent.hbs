@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="/stylesheets/parent.css" />
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/javascript/fadeEffect.js"></script>
 </head>
@@ -45,57 +45,70 @@
 </header>
 {{/if}}
 
-<div class="col-lg-12 editProfy text-center">
- <div class="before-form text-center">
-     <div class="panel-body text-center">
-      </div>
- </div>
 
- <div class="ppic-container">
-      <img class="profile-image" src={{editParent.image}} alt="profile-image" />
- </div>
-  <form method="POST" action="/parent/{{showParentData.id}}/edit"
-   class="form-center">
-    <h1 class="href">Edit Profile</h1>
-    <div id="form-group">
-      <label for="level">First Name:</label>
-      <input type="text" name="firstName" value="{{editParent.firstName}}" class="form-control">
+<div class="col-lg-12 editProfy text-center">
+  <div class="before-form text-center">
+    <div class="panel-body text-center">
+      <!-- background image container -->
     </div>
-    <div id="form-group">
-      <label for="level">Last Name</label>
-      <input type="text" name="lastName" value="{{editParent.lastName}}" class="form-control">
+
+    <div class="ppic-container">
+          <img class="profile-image" src={{editParent.image}} alt="profile-image" />
     </div>
-    <div id="form-group">
-      <label for="level">Username:</label>
-      <input type="text" name="username" value="{{editParent.username}}" class="form-control">
-    </div>
-    <div id="form-group">
-      <label for="level">Image:</label>
-      <input type='text' class="form-control"
-       name="image" value="{{editParent.image}}" placeholder="Image url" />
-    </div>
-    <div id="form-group">
-      <label for="level">City:</label>
-      <input type="text" name="city" value="{{editParent.city}}" class="form-control">
-    </div>
-    <div id="form-group">
-      <label for="level">Country:</label>
-      <input type="text" name="country" value="{{editParent.country}}" class="form-control">
-    </div>
-    <div id="form-group">
-      <label for="level">Kids:</label>
-      <input type="number" name="kids" value="{{editParent.kids}}" class="form-control">
-    </div>
-    <div id="form-group">
-      <label for="level">Caring days:</label>
-      <input type="number" name="days" value="{{editParent.days}}" class="form-control">
-    </div>
-    <input type="submit" id="button" class="btn btn-primary" value="Submit">
+
+    <div class="form-container">
+  <form method="POST" enctype="multipart/form-data" action="/parent/{{showParentData.id}}/edit" class="form-center">
+        <h1 class="href">Edit Profile</h1>
+      <div id="form-group">
+        <label for="level">First Name:</label>
+        <input type="text" name="firstName" value="{{editParent.firstName}}" class="form-control">
+      </div>
+      <div id="form-group">
+        <label for="level">Last Name</label>
+        <input type="text" name="lastName" value="{{editParent.lastName}}" class="form-control">
+      </div>
+      <div id="form-group">
+        <label for="level">Username:</label>
+        <input type="text" name="username" value="{{editParent.username}}" class="form-control">
+      </div>
+      <div id="form-group" class="image inner-addon left-addon">
+        <div class="upload-btn-wrapper">
+          <button class="upload">Upload a file</button>
+          <input type="file" name='image' id="addPic" className="btn btn-warning addPic form-control" />
+        </div>
+      </div>
+        <div id="form-group">
+          <label for="level">City:</label>
+          <input type="text" name="city" value="{{editParent.city}}" class="form-control">
+        </div>
+        <div id="form-group">
+          <label for="level">Country:</label>
+          <input type="text" name="country" value="{{editParent.country}}" class="form-control">
+        </div>
+        <div id="form-group">
+          <label for="level">Phone:</label>
+          <input type="text" id="phone" class="form-control" placeholder="Ex. 061-621-2946" name="phone"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{editParent.phone}}">
+        </div>
+        <div id="form-group">
+          <label for="level">Kids:</label>
+          <input type="number" name="kids" value="{{editParent.kids}}" class="form-control">
+        </div>
+        <div id="form-group">
+          <label for="level">Caring days:</label>
+          <input type="number" name="days" value="{{editParent.days}}" class="form-control">
+        </div>
+        <input type="submit" id="button" class="btn btn-primary" value="Submit">
+      </div>
+    </form>
+  </div>
 </div>
-</form>
 </div>
+
 <footer class="footer">
-  <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
+  <p>Copyright <i class="fa fa-copyright"></i> {{title}}
+    <script>document.write(new Date().getFullYear())</script>
+  </p>
 </footer>
 
 

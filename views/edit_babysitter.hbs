@@ -9,9 +9,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="/stylesheets/babysitter.css" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="/stylesheets/babysitter.css" />
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="/javascript/fadeEffect.js"></script>
   <title>{{title}}</title>
 </head>
@@ -47,56 +47,83 @@
 
 <div class="col-lg-12 editProfy text-center">
   <div class="before-form text-center">
-    <div class="panel-body text-center">
-    </div>
-  </div>
+      <div class="panel-body text-center">
+        <!-- background image container -->
+      </div>
 
   <div class="ppic-container">
     <img class="profile-image" src={{editBaby.image}} alt="profile-image" />
   </div>
 
-<form method="POST" action="/babysitter/edit" class="form-center">
-  <h1 class="href">Edit Profile</h1>
-  <div id="form-group">
-    <label for="level">First Name:</label>
-    <input type="text" name="firstName" value="{{editBaby.firstName}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Last Name</label>
-    <input type="text" name="lastName" value="{{editBaby.lastName}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Username:</label>
-    <input type="text" name="username" value="{{editBaby.username}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Image:</label>
-    <input type='text' name="image" value="{{editBaby.image}}" class="form-control"
-     placeholder="Image url" />
-  </div>
-  <div id="form-group">
-    <label for="level">City:</label>
-    <input type="text" name="city" value="{{editBaby.city}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Country:</label>
-    <input type="text" name="country" value="{{editBaby.country}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Age:</label>
-    <input type="number" name="age" value="{{editBaby.age}}" class="form-control">
-  </div>
-  <div id="form-group">
-    <label for="level">Salary:</label>
-    <input type="number" name="salary" value="{{editBaby.salary}}" class="form-control">
-  </div>
-  <input type="submit" id="button" class="btn btn-primary" value="Submit">
-  </div>
-</form>
+<div class="form-container">
+  <form method="POST" enctype="multipart/form-data" action="/babysitter/{{editBaby.id}}/edit" class="form-center">
+    <h1 class="href">Edit Profile</h1>
+    <div id="form-group">
+      <label for="level">First Name:</label>
+      <input type="text" name="firstName" value="{{editBaby.firstName}}" placeholder="ex. Muhamad" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Last Name</label>
+      <input type="text" name="lastName" value="{{editBaby.lastName}}" placeholder="ex. Ali" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Username:</label>
+      <input type="text" name="username" value="{{editBaby.username}}" placeholder="ex. nick" class="form-control">
+    </div>
+        <div id="form-group" class="image inner-addon left-addon">
+          <div class="upload-btn-wrapper">
+            <button class="upload">Upload a file</button>
+            <input type="file" name='image' id="addPic" className="btn btn-warning addPic form-control" />
+          </div>
+        </div>
+    <div id="form-group">
+      <label for="level">City:</label>
+      <input type="text" name="city" value="{{editBaby.city}}" placeholder="ex. Amsterdam" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Country:</label>
+      <input type="text" name="country" value="{{editBaby.country}}" placeholder="ex. Rusia" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Age:</label>
+      <input type="number" name="age" value="{{editBaby.age}}" placeholder="ex. 28" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Salary:</label>
+      <input type="number" name="salary" value="{{editBaby.salary}}" placeholder="ex. 22$ /h"  class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Phone:</label>
+      <input type="text" id="phone" class="form-control" placeholder="Ex. 061-621-2946" name="phone"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{editBaby.phone}}">
+    </div>
+    <div id="form-group">
+      <label for="level">Working as:</label>
+      <input type="text" name="profession" value="{{editBaby.profession}}" placeholder="ex. Nurse" class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Experience:</label>
+      <input type="text" name="experience" value="{{editBaby.experience}}" placeholder="ex. Junior/Medior/Senior"  class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Languages:</label>
+      <input type="text" name="language" value="{{editBaby.language}}" placeholder="What languages do you speak?"   class="form-control">
+    </div>
+    <div id="form-group">
+      <label for="level">Availability:</label>
+      <input type="text" name="availability" value="{{editBaby.availability}}" placeholder="Add number in weeks" class="form-control">
+    </div>
+    <input type="submit" id="button" class="btn btn-primary" value="Submit">
+    </div>
+  </form>
+</div>
+</div>
 </div>
 
 <footer class="footer">
-  <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
+  <p>Copyright <i class="fa fa-copyright"></i> {{title}}
+    <script>document.write(new Date().getFullYear())</script>
+  </p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

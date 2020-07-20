@@ -40,7 +40,7 @@
 
 <div class="signup-sitter">
   <h3 class="signup-title"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h3>
-  <form id="form" class="sitter-form" action="/sitter/signup" method="POST">
+  <form id="form" class="sitter-form" enctype="multipart/form-data" action="/sitter/signup" method="POST">
 <h3>Sign up Now</h3>
   <div class="inner-addon left-addon">
       <i class="fa fa-user"></i>
@@ -83,18 +83,18 @@
           <i class="fa fa-money"></i>
     <input type="text" name="salary" class="form-control" placeholder="Salary Expectation">
         </div>
-
-    <div class="inner-addon left-addon">
-      <i class="fa fa-picture-o "></i>
-        <input type='text' name='image' class="form-control" placeholder="Image url" />
+  <div id="form-group" class="image inner-addon left-addon">
+    <div class="upload-btn-wrapper">
+      <button class="upload">Upload a image</button>
+      <input type="file" name='image' id="addPic" className="btn btn-warning addPic form-control" />
     </div>
-
+  </div>
 
       <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
 
-    <button type="submit">Create account</button>
+    <button class="submit" type="submit">Create account</button>
 
-        <p>Already Having an account? <a class="link" href='/sitter/login'>Log In</a></p>
+        <p class="acc">Already Having an account? <a class="link" href='/sitter/login'>Log In</a></p>
   </form>
 </div>
 

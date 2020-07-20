@@ -5,16 +5,16 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const bcrypt = require("bcryptjs");
 const dotenv = require('dotenv').config();
+const uploader = require('../models/cloudinary-setup');
+const path = require('path');
+
 router.use(cookieParser());
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
-
+//Babysitter area.
 const Babysitter = require('../models/babysitter');
 
-
-
-//Babysitter area.
 
 router.get("/sitter/signup", (req, res) => {
     res.render("auth/sitter/signup", { layout: false });
@@ -23,7 +23,7 @@ router.get("/sitter/signup", (req, res) => {
 // BCrypt to encrypt passwords
 const bcryptSalt = 10;
 
-router.post("/sitter/signup", (req, res, next) => {
+router.post("/sitter/signup", uploader.single('image'), (req, res, next) => {
     try {
         const firstName = req.body.firstName;
         const lastName = req.body.lastName;
@@ -33,7 +33,7 @@ router.post("/sitter/signup", (req, res, next) => {
         const country = req.body.country;
         const age = req.body.age;
         const salary = req.body.salary;
-        const image = req.body.image;
+        const image = req.file.path;
 
 
         if (username === "" || password === "" || username.length < 3 || password.length < 3) {
@@ -130,6 +130,7 @@ router.post("/sitter/login", (req, res, next) => {
                 if (bcrypt.compareSync(thePassword, user.password)) {
                     req.session.currentUser = user;
                     req.session.sitter = user;
+                    console.log(req.session.currentUser)
                     res.redirect("/parents");
                 } else {
                     res.render("auth/sitter/login", {

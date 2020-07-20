@@ -58,26 +58,36 @@
      height: 100vh;
      width: 70%;
      position: relative;
-     top: -124px;
+     top: 0px;
+     padding: 1em;
      margin-bottom: 7em;
      padding-bottom: 6em;
  }
  
  .addRevForm #buttom {
-     position: relative;
-     left: -4em;
+     position: absolute;
+     left: 0em;
      width: 100px;
  }
  
  .editProfy {
-     position: absolute;
+     position: relative;
      top: 10px;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-content: center;
-     overflow-y: hidden;
-     overflow-x: hidden;
+     height: 100%;
+     width: 100%;
+     min-height: 100vw !important;
+ }
+ 
+ .editProfy .form-container {
+     width: 70%;
+     min-height: 100%;
+     margin: 2em 0em;
+     padding: 0.3em;
+     position: absolute;
+     left: 27%;
+     top: 425px;
+     background-color: grey;
+     margin-bottom: 200px;
  }
  
  .editProfy .href {
@@ -86,8 +96,9 @@
      justify-content: center;
      color: var(--primary-link-color);
      text-align: center;
-     top: -40px;
+     top: 15px;
      position: relative;
+     margin: 60px 0px;
  }
  
  .editProfy .form-center {
@@ -95,28 +106,64 @@
      flex-direction: column;
      justify-content: center;
      align-self: center;
-     height: 100vh;
-     width: 70%;
-     left: 12%;
+     min-height: 100vh;
+     width: 100%;
+     left: 0;
      padding-right: 2em;
      position: relative;
-     top: 172px;
-     margin-bottom: 7em;
+     top: 0px;
      background-color: rgb(235, 224, 224);
+     padding-bottom: 126px;
  }
  
  .ppic-container {
      position: relative;
-     top: 500px;
+     top: 5px;
      left: 10px;
      margin-right: 20px;
      width: 22%;
+     padding: 0.3em;
+     background-color: grey;
+ }
+ /*Style of upload button */
+ 
+ .upload-btn-wrapper {
+     position: relative;
+     overflow: hidden;
+     display: inline-block;
+     left: 25.5%;
+ }
+ 
+ .upload {
+     border: 2px solid gray;
+     color: gray;
+     background-color: white;
+     padding: 8px 20px;
+     border-radius: 8px;
+     font-size: 20px;
+     font-weight: bold;
+     cursor: pointer;
+ }
+ 
+ .upload:hover,
+ .upload-btn-wrapper input[type=file]:hover {
+     background-color: #333;
+     color: #fff;
+ }
+ 
+ .upload-btn-wrapper input[type=file] {
+     font-size: 100px;
+     position: absolute;
+     cursor: pointer;
+     left: 0;
+     top: 0;
+     opacity: 0;
  }
  
  .profile-image {
      height: auto;
-     top: -328px;
-     position: absolute;
+     top: 0px;
+     position: relative;
      left: 0;
  }
  
@@ -142,10 +189,10 @@
      top: 100px;
  }
  
- .form-container {
+ .emp-profile .form-container {
      background: #fff;
      width: 100%;
-     height: 100%;
+     min-height: 100%;
      margin: 2em 0em;
      padding: 0.5em;
      position: relative;
@@ -228,6 +275,7 @@
      width: 100px !important;
      position: relative;
      left: 14em;
+     margin-bottom: 100px;
  }
  
  .disRev {
@@ -261,9 +309,10 @@
  .addRev {
      position: relative;
      top: 80px;
-     left: -4em;
+     left: 0;
      color: rgb(79, 146, 81);
      font-size: 26px;
+     margin-bottom: 1.5em;
  }
  
  .h5-comm {
@@ -344,8 +393,8 @@
  }
  
  .footer {
-     position: relative;
-     bottom: -50px;
+     position: fixed;
+     bottom: 0px;
      color: #fff;
      text-align: center;
      background-color: #333;
@@ -385,6 +434,11 @@
      padding-left: 30px;
  }
  
+ .form-group input[type=file],
+ .form-group input[type=text] {
+     border: 2px solid gray;
+ }
+ 
  @media screen and (min-width: 300px) and (max-width: 550px) {
      .emp-profile {
          top: 32px;
@@ -409,6 +463,8 @@
          width: 35vw;
          height: 25vh;
          left: -13px;
+         padding: 0.3em;
+         background: grey;
      }
      .review {
          top: -160px;

@@ -128,7 +128,7 @@
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <p>{{baby.firstName}} {{baby.firstName}}</p>
+                                <p>{{baby.firstName}} {{baby.lastName}}</p>
                             </div>
                         </div> <!-- row  -->
                         <div class="row">
@@ -144,7 +144,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p>123 456 7890</p>
+                                <p>{{baby.phone}}</p>
                             </div>
                         </div> <!-- row  -->
                         <div class="row">
@@ -152,7 +152,7 @@
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Babysitter</p>
+                                <p>{{baby.profession}}</p>
                             </div> <!-- row  -->
                         </div>
 
@@ -172,7 +172,7 @@
                                 <label>Babysitting Experience</label>
                             </div>
                             <div class="col-md-6">
-                                <p>3 Years</p>
+                                <p>{{baby.experience}}</p>
                             </div>
                         </div> <!-- row  -->
                         <div class="row">
@@ -185,10 +185,10 @@
                         </div> <!-- row  -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label>English Level</label>
+                                <label>Languages: </label>
                             </div>
                             <div class="col-md-6">
-                                <p>Expert</p>
+                                <p>{{baby.language}}</p>
                             </div>
                         </div> <!-- row  -->
                         <div class="row">
@@ -196,7 +196,7 @@
                                 <label>Availability</label>
                             </div>
                             <div class="col-md-6">
-                                <p>6 months</p>
+                                <p>{{baby.availability}} weeks </p>
                             </div>
                         </div> <!-- row  -->
                         <div class="row">

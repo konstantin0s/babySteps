@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="/stylesheets/signup.css" />
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,7 +38,7 @@
 
 <div class="signup-parent">
   <h3 class="signup-title"><a class="nav-link href" href='/sitter/signup'>Are you a Sitter?</a> </h3>
-  <form id="form" class="parent-form" action="/parent/signup" method="POST">
+  <form id="form" class="parent-form" enctype="multipart/form-data" action="/parent/signup" method="POST">
   <h3>Sign up Now</h3>
     <div class="inner-addon left-addon">
       <i class="fa fa-user"></i>
@@ -76,21 +76,22 @@
       <i class="fa fa-child"></i>
     <input type="text" name="days" class="form-control" placeholder="Care Days">
     </div>
-    <div class="inner-addon left-addon">
-      <i class="fa fa-picture-o "></i>
-        <input type='text' name="image" class="form-control" placeholder="Paste Image url" />
-    </div>
+      <div id="form-group" class="image inner-addon left-addon">
+        <div class="upload-btn-wrapper">
+          <button class="upload">Upload a image</button>
+          <input type="file" name='image' id="addPic" className="btn btn-warning addPic form-control" />
+        </div>
+      </div>
       <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
-    <button type="submit">Create account</button>
-    <p>Already Having an account? <a class="link" href='/parent/login'>Log In</a></p>
-  </form>
-</div>
-
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>
 {{/if}}
 
+    <button class="submit" type="submit">Create account</button>
+    <p class="acc">Already Having an account? <a class="link" href='/parent/login'>Log In</a></p>
+  </form>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -102,7 +103,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/javascript/main.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 </body>
 </html>

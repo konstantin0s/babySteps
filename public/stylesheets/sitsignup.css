@@ -1,12 +1,25 @@
 /*sitter area */
 
-.signup-sitter {
-    overflow-x: hidden;
-    background: url('https://images.pexels.com/photos/1327403/pexels-photo-1327403.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-    background-size: cover;
-    height: 100%;
-    position: absolute;
+.loaderx {
+    position: relative;
     width: 100%;
+    overflow-x: hidden;
+    min-width: 100%;
+    height: 400px;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 50px;
+    background: url('https://source.unsplash.com/random') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.signup-sitter {
+    position: relative;
+    width: 100%;
+    margin-bottom: 200px;
 }
 
 .signup-title {
@@ -32,9 +45,61 @@
     top: 100px;
 }
 
+
+/*Style of upload button */
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    left: 25.5%;
+}
+
+.upload {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.upload:hover,
+.upload-btn-wrapper input[type=file]:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.sitter-form p,
+.sitter-form p a {
+    color: #333;
+    position: relative;
+    display: flex;
+    top: 15px;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.sitter-form p a {
+    top: 0;
+    margin-left: 0.7em;
+}
+
 #form h3 {
     position: relative;
     text-align: center;
+    margin: 1em 0em;
 }
 
 .sitter-form {
@@ -68,7 +133,7 @@
     width: 100%;
 }
 
-.sitter-form button {
+.sitter-form .submit {
     background: #43a3e6;
     border: 1px solid #43a3e6;
     border-radius: 4px;
@@ -83,7 +148,7 @@
     width: 100%;
 }
 
-.sitter-form button:hover {
+.sitter-form .submit:hover {
     background: #fff;
     color: #43a3e6;
     transition: .3s ease background;
@@ -155,7 +220,7 @@
     }
     .signup-title {
         position: absolute;
-        top: 35px;
+        top: 0px;
         color: #fff;
         text-align: center;
         left: 0px;
@@ -163,7 +228,7 @@
     }
     .signup-title a {
         display: inline-block;
-        top: 5px;
+        top: 6px;
         margin: 1em 0;
         left: 0;
     }

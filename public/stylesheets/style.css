@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
 
 /* CSS variables */
 
@@ -23,8 +31,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     font-family: Font-Awesome;
     text-rendering: auto;
 }
@@ -154,10 +162,7 @@ img {
 }
 
 .cf li .nav-link {
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #ccc;
+    color: #ccc !important;
     font-size: 1em;
     border: 3px #fff solid;
     transition: var(--ease);
@@ -171,7 +176,7 @@ img {
 }
 
 #nav .collapse .cf .nav-link:hover {
-    color: var(--primary-link-color);
+    color: var(--primary-link-color) !important;
 }
 
 .cf li a:hover .cf .logoTitle:hover {
@@ -495,10 +500,9 @@ nav a#openup {
     top: 0px;
     height: 4em;
     display: flex;
-    /* flex-direction: row;
-    justify-content: space-evenly; */
     align-items: flex-start;
     flex-wrap: nowrap;
+    /* width: 100%; */
 }
 
 .cf li {
@@ -707,6 +711,7 @@ nav a#openup {
     font-weight: 600;
     color: #444;
     padding: 0.5em 0em;
+    border: 1px solid;
 }
 
 .profile-tab p {
@@ -725,6 +730,7 @@ nav a#openup {
     left: 70px;
     padding: 0.5em 0em;
     color: #686b6e;
+    border: 1px solid;
 }
 
 .tab-pane {
@@ -778,7 +784,7 @@ nav a#openup {
     margin-left: 60px;
 }
 
-a {
+a:not(nav a) {
     color: #3498db !important;
     outline: none !important;
 }
@@ -843,118 +849,6 @@ a {
 .href {
     text-decoration: none;
 }
-
-
-/* style reviews 
-*/
-
-
-/* 
-.addRev {
-    position: relative;
-    top: 80px;
-    left: -4em;
-    color: rgb(79, 146, 81);
-    font-size: 26px;
-}
-
-.h5-comm {
-    color: rgb(79, 146, 81);
-    font-size: 1em;
-    position: relative;
-    top: 100px;
-    left: -10em;
-}
-
-.review {
-    position: relative;
-    border-bottom: 1px solid grey;
-    top: -150px;
-    font-size: 0.8em;
-    left: 0px;
-    margin-bottom: 20px;
-}
-
-.review-item {
-    margin: -10px 0;
-    padding-bottom: 12px;
-    font-size: 0.8em;
-    background-color: rgb(184, 178, 171);
-    position: relative;
-    top: -161px;
-    border-bottom: 1px solid grey;
-} */
-
-*/
-/* .comment {
-    margin-bottom: 47px;
-    margin-top: 1em;
-    font-size: 1em;
-    position: relative;
-    top: 22px;
-    color: #333;
-    left: 0px;
-    text-transform: capitalize;
-}
-
-.span {
-    font-size: 0.9em;
-    color: grey;
-    position: absolute;
-    top: 3px;
-    left: 9px;
-    margin-right: 16px;
-    margin-bottom: 9px;
-} */
-
-
-/* .addRevForm {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 200px;
-    width: 100%;
-    position: relative;
-    top: -80px;
-}
-
-.addRevForm label {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: black;
-} */
-
-
-/* 
-.addRevForm .form-comments {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    height: 100vh;
-    width: 70%;
-    position: relative;
-    top: -444px;
-    margin-bottom: 7em;
-} */
-
-
-/* .disRev {
-    margin-top: 6px;
-    border-top: 1px solid grey;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    border-bottom: 1px solid grey;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    top: 20px;
-    font-size: 1em;
-    padding: 0 1em;
-} */
 
 #table {
     border-collapse: collapse;
@@ -1061,7 +955,9 @@ label {
     .navbar-collpase.show .cf li a:hover {
         color: #c9c505;
     }
-    #nav ul .login a {
+    #nav ul .login a,
+    #nav ul .nav-item a,
+    #nav ul .nav-link {
         background: #c9c505;
         top: 0px;
         color: #333 !important;
@@ -1195,13 +1091,13 @@ label {
         position: relative;
         top: 3em;
     }
-    .cf ul li a {
+    #nav .show .cf ul li a {
         color: #333 !important;
         border: 3px solid #fff;
         font-size: 1.3em;
         display: inline-block;
         padding: 0 0.4em 0 0.4em;
-        background: #c9c505;
+        background: #c9c505 !important;
         width: 70%;
         display: inline-block;
     }

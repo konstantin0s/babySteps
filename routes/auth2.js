@@ -4,6 +4,8 @@ const request = require('request');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const bcrypt = require("bcryptjs");
+const uploader = require('../models/cloudinary-setup');
+const path = require('path');
 const dotenv = require('dotenv').config();
 router.use(cookieParser());
 
@@ -19,7 +21,7 @@ router.get("/parent/signup", (req, res) => {
     res.render("auth/parent/signup", { layout: false });
 });
 
-router.post("/parent/signup", (req, res, next) => {
+router.post("/parent/signup", uploader.single('image'), (req, res, next) => {
     try {
         const firstName = req.body.firstName;
         const lastName = req.body.lastName;
@@ -29,7 +31,7 @@ router.post("/parent/signup", (req, res, next) => {
         const country = req.body.country;
         const kids = req.body.kids;
         const days = req.body.days;
-        const image = req.body.image;
+        const image = req.file.path;
 
 
         if (username == "" || password == "") {
@@ -128,6 +130,7 @@ router.post("/parent/login", (req, res, next) => {
                     // debugger
                     req.session.currentUser = user;
                     req.session.family = user;
+                    console.log(req.session.currentUser)
                     res.redirect("/babysitters");
                 } else {
                     res.render("auth/parent/login", {
