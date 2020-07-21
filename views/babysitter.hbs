@@ -80,6 +80,13 @@
     </div>
 </div>
 
+{{#if updateBabySitterSuccessMsg }}
+<div class="alert alert-success">{{ updateBabySitterSuccessMsg }}</div>
+{{/if}} 
+{{#if updateBabySitterErrorMsg }}
+<div class="alert alert-danger">{{ updateBabySitterErrorMsg }}</div>
+{{/if}}
+
     <form class="form-container" method="post">
         <div class="row">
             <div class="col-md-3">

@@ -37,6 +37,57 @@
              padding: 0px;
              transition: opacity 3s;
          }
+         /* hide message with a keyframe */
+         
+         @keyframes update-response {
+             from {
+                 opacity: 1;
+             }
+             to {
+                 opacity: 0;
+             }
+         }
+         
+         @-webkit-keyframes update-response {
+             from {
+                 opacity: 1;
+             }
+             to {
+                 opacity: 0;
+             }
+         }
+         
+         .alert-success {
+             position: relative;
+             top: 151px;
+             text-align: center;
+             left: 0;
+             width: 100%;
+             align-self: center;
+             animation: update-response 0.5s 1;
+             -webkit-animation: update-response 0.5s 1;
+             animation-fill-mode: forwards;
+             animation-delay: 108s;
+             -webkit-animation-delay: 108s;
+             /* Safari and Chrome */
+             -webkit-animation-fill-mode: forwards;
+         }
+         
+         .alert-danger {
+             position: relative;
+             top: 151px;
+             text-align: center;
+             left: 0;
+             width: 100%;
+             align-self: center;
+             animation: update-response 0.5s 1;
+             -webkit-animation: update-response 0.5s 1;
+             animation-fill-mode: forwards;
+             animation-delay: 108s;
+             -webkit-animation-delay: 108s;
+             /* Safari and Chrome */
+             -webkit-animation-fill-mode: forwards;
+         }
          
          .profile-head {
              position: relative;
@@ -160,7 +211,7 @@
              position: relative;
              overflow: hidden;
              display: inline-block;
-             left: 25.5%;
+             left: 25%;
          }
          
          .upload {
@@ -224,7 +275,7 @@
              padding: 0.5em;
              position: relative;
              background: #ebedeb;
-             top: 155px
+             top: 120px
          }
          
          .emp-profile .profile-img {
@@ -254,6 +305,14 @@
              font-size: 15px;
              background: #212529b8;
              top: -37px;
+         }
+         
+         .message {
+             font-size: 1em;
+             color: red;
+             font-weight: 400;
+             position: absolute;
+             left: 61%;
          }
          
          .profile-head .nav-tabs .nav-link {

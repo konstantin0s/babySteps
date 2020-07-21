@@ -128,10 +128,10 @@ router.post("/sitter/login", (req, res, next) => {
                     return;
                 }
                 if (bcrypt.compareSync(thePassword, user.password)) {
-                    console.log('sitter user', user);
+                    // console.log('sitter user', user);
                     req.session.currentUser = user;
                     req.session.sitter = user;
-                    console.log('this is from auth', req.session.currentUser)
+                    // console.log('this is from auth', req.session.currentUser)
                     res.redirect("/parents");
                 } else {
                     res.render("auth/sitter/login", {

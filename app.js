@@ -9,6 +9,8 @@ const moment = require('moment');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
+const flash = require('req-flash');
+
 require("dotenv").config();
 const app = express();
 
@@ -91,7 +93,7 @@ app.use(["/parent*", "/babysitter*.", "/parents*", "/babysitters*"], (req, res, 
 });
 
 
-
+app.use(flash());
 app.use('/', require('./routes/editParent'));
 app.use('/', require('./routes/editBabysitter'));
 app.use('/', require('./routes/parent'));

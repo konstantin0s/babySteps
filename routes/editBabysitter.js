@@ -15,19 +15,19 @@ router.get('/babysitter/:id/edit', function(req, res) {
             if (err) {
                 console.log(err);
             } else {
-                res.render('edit_babysitter', { editBaby: editBaby, sitter: req.session.sitter, layout: false });
+                res.render('edit_babysitter', {
+                    editBaby: editBaby,
+                    sitter: req.session.sitter,
+                    layout: false,
+                    updateBabySitterErrorMsg: req.flash('updateBabySitterErrorMsg'),
+                    updateBabySitterSuccessMsg: req.flash('updateBabySitterSuccessMsg')
+                });
             }
         });
     } catch (error) {
         console.log(error);
     }
 });
-
-//findByIdAndUpdate(req.session.user._id, {})
-// router.get('/babysitter/edit', function(req, res) {
-//     debugger
-//     res.render('edit_babysitter', { editBaby: req.session.currentUser, layout: false });
-// })
 
 //add submit POST route
 router.post('/babysitter/:id/edit', uploader.single('image'), async function(req, res) {
@@ -57,18 +57,17 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
 
                     await Babysitter.findByIdAndUpdate({ _id: req.params.id }, babyx, function(err) {
                         if (err) {
-                            // req.flash(
-                            //     'updateParentErrorMsg',
-                            //     'Something went wrong while updating your profile!'
-                            // );
+                            req.flash(
+                                'updateBabySitterErrorMsg',
+                                'Something went wrong while updating your profile!'
+                            );
                             console.log(err);
                             return;
                         } else {
-                            console.log(babyx);
-                            // req.flash(
-                            //     'updateParentSuccessMsg',
-                            //     'Profile updated successfully!'
-                            // );
+                            req.flash(
+                                'updateBabySitterSuccessMsg',
+                                'Profile updated successfully!'
+                            );
                             res.redirect(`/babysitter/${req.params.id}`);
                         }
                     }).catch((error) => {
@@ -98,14 +97,15 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
 
             await Babysitter.findByIdAndUpdate({ _id: req.params.id }, babys, function(err) {
                 if (err) {
-                    // req.flash(
-                    //     'updateParentErrorMsg',
-                    //     'Something went wrong while updating your profile!'
-                    // );
-                    return;
+                    req.flash(
+                        'updateBabySitterErrorMsg',
+                        'Something went wrong while updating your profile!'
+                    );
                 } else {
-                    console.log(babys);
-                    // req.flash('updateParentSuccessMsg', 'Profile updated successfully!');
+                    req.flash(
+                        'updateBabySitterSuccessMsg',
+                        'Profile updated successfully!'
+                    );
                     res.redirect(`/babysitter/${req.params.id}`);
                 }
             }).catch((error) => {

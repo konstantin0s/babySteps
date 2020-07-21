@@ -10,9 +10,14 @@ router.get('/babysitter/:id', function(req, res) {
             if (err) {
                 console.log(err);
             } else {
-                // res.render('babysitter',
-                // {baby: baby});
-                res.render('babysitter', { baby: baby, family: req.session.family, sitter: req.session.sitter, layout: false });
+                res.render('babysitter', {
+                    baby: baby,
+                    family: req.session.family,
+                    sitter: req.session.sitter,
+                    layout: false,
+                    updateBabySitterErrorMsg: req.flash('updateBabySitterErrorMsg'),
+                    updateBabySitterSuccessMsg: req.flash('updateBabySitterSuccessMsg')
+                });
             }
         });
     } catch (error) {
@@ -25,7 +30,10 @@ router.post('/babysitter', (req, res) => {
         const { user, comments } = req.body;
         Babysitter.updateOne({ _id: req.query.babysitter_id }, { $push: { reviews: { user, comments } } })
             .then(babysitter => {
-                res.redirect('/babysitter/' + req.query.babysitter_id)
+                res.redirect('/babysitter/' + req.query.babysitter_id, {
+                    updateBabySitterErrorMsg: req.flash('updateBabySitterErrorMsg'),
+                    updateBabySitterSuccessMsg: req.flash('updateBabySitterSuccessMsg')
+                })
             })
             .catch((error) => {
                 console.log(error)
@@ -50,7 +58,11 @@ router.post('/photo/add', function(req, res) {
                 console.log(err);
                 return;
             } else {
-                res.redirect('/babysitter', { profilePhoto, sitter: req.session.sitter, layout: false });
+                res.redirect('/babysitter', {
+                    profilePhoto,
+                    sitter: req.session.sitter,
+                    layout: false
+                });
             }
         });
     } catch (error) {
