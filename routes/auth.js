@@ -128,9 +128,10 @@ router.post("/sitter/login", (req, res, next) => {
                     return;
                 }
                 if (bcrypt.compareSync(thePassword, user.password)) {
+                    console.log('sitter user', user);
                     req.session.currentUser = user;
                     req.session.sitter = user;
-                    console.log(req.session.currentUser)
+                    console.log('this is from auth', req.session.currentUser)
                     res.redirect("/parents");
                 } else {
                     res.render("auth/sitter/login", {
@@ -138,6 +139,7 @@ router.post("/sitter/login", (req, res, next) => {
                         errorMessage: "Incorrect login, try again!"
                     });
                 }
+                req.session.currentUser = user;
             })
             .catch(error => {
                 next(error);

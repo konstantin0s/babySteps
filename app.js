@@ -1,3 +1,4 @@
+const fallback = require('express-history-api-fallback');
 const express = require('express');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
@@ -26,20 +27,27 @@ mongoose
 app.set('views', path.join(__dirname, 'views'));
 app.set('auth', path.join(__dirname, 'auth'));
 app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
+var root = __dirname + '/public'
+app.use(express.static(root))
+    // app.use(fallback('index.html', { root: root }))
+    // app.use(express.static(path.join(__dirname, 'public')));
+    // app.use(fallback({ root: root }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
 app.use(session({ //setup sessions always here
     secret: "basic-auth-secret",
     key: 'sid',
-    cookie: { maxAge: 60000 },
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000
+    },
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({
         mongooseConnection: mongoose.connection,
-        ttl: 24 * 60 * 60 // 1 day
+        ttl: 24 * 60 * 60 * 1000 // 1 day
     })
 }));
 
@@ -61,28 +69,25 @@ app.use(function(req, res, next) {
 app.locals.title = 'BabySteps';
 
 
-// app.get('/', function(req, res) {
-//     res.cookie('name', 'name'); //Sets name = express
-//     res.render('index', );
-// });
-
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/auth', {
     layout: false
 }));
 app.use('/', require('./routes/auth2', { layout: false }));
 
-app.use(["/parent*", "/babysitter*."], (req, res, next) => {
-    if (req.session.currentUser) {
-        res.locals.sitter = req.session.sitter; //babysitters
-        res.locals.family = req.session.family; //parents
-        console.log('res local sitter', res.locals.sitter);
-        console.log('res local family', res.locals.family);
-        console.log('res local user', res.locals.user);
-        next(); // ==> go to the next route ---
-    } else { //    |
-        res.redirect("/sitter/login"); //    |  <-- it redirects here after sign up
-    } //    |
+app.use(["/parent*", "/babysitter*.", "/parents*", "/babysitters*"], (req, res, next) => {
+    var tries = 3;
+    if (req.session.currentUser == undefined) {
+        console.log('res local Current-user', req.session);
+        tries -= 1;
+        res.redirect("/");
+    } else {
+        console.log('res local Current-user', req.session.currentUser);
+        next();
+    }
+    if (tries < 0) {
+        res.redirect("/");
+    }
 });
 
 

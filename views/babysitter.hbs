@@ -109,8 +109,8 @@
                          <li class="nav-item">
                           {{#if sitter}}
                           <div>
-                           <button class="btn btn-default"> <a class="profile-edit-btn" name="btnAddMore"
-                                href="/babysitter/{{baby.id}}/edit">Settings</a>
+                           <button class="nav-link"> <a class="profile-edit-btn" name="btnAddMore"
+                             href="/babysitter/{{baby.id}}/edit">Settings</a>
                          </div>
                           {{/if}}
                          </li>
@@ -199,11 +199,21 @@
                                 <p>{{baby.availability}} weeks </p>
                             </div>
                         </div> <!-- row  -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Age</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{baby.age}} weeks </p>
+                                </div>
+                            </div> <!-- row  -->
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <label>Joined at</label><br />
-                                <p>{{baby.createdAt}}</p>
                             </div> <!-- col-md-12  -->
+                            <div class="col-md-6">
+                                <p id="date">{{baby.createdAt}}</p>
+                            </div>
                         </div> <!-- row  -->
                     </div> <!-- tab pane div  -->
                 </div> <!-- tab content div -->
@@ -260,6 +270,7 @@
     <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
 
+<script src="/javascript/convert.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>

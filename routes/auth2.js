@@ -128,9 +128,10 @@ router.post("/parent/login", (req, res, next) => {
                 if (bcrypt.compareSync(thePassword, user.password)) {
                     // Save the login in the session!
                     // debugger
+                    console.log('parent user', user);
                     req.session.currentUser = user;
                     req.session.family = user;
-                    console.log(req.session.currentUser)
+                    console.log(req.session.currentUser);
                     res.redirect("/babysitters");
                 } else {
                     res.render("auth/parent/login", {
