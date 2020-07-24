@@ -38,6 +38,17 @@
 
 <div class="login-container">
  <h1 class="text-center">LOGIN AREA</h1>
+
+    {{#if updatePasswordSuccessMsg }}
+    <div class="alert alert-success">{{ updatePasswordSuccessMsg }}</div>
+    {{/if}}
+    {{#if sendPasswordSuccessMsg }}
+    <div class="alert alert-success">{{ sendPasswordSuccessMsg }}</div>
+    {{/if}}
+    {{#if sendPasswordErrorMsg }}
+    <div class="alert alert-error">{{ sendPasswordErrorMsg }}</div>
+    {{/if}}
+
   <form action="/parent/login" class="loginx" method="POST" id="form">
 
         <h3 class="log-title">Log in to your account</h3>
@@ -56,12 +67,18 @@
     <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
 
-    <button type="submit">Sign in</button>
+    <button class="submit" type="submit">Sign in</button>
 
     <p class="account-message href">
       Don't have an account? <a class="sign" href="/parent/signup">Sign up</a>
     </p>
   </form>
+
+<div class="acc-recover">
+  <a class="signup" href="/recover"> Forgot your password?</a>
+</div>
+
+
 </div>
 
 

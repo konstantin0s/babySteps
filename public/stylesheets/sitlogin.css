@@ -77,10 +77,24 @@ header {
     width: 100%;
 }
 
-#form button:hover {
-    background: #fff;
-    color: #43a3e6;
+#form .submit:hover {
+    background: #333;
+    color: #c9c505;
     transition: .3s ease background;
+}
+
+.acc-recover a {
+    color: rgb(252, 85, 56) !important;
+    font-weight: bold;
+}
+
+.acc-recover {
+    position: relative;
+    display: inline-block;
+    left: 41%;
+    font-size: 1.2em;
+    color: #fff;
+    top: 174px;
 }
 
 
@@ -97,6 +111,47 @@ header {
     position: absolute;
     padding: 10px;
     pointer-events: none;
+}
+
+
+/* success password login */
+
+
+/* hide message with a keyframe */
+
+@keyframes reset-pass {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes reset-pass {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success,
+.alert-error {
+    position: relative;
+    top: -59px;
+    left: -20px;
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 0px;
+    animation: reset-pass 0.5s 1;
+    -webkit-animation: reset-pass 0.5s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+    -webkit-animation-delay: 12s;
+    /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
 }
 
 

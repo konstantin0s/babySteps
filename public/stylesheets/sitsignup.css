@@ -148,9 +148,9 @@
     width: 100%;
 }
 
-.sitter-form .submit:hover {
-    background: #fff;
-    color: #43a3e6;
+#form .submit:hover {
+    background: #333;
+    color: #c9c505;
     transition: .3s ease background;
 }
 

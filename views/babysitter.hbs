@@ -75,6 +75,9 @@
 
 
 <div class="emp-profile">
+
+<div id="progress"></div>
+
  <div class="before-form text-center">
     <div class="panel-body text-center">
     </div>
@@ -101,7 +104,7 @@
                 </div> <!--profile image -->
             </div> <!--col md 3 -->
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-head">
                 <div class="profile-head">
                     <p class="profile-rating">RANKINGS : <span>8/10</span></p>
                        <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -211,7 +214,7 @@
                                     <label>Age</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{baby.age}} weeks </p>
+                                    <p>{{baby.age}} years old </p>
                                 </div>
                             </div> <!-- row  -->
                         <div class="row">
@@ -277,6 +280,7 @@
     <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
 
+<script src="/javascript/progress.js"></script>
 <script src="/javascript/convert.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

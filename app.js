@@ -31,9 +31,10 @@ app.set('auth', path.join(__dirname, 'auth'));
 app.set('view engine', 'hbs');
 var root = __dirname + '/public'
 app.use(express.static(root))
-    // app.use(fallback('index.html', { root: root }))
-    // app.use(express.static(path.join(__dirname, 'public')));
-    // app.use(fallback({ root: root }));
+
+// app.use(fallback('index.html', { root: root }))
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(fallback({ root: root }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -62,6 +63,8 @@ app.use(cors({
     'preflightContinue': false
 }));
 
+app.use(flash());
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -72,19 +75,23 @@ app.locals.title = 'BabySteps';
 
 
 app.use('/', require('./routes/index'));
+app.use('/', require('./routes/resetSitterPass'));
+app.use('/', require('./routes/resetParentPass'));
+
+
+
+
 app.use('/', require('./routes/auth', {
     layout: false
 }));
 app.use('/', require('./routes/auth2', { layout: false }));
 
-app.use(["/parent*", "/babysitter*.", "/parents*", "/babysitters*"], (req, res, next) => {
+app.use(["/parent*", "/babysitter*."], (req, res, next) => {
     var tries = 3;
     if (req.session.currentUser == undefined) {
-        console.log('res local Current-user', req.session);
         tries -= 1;
         res.redirect("/");
     } else {
-        console.log('res local Current-user', req.session.currentUser);
         next();
     }
     if (tries < 0) {
@@ -93,7 +100,6 @@ app.use(["/parent*", "/babysitter*.", "/parents*", "/babysitters*"], (req, res, 
 });
 
 
-app.use(flash());
 app.use('/', require('./routes/editParent'));
 app.use('/', require('./routes/editBabysitter'));
 app.use('/', require('./routes/parent'));

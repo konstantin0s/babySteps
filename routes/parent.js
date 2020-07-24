@@ -10,6 +10,8 @@ router.get('/parent/:id', async function(req, res) {
             if (err) {
                 console.log(err);
             } else {
+                console.log('family session', req.session.family);
+                console.log('sitter session', req.session.sitter);
                 res.render('parent', { parent: parent, family: req.session.family, sitter: req.session.sitter, layout: false });
             }
 

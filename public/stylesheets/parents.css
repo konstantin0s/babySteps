@@ -6,6 +6,15 @@
     padding: 0;
 }
 
+#progress {
+    border-bottom: 6px solid blue;
+    width: 0;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    z-index: 1000;
+}
+
 .usr-link {
     color: #444;
 }
@@ -196,6 +205,9 @@
 /* end of search bar style */
 
 @media screen and (max-width: 689px) {
+    #progress {
+        top: 57px;
+    }
     .pTitle {
         width: 70%;
         left: 3em;
@@ -240,6 +252,9 @@
 }
 
 @media screen and (min-width:690px) and (max-width:767px) {
+    #progress {
+        top: 57px;
+    }
     .pTitle {
         width: 70%;
         left: 3em;

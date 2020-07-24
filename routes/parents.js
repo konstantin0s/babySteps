@@ -5,7 +5,7 @@ const Parents = require('../models/parent');
 router.get('/parents', (req, res) => {
     try {
         if (req.session.family) {
-            res.status(403).send("Go away");
+            // res.status(403).send("Go away");
             res.redirect('/babysitters');
         }
         Parents.find({}, (err, parents) => {

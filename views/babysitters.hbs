@@ -18,7 +18,7 @@
 
 <body id="fadein">
 <header>
-      <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
+          <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top cf">
       <button class="navbar-toggler" type="button" data-toggle="collapse" 
       id="nav-collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,13 +65,14 @@
 {{/if}}
 
 <div class="main-container">
+      <div id="progress"></div>
     <div class="logo-container">
       <img class="logo" src="/images/logo.png" alt="Babysteps">
     </div>
     <div class="title-container">
       <!--background image container -->
     </div>
-    <h1 class="pTitle">Meet Parents:</h1>
+    <h1 class="pTitle">Meet Sitters:</h1>
   <div class="formless">
         <form>
         <input id="input" class="input" type="text"
@@ -121,6 +122,7 @@
   <p>Copyright <i class="fa fa-copyright"></i> {{title}} <script>document.write(new Date().getFullYear())</script></p>
 </footer>
 
+<script src="../javascript/progress.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/javascript/main.js"></script>
     <script src="/javascript/script.js"></script>
