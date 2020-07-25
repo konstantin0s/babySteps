@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/babysitter.css" />
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
     <script src="/javascript/fadeEffect.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,7 +37,7 @@
                 <a class="nav-link" href='/babysitters'>To Sitters</a>
             </li>
             <li class="nav-item babysitter">
-                <a class="nav-link" href="/parent/{{family._id}}/edit">Settings</a>
+                <a class="nav-link" href="/parent/{{family._id}}/edit">{{family.firstName}}</a>
             </li>
             <li class="nav-item logout">
                 <a class="nav-link" href='/logout'>Logout</a>
@@ -63,7 +64,7 @@
             <a class="nav-link" href='/parents'>View Parents</a>
           </li>
           <li class="nav-item babysitter">
-            <a class="nav-link" href="/babysitter/{{baby.id}}/edit">Settings</a>
+            <a class="nav-link" href="/babysitter/{{baby.id}}/edit">{{baby.firstName}}</a>
          </li>
           <li class="nav-item logout">
             <a class="nav-link" href='/logout'>Logout</a>

@@ -189,10 +189,13 @@
             top: 75px;
         }
         .login-container .loginx {
-            top: 165px;
+            top: 16px;
         }
         .login-sitter h1 {
             color: #fff;
+        }
+        .acc-recover {
+            top: -20px;
         }
     }
     

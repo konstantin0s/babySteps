@@ -48,17 +48,18 @@
 
 <div class="col-lg-12 editProfy text-center">
   <div id="progress"></div>
-  <div class="before-form text-center">
+
     <div class="panel-body text-center">
       <!-- background image container -->
     </div>
 
+<div class="wrapper">
     <div class="ppic-container">
           <img class="profile-image" src={{editParent.image}} alt="profile-image" />
     </div>
 
     <div class="form-container">
-  <form method="POST" enctype="multipart/form-data" action="/parent/{{showParentData.id}}/edit" class="form-center">
+      <form method="POST" enctype="multipart/form-data" action="/parent/{{showParentData.id}}/edit" class="form-center">
         <h1 class="href">Edit Profile</h1>
       <div id="form-group">
         <label for="level">First Name:</label>
@@ -99,18 +100,20 @@
           <label for="level">Caring days:</label>
           <input type="number" name="days" value="{{editParent.days}}" class="form-control">
         </div>
+        <div id="form-group">
         <input type="submit" id="button" class="btn btn-primary" value="Submit">
       </div>
     </form>
   </div>
-</div>
-</div>
+</div> <!--wrapper -->
 
-<footer class="footer">
-  <p>Copyright <i class="fa fa-copyright"></i> {{title}}
-    <script>document.write(new Date().getFullYear())</script>
-  </p>
-</footer>
+  <footer class="footer">
+    <p>Copyright <i class="fa fa-copyright"></i> {{title}}
+      <script>document.write(new Date().getFullYear())</script>
+    </p>
+  </footer>
+
+</div>
 
 <script src="/javascript/progress.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

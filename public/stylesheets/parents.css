@@ -211,9 +211,10 @@
     .pTitle {
         width: 70%;
         left: 3em;
+        top: -70px;
     }
     .formless {
-        top: 15px;
+        top: -76px;
         text-align: center;
         left: -2em;
     }
