@@ -47,11 +47,11 @@
 
 <div class="col-lg-12 editProfy text-center">
     <div id="progress"></div>
-  <div class="before-form text-center">
       <div class="panel-body text-center">
         <!-- background image container -->
       </div>
 
+<div  class="wrapper">
   <div class="ppic-container">
     <img class="profile-image" src={{editBaby.image}} alt="profile-image" />
   </div>
@@ -115,18 +115,22 @@
       <label for="level">Availability:</label>
       <input type="text" name="availability" value="{{editBaby.availability}}" placeholder="Add number in weeks" class="form-control">
     </div>
-    <input type="submit" id="button" class="btn btn-primary" value="Submit">
-    </div>
+   <div id="form-group">
+      <input type="submit" id="button" class="btn btn-primary" value="Submit">
+   </div>
   </form>
 </div>
-</div>
-</div>
+</div> <!-- wrapper -->
 
 <footer class="footer">
   <p>Copyright <i class="fa fa-copyright"></i> {{title}}
     <script>document.write(new Date().getFullYear())</script>
   </p>
 </footer>
+
+</div>
+
+
 
 <script src="/javascript/progress.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -7,7 +7,7 @@ header {
 
 .login-sitter h1 {
     position: relative;
-    top: 140px;
+    top: 100px;
     font-size: 1.5em;
     color: rgb(63, 60, 60);
     font-weight: bold;
@@ -16,22 +16,27 @@ header {
 .login-sitter {
     background: url('https://images.pexels.com/photos/1257105/pexels-photo-1257105.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
     background-size: cover;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-sitter .loginx {
     width: 380px;
     position: relative;
-    top: 160px;
+    top: 70px;
     padding-bottom: 60px;
     padding: 1em 2em;
     border-radius: 1em;
     height: auto;
     background-color: #fff;
     margin: auto;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #form input {
@@ -84,17 +89,29 @@ header {
 }
 
 .acc-recover a {
-    color: rgb(252, 85, 56) !important;
+    color: #fff;
     font-weight: bold;
 }
 
+.acc-recover a:hover {
+    text-decoration: none;
+    color: #43a3e6;
+}
+
 .acc-recover {
-    position: relative;
-    display: inline-block;
-    left: 41%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     font-size: 1.2em;
     color: #fff;
-    top: 174px;
+    top: 15px;
+    position: relative;
+    opacity: 0.8;
+    background: #444;
+    text-align: center;
+    padding: 1em;
+    width: 376px;
+    margin-bottom: 3em;
 }
 
 

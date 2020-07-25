@@ -27,7 +27,6 @@ button {
     src: url('/fonts/fontawesome-webfont.woff2') format("woff2"), url('/fonts/fontawesome-webfont.woff') format('woff'), url('/fonts/fontawesome-webfont.ttf') format('truetype');
 }
 
-html,
 body {
     margin: 0;
     padding: 0;
@@ -67,6 +66,7 @@ body {
     margin: 0px;
     padding: 0px;
     transition: opacity 3s;
+    height: 100%;
 }
 
 .navbar-toggler {
