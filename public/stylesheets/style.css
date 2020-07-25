@@ -223,8 +223,13 @@ a:hover {
     margin-bottom: 0;
 }
 
-.section-main,
-h2 {
+.section-main {
+    position: relative;
+    top: 200px;
+    text-align: center;
+}
+
+.section-main h2 {
     position: relative;
     top: -90px;
     color: black;
