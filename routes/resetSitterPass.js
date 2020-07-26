@@ -39,7 +39,7 @@ router.post("/recover", async(req, res) => {
         let subject = "Password change request";
         let to = user.email;
         let from = 'constantintofan85@gmail.com'
-        let link = "http://localhost:5000/reset/" + user.resetPasswordToken;
+        let link = "https://allthesebabysteps.herokuapp.com/reset/" + user.resetPasswordToken;
         let html = `<p>Hi ${user.username}</p>
                     <p>Please click on the following <a href="${link}">link</a> to reset your password.</p> 
                     <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>`;
