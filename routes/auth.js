@@ -105,7 +105,14 @@ router.post('/sitter/signup', function(req, res) {
 });
 
 router.get("/sitter/login", (req, res) => {
-    res.render("auth/sitter/login", { layout: false });
+    res.render("auth/sitter/login", {
+        updatePasswordSuccessMsg: req.flash('updatePasswordSuccessMsg'),
+        sendPasswordSuccessMsg: req.flash('sendPasswordSuccessMsg'),
+        sendPasswordErrorMsg: req.flash('sendPasswordErrorMsg'),
+        sendRecoverErrorMsg: req.flash('sendRecoverErrorMsg'),
+        sendTokenErrorMsg: req.flash('sendTokenErrorMsg'),
+        layout: false
+    });
 });
 
 router.post("/sitter/login", (req, res, next) => {

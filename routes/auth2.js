@@ -103,7 +103,14 @@ router.post('/parent/signup', function(req, res) {
 });
 
 router.get("/parent/login", (req, res) => {
-    res.render("auth/parent/login", { layout: false });
+    res.render("auth/parent/login", {
+        updatePasswordSuccessMsg: req.flash('updatePasswordSuccessMsg'),
+        sendPasswordSuccessMsg: req.flash('sendPasswordSuccessMsg'),
+        sendPasswordErrorMsg: req.flash('sendPasswordErrorMsg'),
+        sendRecoverErrorMsg: req.flash('sendRecoverErrorMsg'),
+        sendTokenErrorMsg: req.flash('sendTokenErrorMsg'),
+        layout: false
+    });
 });
 
 router.post("/parent/login", (req, res, next) => {

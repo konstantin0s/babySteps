@@ -45,8 +45,17 @@
     {{#if sendPasswordSuccessMsg }}
     <div class="alert alert-success">{{ sendPasswordSuccessMsg }}</div>
     {{/if}}
+    
     {{#if sendPasswordErrorMsg }}
     <div class="alert alert-error">{{ sendPasswordErrorMsg }}</div>
+    {{/if}}
+    
+    {{#if sendRecoverErrorMsg }}
+    <div class="alert alert-error">{{ sendRecoverErrorMsg }}</div>
+    {{/if}}
+    
+    {{#if sendTokenErrorMsg }}
+    <div class="alert alert-error">{{ sendTokenErrorMsg }}</div>
     {{/if}}
 
   <form action="/parent/login" class="loginx" method="POST" id="form">

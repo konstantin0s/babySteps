@@ -49,6 +49,7 @@ router.post("/recover", async(req, res) => {
         res.redirect("/parent/login");
     } catch (error) {
         req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent");
+        res.redirect("/recover");
     }
 });
 
@@ -63,6 +64,7 @@ router.get("/reset/:token", async(req, res, next) => {
 
         if (!user) {
             req.flash('sendUserErrorMsg', "There is no user registered on this website");
+            res.redirect('/recover');
         }
 
         //Redirect user to form with the email address
@@ -108,7 +110,8 @@ router.post("/reset/:token", async(req, res) => {
         req.flash('updatePasswordSuccessMsg', 'Password updated successfully!');
         res.redirect("/parent/login");
     } catch (error) {
-        return req.flash('sendPasswordErrorMsg', 'Password not updated, please try again.');
+        req.flash('sendPasswordErrorMsg', 'Password not updated, please try again.');
+        res.redirect('/recover');
     }
 });
 

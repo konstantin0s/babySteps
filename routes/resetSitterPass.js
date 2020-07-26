@@ -19,12 +19,10 @@ router.get('/recover', async(req, res) => {
 router.post("/recover", async(req, res) => {
     try {
         const email = req.body.email;
-        console.log('email log', email)
 
         const user = await Babysitter.findOne({ "email": email })
-        console.log(user)
+
         if (!user) {
-            res.redirect('recover');
             req.flash('sendRecoverErrorMsg', 'The email address ' + req.body.email + ' is not associated with any account.Double-check your email address and try again.');
             return res.status(401);
         }
@@ -48,7 +46,7 @@ router.post("/recover", async(req, res) => {
         req.flash('sendPasswordSuccessMsg', 'A reset email has been sent to ' + user.email);
         res.redirect("/sitter/login");
     } catch (error) {
-        req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent");
+        res.render('recover', { req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent") });
     }
 });
 
