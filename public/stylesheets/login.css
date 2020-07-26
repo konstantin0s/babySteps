@@ -4,6 +4,10 @@
         overflow-y: scroll;
     }
     
+    a {
+        text-decoration: none;
+    }
+    
     .cf .login a {
         position: relative;
         left: 0%;

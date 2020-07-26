@@ -5,6 +5,10 @@ header {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .login-sitter h1 {
     position: relative;
     top: 100px;
