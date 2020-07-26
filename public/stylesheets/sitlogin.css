@@ -157,8 +157,9 @@ header {
 .alert-success,
 .alert-error {
     position: relative;
-    top: 59px;
-    left: -20px;
+    top: 123px;
+    text-align: center;
+    left: 0px;
     width: 100%;
     margin-left: 0px;
     padding-left: 0px;
