@@ -37,7 +37,7 @@ router.post("/recover", async(req, res) => {
         let subject = "Password change request";
         let to = user.email;
         let from = 'constantintofan85@gmail.com'
-        let link = "https://allthesebabysteps.herokuapp.com/reset/" + user.resetPasswordToken;
+        let link = "https://allthesebabysteps.herokuapp.com/reset/" + user.resetPasswordToken
         let html = `<p>Hi ${user.username}</p>
                     <p>Please click on the following <a href="${link}">link</a> to reset your password.</p> 
                     <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>`;
@@ -47,7 +47,7 @@ router.post("/recover", async(req, res) => {
         res.redirect("/sitter/login");
     } catch (error) {
         req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent")
-        res.render('recover');
+        res.redirect("/sitter/login");
     }
 });
 
@@ -107,7 +107,8 @@ router.post("/reset/:token", async(req, res) => {
         req.flash('updatePasswordSuccessMsg', 'Password updated successfully!');
         res.redirect("/sitter/login");
     } catch (error) {
-        return req.flash('sendPasswordErrorMsg', 'Password not updated, please try again.');
+        req.flash('sendPasswordErrorMsg', 'Password not updated, please try again.');
+        res.redirect('/sitter/login');
     }
 });
 

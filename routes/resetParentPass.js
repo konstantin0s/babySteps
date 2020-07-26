@@ -24,9 +24,8 @@ router.post("/recover", async(req, res) => {
         const user = await Parent.findOne({ "email": email })
 
         if (!user) {
-            res.redirect('recover');
             req.flash('sendRecoverErrorMsg', 'The email address ' + req.body.email + ' is not associated with any account.Double-check your email address and try again.');
-            return res.status(401);
+            res.redirect('recover');
         }
 
         //Generate and set password reset token
@@ -49,7 +48,7 @@ router.post("/recover", async(req, res) => {
         res.redirect("/parent/login");
     } catch (error) {
         req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent");
-        res.redirect("/recover");
+        res.redirect('/parent/login');
     }
 });
 
@@ -111,7 +110,7 @@ router.post("/reset/:token", async(req, res) => {
         res.redirect("/parent/login");
     } catch (error) {
         req.flash('sendPasswordErrorMsg', 'Password not updated, please try again.');
-        res.redirect('/recover');
+        res.redirect('/parent/login');
     }
 });
 
