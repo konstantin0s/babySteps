@@ -46,7 +46,8 @@ router.post("/recover", async(req, res) => {
         req.flash('sendPasswordSuccessMsg', 'A reset email has been sent to ' + user.email);
         res.redirect("/sitter/login");
     } catch (error) {
-        res.render('recover', { req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent") });
+        req.flash('sendPasswordErrorMsg', "A reset email couldn't been sent")
+        res.render('recover');
     }
 });
 
