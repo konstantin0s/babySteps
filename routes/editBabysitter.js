@@ -4,9 +4,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const Babysitter = require('../models/babysitter');
 const uploader = require('../models/cloudinary-setup');
+const bcrypt = require("bcryptjs");
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+
+const bcryptSalt = 10;
 
 
 router.get('/babysitter/:id/edit', function(req, res) {
@@ -40,6 +43,10 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
                     console.log(err);
                 } else {
 
+                    const newPass = req.body.password;
+                    const salt = bcrypt.genSaltSync(bcryptSalt);
+                    const hashPass = bcrypt.hashSync(newPass, salt);
+
                     let babyx = {};
                     babyx.firstName = req.body.firstName;
                     babyx.lastName = req.body.lastName;
@@ -54,6 +61,10 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
                     babyx.experience = req.body.experience;
                     babyx.language = req.body.language;
                     babyx.availability = req.body.availability;
+                    babyx.password = hashPass;
+                    console.log('babyx', babyx.password)
+
+
 
                     await Babysitter.findByIdAndUpdate({ _id: req.params.id }, babyx, function(err) {
                         if (err) {

@@ -161,6 +161,35 @@
                    width: 100px;
                }
                
+               .flip {
+                   font-size: 16px;
+                   padding: 10px;
+                   text-align: center;
+                   background-color: #b5b8bd;
+                   color: white;
+                   border: solid 1px #a6d8a8;
+                   margin: auto;
+                   cursor: pointer;
+               }
+               
+               #pass {
+                   font-size: 16px;
+                   padding: 10px;
+                   text-align: center;
+                   background-color: #b5b8bd;
+                   color: white;
+                   border: solid 1px #a6d8a8;
+                   margin: auto;
+                   cursor: pointer;
+                   width: 80%;
+                   left: 10%;
+                   position: relative;
+               }
+               
+               .pass-change {
+                   display: none;
+               }
+               
                .editProfy {
                    position: relative;
                    overflow-x: hidden;
