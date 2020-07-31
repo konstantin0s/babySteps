@@ -62,9 +62,6 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
                     babyx.language = req.body.language;
                     babyx.availability = req.body.availability;
                     babyx.password = hashPass;
-                    console.log('babyx', babyx.password)
-
-
 
                     await Babysitter.findByIdAndUpdate({ _id: req.params.id }, babyx, function(err) {
                         if (err) {
@@ -90,6 +87,10 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
             });
         } else {
             //in case you update image, run this:
+            const newPass = req.body.password;
+            const salt = bcrypt.genSaltSync(bcryptSalt);
+            const hashPass = bcrypt.hashSync(newPass, salt);
+
             let babys = {};
             babys.firstName = req.body.firstName;
             babys.lastName = req.body.lastName;
@@ -104,6 +105,7 @@ router.post('/babysitter/:id/edit', uploader.single('image'), async function(req
             babys.experience = req.body.experience;
             babys.language = req.body.language;
             babys.availability = req.body.availability;
+            babys.password = hashPass;
 
 
             await Babysitter.findByIdAndUpdate({ _id: req.params.id }, babys, function(err) {

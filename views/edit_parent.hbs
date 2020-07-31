@@ -59,7 +59,8 @@
     </div>
 
     <div class="form-container">
-      <form method="POST" enctype="multipart/form-data" action="/parent/{{showParentData.id}}/edit" class="form-center">
+      <form method="POST" name="form" 
+      enctype="multipart/form-data" action="/parent/{{showParentData.id}}/edit" class="form-center">
         <h1 class="href">Edit Profile</h1>
       <div id="form-group">
         <label for="level">First Name:</label>
@@ -100,10 +101,26 @@
           <label for="level">Caring days:</label>
           <input type="number" name="days" value="{{editParent.days}}" class="form-control">
         </div>
+
+<p class="flip">Change password</p>
+<div id="pass" class="pass-change">
+  <div id="form-group">
+    <label for="level">Change Password</label>
+    <input class="form-control password" id="firstPass" data-help="Enter minimum six characters, at least one uppercase letter and one number!"
+     type="password" name="password" placeholder="New Password" autofocus="true">
+  </div>
+  <div id="form-group">
+    <label for="level">Repeat Password</label>
+    <input class="form-control password" id="passCheck" data-help="Enter minimum six characters, at least one uppercase letter and one number!"
+     type="password" name="confirmPassword" placeholder="Confirm Password">
+  </div>
+</div>
+
         <div id="form-group">
         <input type="submit" id="button" class="btn btn-primary" value="Submit">
       </div>
     </form>
+    <p id="help"></p>
   </div>
 </div> <!--wrapper -->
 
@@ -116,6 +133,7 @@
 </div>
 
 <script src="/javascript/progress.js"></script>
+<script src="/javascript/edit.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/javascript/main.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

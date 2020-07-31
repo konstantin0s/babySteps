@@ -82,10 +82,9 @@
                    /* Safari and Chrome */
                    -webkit-animation-fill-mode: forwards;
                }
-               
-               .alert-danger {
+               /* .alert-danger {
                    position: relative;
-                   top: 151px;
+                   /* top: 151px; 
                    text-align: center;
                    left: 0;
                    width: 100%;
@@ -95,9 +94,8 @@
                    animation-fill-mode: forwards;
                    animation-delay: 108s;
                    -webkit-animation-delay: 108s;
-                   /* Safari and Chrome */
                    -webkit-animation-fill-mode: forwards;
-               }
+               } */
                
                .profile-head {
                    position: relative;
@@ -170,6 +168,23 @@
                    border: solid 1px #a6d8a8;
                    margin: auto;
                    cursor: pointer;
+               }
+               
+               #help {
+                   position: absolute;
+                   transition: all 0.5s ease-in;
+                   top: 820px;
+                   box-sizing: border-box;
+                   color: #333;
+                   font-weight: 900;
+                   left: -40%;
+                   margin: 20px auto;
+                   padding: 24px;
+                   display: flex;
+                   flex-direction: row;
+                   justify-content: center;
+                   width: 47%;
+                   font-size: 1em;
                }
                
                #pass {
