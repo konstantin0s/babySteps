@@ -13,6 +13,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/javascript/fadeEffect.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body id="fadein">
@@ -42,6 +43,7 @@
   <h3 class="signup-title"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h3>
   <form id="form" class="sitter-form" enctype="multipart/form-data" action="/sitter/signup" method="POST">
 <h3>Sign up Now</h3>
+
   <div class="inner-addon left-addon">
       <i class="fa fa-user"></i>
   <input type="text" name="firstName" class="form-control" placeholder="First Name">
@@ -94,7 +96,9 @@
     </div>
   </div>
 
-      <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
+  <div id="recaptcha" class="recaptcha">
+    <div class="g-recaptcha" data-sitekey={{recapkey}}></div>
+  </div>
 
     <button class="submit" type="submit">Create account</button>
 
@@ -114,6 +118,7 @@
   </div>
 </footer>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/javascript/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

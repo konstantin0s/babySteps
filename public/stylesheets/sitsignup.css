@@ -72,6 +72,11 @@
     color: #fff;
 }
 
+.g-recaptcha {
+    display: block;
+    position: relative;
+}
+
 .upload-btn-wrapper input[type=file] {
     font-size: 100px;
     position: absolute;

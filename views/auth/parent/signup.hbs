@@ -13,6 +13,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/javascript/fadeEffect.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body id="fadein">
@@ -86,7 +87,11 @@
           <input type="file" name='image' id="addPic" className="btn btn-warning addPic form-control" />
         </div>
       </div>
-      <div class="g-recaptcha" data-sitekey="6LeR0ZMUAAAAAHe19OLvaksuM7cB-k8XHCCmE96b"></div>
+
+        <div id="recaptcha" class="recaptcha">
+          <div class="g-recaptcha" data-sitekey={{recapkey}}></div>
+        </div>
+  
 
 {{#if errorMessage}}
 <div class="error-message">{{ errorMessage }}</div>

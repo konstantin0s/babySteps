@@ -46,9 +46,10 @@
     <div class="father-container">
 
       <div class="form-container">
-        {{#if sendRecoverErrorMsg }}
-        <div class="alert alert-error">{{ sendRecoverErrorMsg }}</div>
-        {{/if}}
+
+            {{#if errorMessage }}
+            <div class="alert alert-danger">{{ errorMessage }}</div>
+            {{/if}}
 
         <form id="form" action="/recover" method="POST">
           <div class="hint-message">
@@ -69,10 +70,6 @@
         <div class="extreme-help">
           <p> Still can't login? E-mail constantintofan85@gmail.com if you need additional assistance.</p>
         </div>
-
-        {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-        {{/if}}
 
       </div>
     </div>

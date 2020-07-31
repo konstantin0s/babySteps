@@ -87,7 +87,7 @@ router.post('/parent/signup', function(req, res) {
             return res.json({ "responseError": "Please select captcha first" });
         }
 
-        const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+        const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.RECAPTHA_SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
 
         request(verificationURL, function(error, response, body) {
             body = JSON.parse(body);

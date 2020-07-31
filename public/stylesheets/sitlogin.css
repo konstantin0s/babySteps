@@ -164,7 +164,8 @@ a {
     top: 123px;
     text-align: center;
     left: 0px;
-    width: 100%;
+    width: 50%;
+    align-self: center;
     margin-left: 0px;
     padding-left: 0px;
     animation: reset-pass 0.5s 1;

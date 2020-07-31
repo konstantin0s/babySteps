@@ -83,24 +83,40 @@ router.post("/sitter/signup", uploader.single('image'), (req, res, next) => {
     }
 });
 
-router.post('/sitter/signup', function(req, res) {
+router.post('/sitter/signup', async function(req, res, next) {
     try {
-        if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-            return res.json({ "responseError": "Please select captcha first" });
+        if (
+            req.body['g-recaptcha-response'] === undefined ||
+            req.body['g-recaptcha-response'] === '' ||
+            req.body['g-recaptcha-response'] === null
+        ) {
+            return res.json({ responseError: 'Please select captcha first' });
         }
+        const secretKey = process.env.RECAPTHA_SECRET_KEY;
 
-        const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.SECRET_KEY + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+        const verificationURL =
+            'https://www.google.com/recaptcha/api/siteverify?secret=' + secretKey +
+            '&response=' +
+            req.body['g-recaptcha-response'] +
+            '&remoteip=' +
+            req.connection.remoteAddress;
 
-        request(verificationURL, function(error, response, body) {
+        await request(verificationURL, function(error, response, body) {
             body = JSON.parse(body);
 
             if (body.success !== undefined && !body.success) {
-                return res.json({ "responseError": "Failed captcha verification" });
+                res.render('auth/sitter/signup', {
+                    errorMessage: 'Failed captcha verification'
+                });
+                return;
             }
-            res.json({ "responseSuccess": "Success" });
+            // res.json({ "responseSuccess": "Success" });
+            res.redirect('auth/sitter/login');
+        }).catch((error) => {
+            next(error);
         });
     } catch (error) {
-        console.log(error);
+        res.status(500).json({ message: error.message });
     }
 });
 

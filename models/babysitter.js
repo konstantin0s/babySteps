@@ -24,69 +24,51 @@ const babysitterSchema = new Schema({
     experience: { type: String },
     language: { type: String },
     reviews: [{
-            user: { type: String },
-            comments: { type: String }
-        }]
-        // resetPasswordToken: {
-        //     type: String,
-        //     required: false
-        // },
+        user: { type: String },
+        comments: { type: String }
+    }],
+    resetPasswordToken: {
+        type: String,
+        required: false
+    },
 
-    // resetPasswordExpires: {
-    //     type: Date,
-    //     required: false
-    // }
+    resetPasswordExpires: {
+        type: Date,
+        required: false
+    }
 }, {
     timestamps: true
 });
 
-// babysitterSchema.pre('save', function(next) {
-//     const user = this;
+babysitterSchema.methods.generateJWT = function() {
+    const today = new Date();
+    const expirationDate = new Date(today);
+    expirationDate.setDate(today.getDate() + 60);
 
-//     if (!user.isModified('password')) return next();
+    let payload = {
+        id: this._id,
+        email: this.email,
+        username: this.username
+    };
 
-//     bcrypt.genSalt(10, function(err, salt) {
-//         if (err) return next(err);
+    return jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: parseInt(expirationDate.getTime() / 1000, 10)
+    });
+};
 
-//         bcrypt.hash(user.password, salt, function(err, hash) {
-//             if (err) return next(err);
+babysitterSchema.methods.generatePasswordReset = function() {
+    this.resetPasswordToken = crypto.randomBytes(20).toString('hex');
+    this.resetPasswordExpires = Date.now() + 3600000; //expires in an hour
+};
 
-//             user.password = hash;
-//             next();
-//         });
-//     });
-// });
+babysitterSchema.methods.generateVerificationToken = function() {
+    let payload = {
+        userId: this._id,
+        token: crypto.randomBytes(20).toString('hex')
+    };
 
-// babysitterSchema.methods.generateJWT = function() {
-//     const today = new Date();
-//     const expirationDate = new Date(today);
-//     expirationDate.setDate(today.getDate() + 60);
-
-//     let payload = {
-//         id: this._id,
-//         email: this.email,
-//         username: this.username
-//     };
-
-//     return jwt.sign(payload, process.env.JWT_SECRET, {
-//         expiresIn: parseInt(expirationDate.getTime() / 1000, 10)
-//     });
-// };
-
-// babysitterSchema.methods.generatePasswordReset = function() {
-//     this.resetPasswordToken = crypto.randomBytes(20).toString('hex');
-//     this.resetPasswordExpires = Date.now() + 3600000; //expires in an hour
-// };
-
-// babysitterSchema.methods.generateVerificationToken = function() {
-//     let payload = {
-//         userId: this._id,
-//         token: crypto.randomBytes(20).toString('hex')
-//     };
-
-//     return new TokenSitter(payload);
-// };
-
+    return new Token(payload);
+};
 
 
 const Babysitter = mongoose.model("Babysitter", babysitterSchema);

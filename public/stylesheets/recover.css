@@ -201,11 +201,12 @@ body {
 }
 
 .alert-success,
-.alert-error {
+.alert-danger {
     position: relative;
-    top: -59px;
-    left: -20px;
+    top: 37px;
+    left: 20px;
     width: 100%;
+    text-align: center;
     margin-left: 0px;
     padding-left: 0px;
     animation: show-messages 0.5s 1;

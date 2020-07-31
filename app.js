@@ -1,4 +1,3 @@
-const fallback = require('express-history-api-fallback');
 const express = require('express');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
@@ -10,6 +9,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const cookieParser = require('cookie-parser');
 const flash = require('req-flash');
+const fallback = require('express-history-api-fallback');
 
 require("dotenv").config();
 const app = express();
@@ -72,6 +72,8 @@ app.use(function(req, res, next) {
 });
 
 app.locals.title = 'BabySteps';
+app.locals.recapkey = process.env.RECAPTHA_SITE_KEY;
+
 
 
 app.use('/', require('./routes/index'));
