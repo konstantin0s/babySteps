@@ -55,11 +55,13 @@
      -webkit-animation-fill-mode: forwards;
  }
  
- #email:valid {
+ #email:valid,
+ input:valid {
      border-color: black;
  }
  
- #email:invalid {
+ #email:invalid,
+ input:invalid {
      border-color: red;
  }
  

@@ -41,53 +41,61 @@
 
 <div class="signup-sitter">
   <h3 class="signup-title"><a class="nav-link href" href='/parent/signup'>Are you a Parent?</a> </h3>
-  <form id="form" class="sitter-form" enctype="multipart/form-data" action="/sitter/signup" method="POST">
+  <form id="form" name="form" class="sitter-form" enctype="multipart/form-data" action="/sitter/signup" method="POST">
 <h3>Sign up Now</h3>
 
   <div class="inner-addon left-addon">
       <i class="fa fa-user"></i>
-  <input type="text" name="firstName" class="form-control" placeholder="First Name">
+  <input type="text" name="firstName" class="form-control" placeholder="First Name" 
+   required='true' data-help="Name must be at least 3 chars">
   </div>
  
   <div class="inner-addon left-addon">
     <i class="fa fa-user"></i>
-    <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+    <input type="text" name="lastName" class="form-control" placeholder="Last Name" 
+     required='true'  data-help="Name must be at least 3 chars">
   </div>
     
       <div class="inner-addon left-addon">
         <i class="fa fa-user"></i>
-          <input type="text" name="username" class="form-control" placeholder="Username" required='true'>
+          <input type="text" name="username" class="form-control" placeholder="Username"
+           required='true'  data-help="Username must be at least 3 chars">
       </div>
             <div class="inner-addon left-addon">
               <i class="fa fa-user"></i>
-              <input id="email" type="email" name="email" class="form-control" placeholder="Email" required='true'>
+              <input id="email" type="email" name="email" class="form-control" placeholder="Email"
+               required='true'  data-help="Enter a valid email">
             </div>
   
   <div class="inner-addon left-addon">
     <i class="fa fa-lock"></i>
-    <input type="password" name="password" placeholder="Password" required='true'>
+    <input type="password" name="password" placeholder="Password"
+     required='true'  data-help="Password too short">
   </div>
 
 
 <div class="inner-addon left-addon">
   <i class="fa fa-globe"></i>
-      <input type="text" name="city" class="form-control" placeholder="City">
+      <input type="text" name="city" class="form-control" placeholder="City"
+        required='true'  data-help="Enter city name">
 </div>
 
 
 <div class="inner-addon left-addon">
   <i class="fa fa-flag"></i>
-    <input type="text" name="country" class="form-control" placeholder="Country">
+    <input type="text" name="country" class="form-control" placeholder="Country"  
+    required='true'  data-help="Enter country name">
 </div>
 
     <div class="inner-addon left-addon">
       <i class="fa fa-birthday-cake"></i>
-    <input type="text" name="age" class="form-control" placeholder="Age">
+    <input type="text" name="age" class="form-control" placeholder="Age"
+      required='true' >
     </div>
 
         <div class="inner-addon left-addon">
           <i class="fa fa-money"></i>
-    <input type="text" name="salary" class="form-control" placeholder="Salary Expectation">
+    <input type="text" name="salary" class="form-control" placeholder="Salary Expectation" >
         </div>
   <div id="form-group" class="image inner-addon left-addon">
     <div class="upload-btn-wrapper">
@@ -109,6 +117,8 @@
 {{#if errorMessage}}
 <div class="error-message alert alert-danger">{{ errorMessage }}</div>
 {{/if}}
+
+<p id="help"></p>
 
 <!-- Footer -->
 <footer>

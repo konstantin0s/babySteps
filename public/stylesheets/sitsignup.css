@@ -59,11 +59,26 @@
 
 /* form validation */
 
-#email:valid {
+#help {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    color: chocolate;
+    text-align: center;
+    padding: 1em 3em;
+    align-self: center;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#email:valid,
+input:valid {
     border-color: black;
 }
 
-#email:invalid {
+#email:invalid,
+input:invalid {
     border-color: red;
 }
 
