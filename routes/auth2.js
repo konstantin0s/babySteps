@@ -124,14 +124,12 @@ router.post("/parent/login", (req, res, next) => {
             });
             return;
         }
-        //if parent Parent.findOne else Sitter.findOne
 
         Parent.findOne({ "username": theUsername })
             .then(user => {
                 if (!user) {
                     // debugger
                     res.render("auth/parent/login", {
-                        layout: false,
                         errorMessage: `The username > ${theUsername} < doesn't exist.`
                     });
                     return;
@@ -143,7 +141,7 @@ router.post("/parent/login", (req, res, next) => {
                     res.redirect("/babysitters");
                 } else {
                     res.render("auth/parent/login", {
-                        layout: false,
+
                         errorMessage: "Incorrect login, try again!",
 
                     })

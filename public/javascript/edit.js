@@ -26,7 +26,7 @@ function display() {
 function validatePassword() {
     var firstPassword = document.form.password.value;
     var secondPassword = document.form.confirmPassword.value;
-    // var strongRegex = new RegExp("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$");
+
     //Input Password and Submit [6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter]
     var passW = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
@@ -45,7 +45,13 @@ function validatePassword() {
 }
 
 const passCheck = document.querySelector("#passCheck");
-passCheck.addEventListener('blur', validatePassword);
+passCheck.addEventListener('blur', () => {
+    validatePassword();
+    var firstPassword = document.form.password.value;
+    var secondPassword = document.form.confirmPassword.value;
+    firstPassword = '';
+    secondPassword = '';
+});
 
 //data help on input password
 let help = document.getElementById('help');

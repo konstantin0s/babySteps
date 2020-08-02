@@ -545,17 +545,6 @@ nav a#openup {
     padding: 0;
 }
 
-.error-message {
-    background: #f02b63;
-    box-sizing: border-box;
-    color: #fff;
-    margin: 15px auto -1px;
-    padding: 10px 12px;
-    width: 100%;
-    font-size: 0.8em;
-    height: 60px;
-}
-
 .babyImg {
     position: relative;
     top: -400px;

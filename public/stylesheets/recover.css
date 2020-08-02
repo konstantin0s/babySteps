@@ -218,6 +218,14 @@ body {
     -webkit-animation-fill-mode: forwards;
 }
 
+#email:valid {
+    border-color: black;
+}
+
+#email:invalid {
+    border-color: red;
+}
+
 #form {
     width: 100%;
     position: relative;

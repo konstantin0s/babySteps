@@ -16,6 +16,57 @@
     background-size: cover;
 }
 
+
+/* hide message with a keyframe */
+
+@keyframes reset-pass {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes reset-pass {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-danger {
+    position: relative;
+    top: 1px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    align-self: center;
+    margin-left: 0px;
+    margin-bottom: 0.1em !important;
+    padding-left: 0px;
+    animation: reset-pass 0.5s 1;
+    -webkit-animation: reset-pass 0.5s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+    -webkit-animation-delay: 12s;
+    /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+}
+
+
+/* form validation */
+
+#email:valid {
+    border-color: black;
+}
+
+#email:invalid {
+    border-color: red;
+}
+
 .signup-sitter {
     position: relative;
     width: 100%;

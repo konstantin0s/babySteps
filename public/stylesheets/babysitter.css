@@ -82,20 +82,6 @@
                    /* Safari and Chrome */
                    -webkit-animation-fill-mode: forwards;
                }
-               /* .alert-danger {
-                   position: relative;
-                   /* top: 151px; 
-                   text-align: center;
-                   left: 0;
-                   width: 100%;
-                   align-self: center;
-                   animation: update-response 0.5s 1;
-                   -webkit-animation: update-response 0.5s 1;
-                   animation-fill-mode: forwards;
-                   animation-delay: 108s;
-                   -webkit-animation-delay: 108s;
-                   -webkit-animation-fill-mode: forwards;
-               } */
                
                .profile-head {
                    position: relative;

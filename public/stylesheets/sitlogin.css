@@ -11,7 +11,8 @@ a {
 
 .login-sitter h1 {
     position: relative;
-    top: 100px;
+    top: 70px;
+    margin-bottom: 30px;
     font-size: 1.5em;
     color: rgb(63, 60, 60);
     font-weight: bold;
@@ -109,6 +110,7 @@ a {
     font-size: 1.2em;
     color: #fff;
     top: 15px;
+    margin-top: 60px;
     position: relative;
     opacity: 0.8;
     background: #444;
@@ -159,12 +161,15 @@ a {
 }
 
 .alert-success,
-.alert-error {
+.error-message,
+.alert-error,
+.alert-danger {
     position: relative;
-    top: 103px;
+    top: 1px;
     text-align: center;
     left: 0px;
-    width: 50%;
+    width: 100%;
+    margin-bottom: 0.1em !important;
     align-self: center;
     margin-left: 0px;
     padding-left: 0px;
@@ -175,6 +180,17 @@ a {
     -webkit-animation-delay: 12s;
     /* Safari and Chrome */
     -webkit-animation-fill-mode: forwards;
+}
+
+
+/* form validation */
+
+#pass:valid {
+    border-color: black;
+}
+
+#pass:invalid {
+    border-color: red;
 }
 
 

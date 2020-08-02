@@ -49,22 +49,33 @@
     }
     
     .alert-success,
+    .error-message,
     .alert-error {
         position: relative;
-        top: 123px;
+        top: 12px;
         text-align: center;
         left: 0px;
-        width: 50%;
+        width: 100%;
         align-self: center;
         margin-left: 0px;
+        margin-bottom: 0.1em !important;
         padding-left: 0px;
-        animation: reset-pass 0.5s 1;
+        /* animation: reset-pass 0.5s 1;
         -webkit-animation: reset-pass 0.5s 1;
-        animation-fill-mode: forwards;
-        animation-delay: 12s;
-        -webkit-animation-delay: 12s;
+        animation-fill-mode: forwards; */
+        /* animation-delay: 12s;
+        -webkit-animation-delay: 12s; */
         /* Safari and Chrome */
-        -webkit-animation-fill-mode: forwards;
+        /* -webkit-animation-fill-mode: forwards; */
+    }
+    /* form validation */
+    
+    input:valid {
+        border-color: black;
+    }
+    
+    input:invalid {
+        border-color: red;
     }
     
     .acc-recover a {
@@ -84,6 +95,7 @@
         font-size: 1.2em;
         color: #fff;
         top: 15px;
+        margin-top: 60px;
         position: relative;
         opacity: 0.8;
         background: #444;
@@ -106,7 +118,8 @@
     
     .login-container h1 {
         position: relative;
-        top: 100px;
+        top: 70px;
+        margin-bottom: 30px;
         font-size: 1.5em;
         color: #fff;
         font-weight: bold;

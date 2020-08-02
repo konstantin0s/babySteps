@@ -77,8 +77,7 @@ router.get("/reset/:token", async(req, res, next) => {
         //Redirect user to form with the email address
         res.render('reset', {
             user,
-            token,
-            layout: false
+            token
         });
     } catch (error) {
         req.flash('sendTokenErrorMsg', "The token could not be verified. Please try again. ");

@@ -58,10 +58,10 @@
           </div>
           <div class="inner-addon left-addon">
             <i class="fa fa-user"></i>
-            <input type="email" class="email form-control" name="email" placeholder="Email" autofocus="true">
+            <input id="email" type="email" class="email form-control" name="email" placeholder="Email" autofocus="true">
           </div>
 
-          <button  class="btn submit" type="submit">Submit</button>
+          <button id="submit" class="btn submit" type="submit" disabled>Submit</button>
           <p class="account-message">
             <a class="recover link" href="/parent/login">Log in</a> or
             <a class="recover link" href="/parent/signup">Sign up</a>
@@ -83,6 +83,7 @@
   </div>
 </footer>
 
+<script src="/javascript/validate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/javascript/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

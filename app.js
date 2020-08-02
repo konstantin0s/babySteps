@@ -77,16 +77,11 @@ app.locals.recapkey = process.env.RECAPTHA_SITE_KEY;
 
 
 app.use('/', require('./routes/index'));
+app.use('/', require('./routes/auth'));
+app.use('/', require('./routes/auth2'));
 app.use('/', require('./routes/resetSitterPass'));
 app.use('/', require('./routes/resetParentPass'));
 
-
-
-
-app.use('/', require('./routes/auth', {
-    layout: false
-}));
-app.use('/', require('./routes/auth2', { layout: false }));
 
 app.use(["/parent*", "/babysitter*."], (req, res, next) => {
     var tries = 3;

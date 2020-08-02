@@ -60,7 +60,7 @@
       </div>
             <div class="inner-addon left-addon">
               <i class="fa fa-user"></i>
-              <input type="email" name="email" class="form-control" placeholder="Email" required='true'>
+              <input id="email" type="email" name="email" class="form-control" placeholder="Email" required='true'>
             </div>
   
   <div class="inner-addon left-addon">
@@ -100,14 +100,14 @@
     <div class="g-recaptcha" data-sitekey={{recapkey}}></div>
   </div>
 
-    <button class="submit" type="submit">Create account</button>
+    <button id="submit" class="submit" type="submit" disabled>Create account</button>
 
         <p class="acc">Already Having an account? <a class="link" href='/sitter/login'>Log In</a></p>
   </form>
 </div>
 
 {{#if errorMessage}}
-<div class="error-message">{{ errorMessage }}</div>
+<div class="error-message alert alert-danger">{{ errorMessage }}</div>
 {{/if}}
 
 <!-- Footer -->
@@ -118,6 +118,7 @@
   </div>
 </footer>
 
+  <script src="/javascript/validate.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/javascript/main.js"></script>

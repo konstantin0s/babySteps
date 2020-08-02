@@ -55,7 +55,7 @@
     </div>
       <div class="inner-addon left-addon">
         <i class="fa fa-user"></i>
-        <input type="email" name="email" class="form-control" placeholder="Email" required='true'>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required='true'>
       </div>
     <div class="inner-addon left-addon">
       <i class="fa fa-lock"></i>
@@ -94,10 +94,10 @@
   
 
 {{#if errorMessage}}
-<div class="error-message">{{ errorMessage }}</div>
+<div class="error-message alert alert-danger">{{ errorMessage }}</div>
 {{/if}}
 
-    <button class="submit" type="submit">Create account</button>
+    <button class="submit" type="submit" id="submit" disabled>Create account</button>
     <p class="acc">Already Having an account? <a class="link" href='/parent/login'>Log In</a></p>
   </form>
 </div>
@@ -109,7 +109,7 @@
   </div>
 </footer>
 
-
+<script src="/javascript/validate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/javascript/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

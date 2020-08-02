@@ -39,7 +39,6 @@ router.post("/sitter/signup", uploader.single('image'), (req, res, next) => {
 
         if (username === "" || password === "" || username.length < 3 || password.length < 3) {
             res.render("auth/sitter/signup", {
-                layout: false,
                 errorMessage: "You username or the password requires attention!"
             });
             return;
@@ -49,7 +48,6 @@ router.post("/sitter/signup", uploader.single('image'), (req, res, next) => {
             .then(user => {
                 if (user !== null) {
                     res.render("auth/sitter/signup", {
-                        layout: false,
                         errorMessage: `The username ${username} already exists!`
                     });
                     return;
@@ -110,7 +108,6 @@ router.post('/sitter/signup', async function(req, res, next) {
                 });
                 return;
             }
-            // res.json({ "responseSuccess": "Success" });
             res.redirect('auth/sitter/login');
         }).catch((error) => {
             next(error);
@@ -147,7 +144,6 @@ router.post("/sitter/login", (req, res, next) => {
             .then(user => {
                 if (!user) {
                     res.render("auth/sitter/login", {
-                        layout: false,
                         errorMessage: `The username > ${theUsername} < doesn't exist.`
                     });
                     return;
@@ -160,7 +156,6 @@ router.post("/sitter/login", (req, res, next) => {
                     res.redirect("/parents");
                 } else {
                     res.render("auth/sitter/login", {
-                        layout: false,
                         errorMessage: "Incorrect login, try again!"
                     });
                 }
