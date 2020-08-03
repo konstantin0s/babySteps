@@ -11,7 +11,6 @@ function inputCheck() {
         field.addEventListener('keyup', (event) => {
             if ((signUpForm.checkValidity())) {
                 if ((field.value.length >= 3)) {
-                    console.log(field.value.length)
                     okButton.disabled = false;
                 } else {
                     okButton.disabled = true;
@@ -27,9 +26,7 @@ inputCheck();
 
 function validName() {
     var nameRegex = /^(?!-)(?!.*-$)[a-zA-Z-]+$/;
-    console.log(userField.value);
     if (userField.value.match(nameRegex) === null || userField.value.length < 3) {
-        // console.log('wrong')
         okButton.disabled = true;
     } else {
         okButton.disabled = false;
