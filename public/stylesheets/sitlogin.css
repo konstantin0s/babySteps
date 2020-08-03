@@ -185,11 +185,11 @@ a {
 
 /* form validation */
 
-#pass:valid {
+input:valid {
     border-color: black;
 }
 
-#pass:invalid {
+input:invalid {
     border-color: red;
 }
 
@@ -227,7 +227,7 @@ a {
         color: #fff;
     }
     .acc-recover {
-        top: -20px;
+        top: 20px;
     }
 }
 

@@ -1,14 +1,42 @@
 const signUpForm = document.getElementById('form');
-const passField = document.getElementById('pass');
+const passField = document.getElementById('pass').value;
+const userField = document.getElementById('user');
 const okButton = document.getElementById('submit');
+let fields = document.querySelectorAll('input');
 
-passField.addEventListener('keyup', (event) => {
-    var passW = /^(?=.*\d)(?=.*[a-z]).{5,20}$/;
-    let isValidPass = passField.value.match(passW);
+function inputCheck() {
 
-    if (isValidPass) {
-        okButton.disabled = false;
-    } else {
-        okButton.disabled = true;
+    for (let field of Array.from(fields)) {
+
+        field.addEventListener('keyup', (event) => {
+            if ((signUpForm.checkValidity())) {
+                if ((field.value.length >= 3)) {
+                    console.log(field.value.length)
+                    okButton.disabled = false;
+                } else {
+                    okButton.disabled = true;
+                }
+            } else {
+                okButton.disabled = true;
+            }
+        });
     }
+}
+
+inputCheck();
+
+function validName() {
+    var nameRegex = /^(?!-)(?!.*-$)[a-zA-Z-]+$/;
+    console.log(userField.value);
+    if (userField.value.match(nameRegex) === null || userField.value.length < 3) {
+        // console.log('wrong')
+        okButton.disabled = true;
+    } else {
+        okButton.disabled = false;
+    }
+}
+
+
+document.getElementById('user').addEventListener('keyup', () => {
+    validName();
 });

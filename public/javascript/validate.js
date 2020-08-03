@@ -37,35 +37,35 @@ function minimLengthInput() {
     for (let field of Array.from(fields)) {
         field.addEventListener('focus', (event) => {
             let text = event.target.getAttribute('data-help');
-            if (help) {
-                help.textContent = text;
-                validateInput();
-                if (field >= 3) {
-                    field.addEventListener('change', (event) => {
-                        help.textContent = '';
-                    });
-                }
-            }
+            help.textContent = text;
+            validateInput();
+
             if (help.textContent === null) {
 
-                console.log('lalaal')
+                console.log('');
             }
 
         });
         field.addEventListener('blur', (event) => {
             help.textContent = '';
         });
+
+        // console.log(field.length)
+        field.addEventListener('change', (event) => {
+            console.log(field.value.length)
+            if (field.value.length >= 3) {
+                help.textContent = '';
+            }
+        });
+
     }
 }
 
 function validateInput() {
     const okButton = document.getElementById('submit');
     if (this.value < 3) {
-        alert('minum 3 ')
         okButton.disabled = false;
-        // this.style.cssText = "border-width:5px;border-color:red;border-style:solid;border-radius:3px;";
     } else {
         okButton.disabled = true;
-        // this.style.cssText = "border-width:5px;border-color:limegreen;border-style:solid;border-radius:3px;";
     }
 }

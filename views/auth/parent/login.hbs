@@ -65,12 +65,14 @@
         <h3 class="log-title">Log in to your account</h3>
         <div class="inner-addon left-addon">
           <i class="fa fa-user"></i>
-          <input type="text" class="form-control" placeholder="Username" name="username">
+          <input id="user" type="text" class="form-control" 
+            placeholder="Username" name="username" required>
         </div>
         
         <div class="inner-addon left-addon">
           <i class="fa fa-lock"></i>
-          <input id="pass" type="password" class="form-control" placeholder="Password" name="password">
+          <input id="pass" type="password" class="form-control"
+             placeholder="Password" name="password" required>
         </div>
 
     <button id="submit" class="submit" type="submit">Sign in</button>
@@ -84,9 +86,8 @@
   <a class="signup" href="/recover"> Forgot your password?</a>
 </div>
 
-
 </div>
-
+</div>
 
 <!-- Footer -->
 <footer>
@@ -96,7 +97,7 @@
   </div>
 </footer>
 
-{{!-- <script src="/javascript/login.js"></script> --}}
+<script src="/javascript/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/javascript/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
