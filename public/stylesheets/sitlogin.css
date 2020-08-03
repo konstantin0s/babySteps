@@ -44,6 +44,19 @@ a {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#help {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    color: chocolate;
+    text-align: center;
+    padding: 1em 3em;
+    align-self: center;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 #form input {
     box-sizing: border-box;
     font-size: 16px;

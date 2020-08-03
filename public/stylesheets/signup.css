@@ -9,7 +9,7 @@
      top: 0px;
      left: 0px;
      margin-bottom: 50px;
-     background: url('https://source.unsplash.com/random') no-repeat center center fixed;
+     background: url('https://images.pexels.com/photos/36445/rose-close-up-pink-flower.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -53,6 +53,19 @@
      -webkit-animation-delay: 12s;
      /* Safari and Chrome */
      -webkit-animation-fill-mode: forwards;
+ }
+ 
+ #help {
+     position: absolute;
+     top: 150px;
+     left: 0;
+     color: chocolate;
+     text-align: center;
+     padding: 1em 3em;
+     align-self: center;
+     width: 100%;
+     font-size: 1em;
+     font-weight: bold;
  }
  
  #email:valid,
@@ -134,6 +147,11 @@
      margin: 1em 0em;
  }
  
+ #form #recaptcha {
+     padding-bottom: 1em;
+     position: relative;
+ }
+ 
  .signup-parent {
      position: relative;
      width: 100%;
@@ -153,13 +171,13 @@
      justify-content: center;
      align-items: center;
      width: 100%;
-     cursor: pointer;
-     color: rgb(233, 212, 212);
+     color: #333;
      font-weight: bold;
      position: relative;
      text-align: center;
      top: 113px;
      cursor: pointer;
+     left: 1em;
  }
  
  #form input {
@@ -170,15 +188,6 @@
      height: 2.6em;
      width: 100%;
      margin-bottom: 20px;
- }
- 
- .parent-form {
-     margin: 30px auto;
-     width: 380px;
-     position: relative;
-     top: 100px;
-     padding-bottom: 20px;
-     height: auto;
  }
  
  .parent-form input,

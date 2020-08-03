@@ -1,60 +1,75 @@
-function emailValidation() {
-
+let globalVar = (function() {
+    // global variables
     const signUpForm = document.getElementById('form');
     const emailField = document.getElementById('email');
     const okButton = document.getElementById('submit');
+    let help = document.querySelector('#help');
+    let fields = document.querySelectorAll('input');
 
-    emailField.addEventListener('keyup', (event) => {
-        let isValidEmail = emailField.checkValidity();
+    return {
+        signUpForm: signUpForm,
+        emailField: emailField,
+        okButton: okButton,
+        help: help,
+        fields: fields
+    };
+}());
+
+function emailValidation() {
+    globalVar.emailField.addEventListener('keyup', (event) => {
+        let isValidEmail = globalVar.emailField.checkValidity();
 
         if (isValidEmail) {
-            okButton.disabled = false;
+            globalVar.okButton.disabled = false;
         } else {
-            okButton.disabled = true;
+            globalVar.okButton.disabled = true;
         }
     });
 }
 
-window.onload = emailValidation;
+window.onload = function() {
+    emailValidation();
+    validateRequiredField();
+    minimLengthInput();
+}
 
 function validateRequiredField() {
 
-    const okButton = document.getElementById('submit');
-    const signUpForm = document.getElementById('form');
-
-    if (signUpForm.checkValidity()) {
-        okButton.disabled = false;
+    if (globalVar.signUpForm.checkValidity()) {
+        globalVar.okButton.disabled = false;
     } else {
-        okButton.disabled = true;
+        globalVar.okButton.disabled = true;
     }
 }
-validateRequiredField();
-minimLengthInput();
+
 
 function minimLengthInput() {
-    let help = document.getElementById('help');
-    let fields = document.querySelectorAll('input');
-    for (let field of Array.from(fields)) {
+    for (let field of Array.from(globalVar.fields)) {
         field.addEventListener('focus', (event) => {
             let text = event.target.getAttribute('data-help');
-            help.textContent = text;
-            validateInput();
+            // console.log(text)
+            if (globalVar.help) {
+                globalVar.help.textContent = text;
+            }
 
-            if (help.textContent === null) {
+            if (field.value.length >= 3) {
+                globalVar.help.textContent = '';
+            }
 
-                console.log('');
+            if (globalVar.help.textContent === null) {
+                console.log('babySteps');
             }
 
         });
         field.addEventListener('blur', (event) => {
-            help.textContent = '';
+            globalVar.help.textContent = '';
         });
 
         // console.log(field.length)
         field.addEventListener('change', (event) => {
-            console.log(field.value.length)
+            // console.log(field.value.length)
             if (field.value.length >= 3) {
-                help.textContent = '';
+                globalVar.help.textContent = '';
             }
         });
 
@@ -62,10 +77,9 @@ function minimLengthInput() {
 }
 
 function validateInput() {
-    const okButton = document.getElementById('submit');
     if (this.value < 3) {
-        okButton.disabled = false;
+        globalVar.okButton.disabled = false;
     } else {
-        okButton.disabled = true;
+        globalVar.okButton.disabled = true;
     }
 }

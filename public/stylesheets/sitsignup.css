@@ -9,7 +9,7 @@
     top: 0px;
     left: 0px;
     margin-bottom: 50px;
-    background: url('https://source.unsplash.com/random') no-repeat center center fixed;
+    background: url('https://images.pexels.com/photos/1172849/pexels-photo-1172849.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -96,19 +96,17 @@ input:invalid {
 }
 
 .signup-title a {
-    position: relative;
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    top: 80px;
     width: 100%;
-    left: 40px;
-    cursor: pointer;
-    color: rgb(233, 212, 212);
+    color: #333;
     font-weight: bold;
     position: relative;
-    top: 100px;
+    text-align: center;
+    top: 113px;
+    cursor: pointer;
+    left: 1em;
 }
 
 
@@ -171,6 +169,11 @@ input:invalid {
     position: relative;
     text-align: center;
     margin: 1em 0em;
+}
+
+#form #recaptcha {
+    padding-bottom: 1em;
+    position: relative;
 }
 
 .sitter-form {
