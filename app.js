@@ -105,6 +105,11 @@ app.use('/', require('./routes/babysitters'));
 app.use('/', require('./routes/babysitter'));
 
 
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function(req, res) {
+    res.status(404).render('404.hbs');
+});
+
 app.listen(process.env.PORT || 5000, () => {
     console.log(`Server started on port 5000...Happy Surfing`);
 });
