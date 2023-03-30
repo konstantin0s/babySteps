@@ -31,7 +31,7 @@
         "express": "^4.16.4",
         "express-history-api-fallback": "^2.2.1",
         "express-session": "^1.15.6",
-        "hbs": "^4.1.0",
+        "hbs": "^4.2.0",
         "helper-date": "^1.0.1",
         "jade": "^1.11.0",
         "jsonwebtoken": "^8.5.1",
